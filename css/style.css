@@ -90,3 +90,98 @@ p {
   box-shadow: 0px 10px 23px rgba(0, 0, 0, 0.12);
   border: 1px solid rgba(224, 224, 224, 0.15);
 }
+
+.window__modal {
+  display: flex;
+  max-width: 658px;
+  height: 296px;
+  background-color: #2C2C2C;
+  opacity: 0.7;
+  align-items: center;
+}
+
+.modal-alert {
+  position: relative;
+  padding: 16px 16px;
+  width: 281px;
+  height: 102px;
+  background-color: #fff;
+  color: #2C2C2C;
+  border-radius: 4px;
+  margin: 0 auto;
+}
+
+.modal-title {
+  font-weight: 700;
+  font-size: 13px;
+  padding: 0 0 10px;
+}
+
+.modal-sub {
+  font-weight: 400;
+  font-size: 13px;
+  padding: 0 0 24px;
+}
+
+.modal__close-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.close-btn-svg {
+  width: 10px;
+  height: 10px;
+  fill: #2C2C2C;
+  opacity: 0.5;
+}
+
+.modal__button {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: flex-end;
+}
+
+.button-cancel {
+  outline: none;
+  border: 1px solid #E0E0E0;
+  cursor: pointer;
+  margin: 0 4px 0 0;
+  width: 70px;
+  height: 36px;
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: 5px;
+  background-color: transparent;
+  transition: all 250ms;
+}
+
+.button-cancel:hover,
+.button-cancel:focus {
+  border: 1px solid #18A0FB;
+  box-shadow: 0px 10px 23px rgba(0, 0, 0, 0.12);
+}
+
+.button-submit {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  height: 36px;
+  width: 92px;
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: 5px;
+  background-color: #18A0FB;
+  color: #fff;
+  transition: all 250ms;
+}
+
+.button-submit:hover,
+.button-submit:focus {
+  box-shadow: 0px 10px 23px rgba(0, 0, 0, 0.12);
+}
