@@ -1,0 +1,92 @@
+body {
+  font-family: "Inter", sans-serif;
+  padding: 0 60px;
+  margin: 0 auto;
+}
+
+p {
+  margin: 0;
+}
+
+.sec__color {
+  display: flex;
+}
+
+.color {
+  display: flex;
+  flex-direction: column;
+  padding: 60px 71px 0 0;
+}
+
+.color-title {
+  font-size: 13px;
+  font-weight: 500;
+  padding-bottom: 24px;
+}
+
+.color-circle {
+  content: "";
+  display: inline;
+  width: 41px;
+  height: 41px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  background-color: #fff;
+}
+
+.color-circle--black {
+  background-color: #2C2C2C;
+}
+
+.color-circle--gray {
+  background-color: #2C2C2C;
+  opacity: 0.5;
+}
+
+.color-circle--blue {
+  background-color: #18A0FB;
+}
+
+.color-circle--red {
+  background-color: #FF3E1D;
+}
+
+.color-circle--green {
+  background-color: #00D200;
+}
+
+.color-circle--yellow {
+  background-color: #FFD422;
+}
+
+.color-circle__border-gray {
+  border: 1px solid #E0E0E0;
+}
+
+.color-circle__border-red {
+  border: 1px solid #FF3E1D;
+}
+
+.color-circle__border-blue {
+  border: 1px solid #18A0FB;
+}
+
+.color-circle--shadow1 {
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(224, 224, 224, 0.15);
+}
+
+.color-circle--shadow2 {
+  box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(224, 224, 224, 0.15);
+}
+
+.color-circle--shadow3 {
+  box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(224, 224, 224, 0.15);
+}
+
+.color-circle--shadow4 {
+  box-shadow: 0px 10px 23px rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(224, 224, 224, 0.15);
+}
