@@ -146,17 +146,46 @@
     </div>
     </div>,
 	<div class="container">
-    <div class="check-wrapp">
-        <label for="check" class="check-label">
-            <input type="checkbox" class="check-mark" id="check">
-            <div class="check-elem"></div>
-            <p class="check-desc">Option</p>
-        </label>
+    <form class="form__option">
+        <p class="option-deck">Option</p>
+        <input type="checkbox" class="option-input" id="check">
+        <label for="check" class="option-label"></label>
+    </form>
+
+    <!-- Checkbox list -->
+
+    <div class="checkbox-list">
+        <div>
+            <form class="form__checkbox-active">
+                <input type="checkbox" class="checkbox-input" id="check-active">
+                <label for="check-active" class="checkbox-active-label"></label>
+            </form>
+            <form class="form__checkbox-active">
+                <input type="checkbox" class="checkbox-input" id="check-active-small">
+                <label for="check-active-small" class="checkbox-active-label checkbox-active-label--small-sise"></label>
+            </form>
+        </div>
+        <!-- <div>
+            <form class="form__check">
+                <input type="checkbox" class="checkbox-input" id="checkbox-white">
+                <label for="checkbox-white" class="checkbox-active-label"></label>
+            </form>
+            <form class="form__check">
+                <input type="checkbox" class="checkbox-input checkbox-input--white-small" id="checkbox-white-small">
+                <label for="checkbox-white-small" class="checkbox-active-label"></label>
+            </form>
+        </div> -->
+        <div>
+            <form>
+                <input disabled type="checkbox" class="disabled-check" id="disabled-check">
+                <label for="disabled-check" class="disable-lable"></label>
+            </form>
+            <form class="form__check">
+                <input disabled type="checkbox" class="disabled-check" id="check-disabled-small">
+                <label for="check-disabled-small" class="disable-lable disable-lable--small"></label>
+            </form>
+        </div>
     </div>
-    <!-- <input type="checkbox" class="checkbox" id="check">
-    <input type="checkbox" class="checkbox" id="check">
-    <input type="checkbox" class="checkbox" id="check">
-    <input type="checkbox" class="checkbox" id="check"> -->
 </div>
 </body>
 </html>
