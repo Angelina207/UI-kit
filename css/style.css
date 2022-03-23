@@ -361,6 +361,7 @@ p {
   font-size: 13px;
   font-weight: 500;
   padding-left: 60px;
+  padding-top: 10px;
 }
 
 .option-input {
@@ -374,6 +375,11 @@ p {
   height: 32px;
   background-color: #00D200;
   border-radius: 23px;
+  cursor: pointer;
+  transition: 250ms;
+}
+.option-label:hover, .option-label:focus {
+  box-shadow: 0px 10px 23px rgba(0, 0, 0, 0.12);
 }
 
 .option-label::before {
@@ -401,107 +407,69 @@ p {
   display: flex;
 }
 
-.form__checkbox-active {
-  margin-top: 30px;
+.form__checkbox {
+  margin: 30px 30px;
 }
 
 .checkbox-input {
-  appearance: none;
   position: relative;
+  appearance: none;
 }
 
-.checkbox-active-label {
-  content: "";
+.checkbox-label {
   position: absolute;
-  display: inline-block;
   width: 52px;
   height: 32px;
   background-color: #00D200;
   border-radius: 23px;
+  cursor: pointer;
   transition: 250ms;
 }
+.checkbox-label:hover, .checkbox-label:focus {
+  box-shadow: 0px 10px 23px rgba(0, 0, 0, 0.12);
+}
 
-.checkbox-active-label::before {
+.checkbox-label::before {
   content: "";
   position: absolute;
-  display: inline-block;
+  background-color: #fff;
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  background-color: #fff;
+  display: inline-block;
   top: calc(50% - 12px);
   left: 3px;
   transition: 250ms;
 }
 
-.checkbox-input:checked ~ .checkbox-active-label {
-  background-color: #00A000;
-}
-
-.checkbox-input:checked ~ .checkbox-active-label::before {
+.checkbox-input:checked ~ .checkbox-label::before {
   left: 25px;
 }
 
-.checkbox-active-label--small-sise {
+.checkbox-label--size {
   height: 24px;
 }
 
-.checkbox-active-label--small-sise::before {
-  height: 20px;
-  width: 20px;
-  top: calc(50% - 10px);
-}
-
-.checkbox-input:checked ~ .checkbox-active-label--small-sise::before {
-  left: 29px;
-}
-
-.disabled-check {
-  appearance: none;
-  position: relative;
-}
-
-.disable-lable {
-  position: absolute;
-  width: 52px;
-  height: 32px;
-  background-color: #E0E0E0;
-  border-radius: 23px;
-  transition: 250ms;
-}
-
-.disable-lable::before {
-  position: absolute;
-  content: "";
-  display: inline-block;
-  background-color: #fff;
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  top: calc(50% - 12px);
-  left: 3px;
-  transition: 250ms;
-}
-
-.disabled-check:checked ~ .disable-lable {
-  background-color: #BBBBBB;
-}
-
-.disabled-check:checked ~ .disable-lable::before {
-  left: 25px;
-}
-
-.disable-lable--small {
-  height: 24px;
-}
-
-.disable-lable--small::before {
+.checkbox-label--size::before {
   width: 20px;
   height: 20px;
   top: calc(50% - 10px);
-  left: 3px;
+  left: 2px;
 }
 
-.disabled-check:checked ~ .disable-lable--small::before {
+.checkbox-input:checked ~ .checkbox-label--size::before {
   left: 30px;
+}
+
+.checkbox-label--gray {
+  background-color: #fff;
+  border: solid 1px #D5D5D5;
+}
+
+.checkbox-label--gray::before {
+  background-color: #D5D5D5;
+}
+
+.checkbox-label--disabled {
+  background-color: #E0E0E0;
 }
