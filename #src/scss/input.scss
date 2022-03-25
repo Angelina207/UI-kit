@@ -1,4 +1,4 @@
-// General styles
+// Checkbox
 
 .form__option{
     display: flex;
@@ -110,6 +110,117 @@
 .checkbox-label--disabled{
     background-color: #E0E0E0;
 }
-// #5EBDFC
 
+// Input forms
+.form-wrapp{
+    display: flex;
+    flex-direction: row;
+}
+.input-form{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding-top: 30px;
+    padding-left: 30px;
+}
+.input-title{
+    color: #2C2C2C;
+    font-size: 13px;
+    font-weight: 500;
+    padding-bottom: 10px;
+}
+.input-area{
+    outline: none;
+    height: 37px;
+    width: 240px;
+    border-radius: 4px;
+    padding: 0 10px;
+    border: solid 2px #EFEFEFFF;
+    transition: 250ms;
+    cursor: pointer;
+    &:focus,
+    &:hover {
+        box-shadow: 0px 10px 23px rgba(0, 0, 0, 0.12);
+    }
+}
+ .input-area::placeholder{
+     color: #888888FF;
+}
+.input-area--err{
+    border: solid 1px #FF3E1DFF;
+    background-color: #FFF3F1FF;
+}
+.input-area--err::placeholder {
+    color: #FF3E1DFF;
+}
+.input-area--focus{
+    border: solid 1px #18A0FBFF;
 
+}
+.input-title--disabled{
+    color: #ABABABFF;
+}
+// Input form search
+
+.search{
+    width: 260px;
+    height: 37px;
+    outline: none;
+    border: solid 2px #E4E4E4FF;
+    border-radius: 4px;
+    padding: 0 10px;
+}
+.search-title{
+    position: absolute;
+    bottom: 0;
+    left: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 500;
+    width: 57px;
+    height: 33px;
+    z-index: 10;
+    color: #919191FF;
+    border-radius: 4px 0 0 4px;
+    border: solid 2px #E4E4E4FF;
+    background-color: #F6F6F6FF;
+}
+.search--padding{
+    position: relative;
+    padding: 0 10px 0 65px;
+}
+.search-svg{
+    fill: #959595FF;
+}
+// Textarea forms
+
+.textarea{
+    outline: none;
+    cursor: pointer;
+    width: 259px;
+    height: 97px;
+    border-radius: 4px;
+    padding: 10px;
+    border: 2px solid #E4E4E4FF;
+}
+.textarea::placeholder{
+    font-size: 13px;
+    font-weight: 500;
+    font-family: Inter;
+    color: #959595FF;
+}
+.textarea--err{
+    border: solid 1px #FF3E1DFF;
+    background-color: #FFF3F1FF;
+}
+.textarea--err::placeholder{
+    color: #FF3E1DFF;
+}
+.textarea-label{
+    color: #2C2C2C;
+    font-size: 13px;
+    font-weight: 500;
+    padding-bottom: 10px;
+}
