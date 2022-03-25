@@ -352,11 +352,16 @@ p {
   box-shadow: 0px 10px 23px rgba(0, 0, 0, 0.12);
 }
 
-.form__option {
+.wrapp-checkbox {
   display: flex;
 }
 
-.option-deck {
+.form__check-box {
+  display: flex;
+  margin: 30px;
+}
+
+.check-box-title {
   color: #2C2C2C;
   font-size: 13px;
   font-weight: 500;
@@ -364,29 +369,30 @@ p {
   padding-top: 10px;
 }
 
-.option-input {
+.check-box {
   position: relative;
   appearance: none;
 }
 
-.option-label {
+.check-box-label {
   position: absolute;
   width: 52px;
   height: 32px;
-  background-color: #00D200;
+  background-color: #fff;
   border-radius: 23px;
+  border: solid 1px #D5D5D5FF;
   cursor: pointer;
   transition: 250ms;
 }
-.option-label:hover, .option-label:focus {
+.check-box-label:hover, .check-box-label:focus {
   box-shadow: 0px 10px 23px rgba(0, 0, 0, 0.12);
 }
 
-.option-label::before {
+.check-box-label::before {
   position: absolute;
   content: "";
   display: inline-block;
-  background-color: #fff;
+  background-color: #D5D5D5FF;
   border-radius: 50%;
   width: 24px;
   height: 24px;
@@ -395,83 +401,36 @@ p {
   transition: 250ms;
 }
 
-.option-input:checked ~ .option-label {
-  background-color: #00A000;
-}
-
-.option-input:checked ~ .option-label::before {
-  left: 25px;
-}
-
-.checkbox-list {
-  display: flex;
-}
-
-.form__checkbox {
-  margin: 30px 30px;
-}
-
-.checkbox-input {
-  position: relative;
-  appearance: none;
-}
-
-.checkbox-label {
-  position: absolute;
-  width: 52px;
-  height: 32px;
+.check-box:checked ~ .check-box-label {
   background-color: #00D200;
-  border-radius: 23px;
-  cursor: pointer;
-  transition: 250ms;
-}
-.checkbox-label:hover, .checkbox-label:focus {
-  box-shadow: 0px 10px 23px rgba(0, 0, 0, 0.12);
 }
 
-.checkbox-label::before {
-  content: "";
-  position: absolute;
-  background-color: #fff;
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  display: inline-block;
-  top: calc(50% - 12px);
-  left: 3px;
-  transition: 250ms;
-}
-
-.checkbox-input:checked ~ .checkbox-label::before {
+.check-box:checked ~ .check-box-label::before {
   left: 25px;
+  background-color: #fff;
 }
 
-.checkbox-label--size {
+.check-box-label--dis {
+  background-color: #E0E0E0FF;
+}
+
+.check-box-label--dis::before {
+  background-color: #fff;
+}
+
+.check-box-label--small {
   height: 24px;
 }
 
-.checkbox-label--size::before {
-  width: 20px;
+.check-box-label--small::before {
   height: 20px;
+  width: 20px;
   top: calc(50% - 10px);
   left: 2px;
 }
 
-.checkbox-input:checked ~ .checkbox-label--size::before {
+.check-box:checked ~ .check-box-label--small::before {
   left: 30px;
-}
-
-.checkbox-label--gray {
-  background-color: #fff;
-  border: solid 1px #D5D5D5;
-}
-
-.checkbox-label--gray::before {
-  background-color: #D5D5D5;
-}
-
-.checkbox-label--disabled {
-  background-color: #E0E0E0;
 }
 
 .form-wrapp {
