@@ -516,12 +516,29 @@ p {
 }
 
 .search--padding {
-  position: relative;
   padding: 0 10px 0 65px;
 }
 
-.search-svg {
+.search--padd-left {
+  padding-left: 40px;
+}
+
+.search--padd-right {
+  padding-right: 40px;
+}
+
+.search-svg-left {
+  position: absolute;
   fill: #959595FF;
+  top: 42px;
+  left: 48px;
+}
+
+.search-svg-right {
+  position: absolute;
+  fill: #959595FF;
+  top: 42px;
+  right: 18px;
 }
 
 .textarea {
