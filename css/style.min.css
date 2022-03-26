@@ -433,6 +433,91 @@ p {
   left: 30px;
 }
 
+.wrapp__form {
+  display: flex;
+  padding-top: 30px;
+}
+
+.form__radio {
+  padding-right: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.radio-box {
+  padding-right: 20px;
+}
+
+.radio-title {
+  padding-left: 20px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.radio-btn {
+  appearance: none;
+  position: relative;
+}
+
+.radio-btn--padding {
+  padding-left: 20px;
+}
+
+.radio-label {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background-color: #fff;
+  border: 1px solid #E0E0E0FF;
+  cursor: pointer;
+}
+
+.radio-label--circle {
+  border-radius: 50%;
+}
+
+.radio-label--circle:before {
+  position: absolute;
+  top: calc(50% - 4px);
+  left: calc(50% - 4px);
+  display: inline-block;
+  content: "";
+  width: 8px;
+  height: 8px;
+  background-color: #fff;
+  border-radius: 50%;
+  opacity: 0;
+  transition: 250ms;
+}
+
+.radio-btn:checked ~ .radio-label--circle:before {
+  opacity: 1;
+}
+
+.radio-btn:checked ~ .radio-label {
+  background-color: #18A0FBFF;
+  border: 1px solid #18A0FBFF;
+}
+
+.radio-btn:disabled ~ .radio-label {
+  background-color: #F6F6F6FF;
+}
+
+.radio-label--square {
+  border-radius: 4px;
+}
+
+.radio-svg-check {
+  position: absolute;
+  top: calc(50% - 4px);
+  left: calc(50% - 5.5px);
+  opacity: 0;
+}
+
+.radio-btn:checked ~ .radio-label--square > .radio-svg-check {
+  opacity: 1;
+}
+
 .form-wrapp {
   display: flex;
   flex-direction: row;
