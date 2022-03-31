@@ -324,5 +324,62 @@
         </div>
     </div>
 </div>
+	<div class="container">
+    <div class="container__upload">    
+        <div class="upload-box">
+            <input class="upload-file" type="file" id="add-file" multiple>
+            <label class="upload-label" for="add-file">
+                <svg class="upload-arrow" version="1.1" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 32 32">
+                    <path d="M27.414 12.586l-10-10c-0.781-0.781-2.047-0.781-2.828 0l-10 10c-0.781 0.781-0.781 2.047 0 2.828s2.047 0.781 2.828 0l6.586-6.586v19.172c0 1.105 0.895 2 2 2s2-0.895 2-2v-19.172l6.586 6.586c0.39 0.39 0.902 0.586 1.414 0.586s1.024-0.195 1.414-0.586c0.781-0.781 0.781-2.047 0-2.828z"></path>
+                </svg>
+            </label>
+            <p class="upload-text">Add Files</p>
+            <p class="upload-desc">Drag & Drop to upload or</p>
+        </div>
+
+        <div class="upload-box upload-box-err">
+            <input class="upload-file" type="file" id="upload-err" multiple>
+            <label class="upload-label upload-label--err" for="upload-err">
+                <svg class="upload-arrow" version="1.1" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 32 32">
+                    <path d="M27.414 12.586l-10-10c-0.781-0.781-2.047-0.781-2.828 0l-10 10c-0.781 0.781-0.781 2.047 0 2.828s2.047 0.781 2.828 0l6.586-6.586v19.172c0 1.105 0.895 2 2 2s2-0.895 2-2v-19.172l6.586 6.586c0.39 0.39 0.902 0.586 1.414 0.586s1.024-0.195 1.414-0.586c0.781-0.781 0.781-2.047 0-2.828z"></path>
+                </svg>
+            </label>
+            <p class="upload-text">Something went wrong</p>
+            <p class="upload-desc">Please try again</p>
+        </div>
+
+        <div class="upload-box">
+            <p class="upload-text">% loaded</p>
+            <div class="upload-progress progress" data-percent="51">
+                <div class="upload-progress-width progress">
+                </div>
+            </div>
+            <p class="upload-desc">Please wait...</p>
+            <button class="upload-btn-cancel">Cancel</button>
+        </div>
+
+        <!-- <div class="upload-box" data-percent-circle="69">
+            <div class="progress-circle">
+            
+            </div>
+            <p class="progress-desc">Loading...</p>
+            <button class="progress-btn">Cancel</button>
+        </div> -->
+    </div>
+    <script>
+        function moveProgress() {
+            const getProgress = document.querySelector('.upload-progress');
+            const percent = parseInt(getProgress.dataset.percent) / 100;
+            const getProgressWidth = document.querySelector('.upload-progress').offsetWidth;
+            const totalPercent = percent * getProgressWidth;
+            const animationLength = 2500;
+
+            console.log(totalPercent);
+        }
+        moveProgress();
+    </script>
+</div>
+
+	<!-- <script src="./js/script.js"></script> -->
 </body>
 </html>

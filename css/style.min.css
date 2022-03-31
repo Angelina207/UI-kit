@@ -487,7 +487,6 @@ p {
   background-color: #fff;
   border-radius: 50%;
   opacity: 0;
-  transition: 250ms;
 }
 
 .radio-btn:checked ~ .radio-label--circle:before {
@@ -657,4 +656,120 @@ p {
   font-size: 13px;
   font-weight: 500;
   padding-bottom: 10px;
+}
+
+.container__upload {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.upload-box {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 281px;
+  width: 270px;
+  margin: 50px 30px 0 0;
+  border: dashed 2px #E0E0E0FF;
+  border-radius: 4px;
+}
+
+.upload-box-err {
+  border: dashed 2px #FF3E1DFF;
+  background-color: #FFF5F4FF;
+}
+
+.upload-box-err > .upload-text {
+  color: #FF3E1DFF;
+}
+
+.upload-box-err > .upload-desc {
+  color: #ABA5A4FF;
+}
+
+.upload-file {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.upload-label {
+  position: absolute;
+  top: 55px;
+  left: calc(50% - 25px);
+  width: 51px;
+  height: 51px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: solid 2px #C0C0C0FF;
+  background-color: transparent;
+}
+
+.upload-label--err {
+  border: 2px solid #FFBEB4FF;
+}
+.upload-label--err > .upload-arrow {
+  fill: #FFBEB4FF;
+}
+
+.upload-arrow {
+  position: absolute;
+  fill: #C0C0C0FF;
+  top: calc(50% - 15px);
+  left: calc(50% - 15px);
+}
+
+.upload-text {
+  font-weight: 500;
+  font-size: 21px;
+  line-height: 25px;
+}
+
+.upload-desc {
+  padding-top: 10px;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 16px;
+  color: #ABABABFF;
+}
+
+.upload-btn-cancel {
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  font-family: Inter;
+  width: 91px;
+  height: 36px;
+  border-radius: 4px;
+  color: #2C2C2CFF;
+  border: solid 1px #E0E0E0FF;
+  background-color: #fff;
+  transition: 250ms;
+  margin-top: 25px;
+}
+.upload-btn-cancel:hover, .upload-btn-cancel:focus {
+  color: #fff;
+  background-color: #18A0FBFF;
+  border: solid 1px #18A0FBFF;
+}
+
+.progress {
+  width: 183px;
+  height: 6px;
+  border-radius: 10px;
+}
+
+.upload-progress {
+  position: relative;
+  overflow: hidden;
+  background-color: #E0E0E0FF;
+}
+
+.upload-progress-width {
+  position: absolute;
+  background-color: #18A0FBFF;
+  top: 0;
+  left: 0;
 }
