@@ -765,6 +765,7 @@ p {
   position: relative;
   overflow: hidden;
   background-color: #E0E0E0FF;
+  margin-top: 10px;
 }
 
 .upload-progress-width {
