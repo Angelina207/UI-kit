@@ -1,20 +1,3 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-	 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="css/style.min.css">
-	<title>Главная</title>
-</head>
-	<body>
-		
-		<main>
-		</main>
-		
-		<script src="js/app.min.js"></script>
-	</body>
-</html> -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -325,9 +308,11 @@
     </div>
 </div>
 	<div class="container">
-    <div class="container__upload">    
-        <div class="upload-box">
-            <input class="upload-file" type="file" id="add-file" multiple>
+    <div class="container__upload">   
+         <!-- form for upload -->
+         
+        <form class="upload-box" method="post">
+            <input class="upload-file" type="file" id="add-file" type="submit" multiple>
             <label class="upload-label" for="add-file">
                 <svg class="upload-arrow" version="1.1" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 32 32">
                     <path d="M27.414 12.586l-10-10c-0.781-0.781-2.047-0.781-2.828 0l-10 10c-0.781 0.781-0.781 2.047 0 2.828s2.047 0.781 2.828 0l6.586-6.586v19.172c0 1.105 0.895 2 2 2s2-0.895 2-2v-19.172l6.586 6.586c0.39 0.39 0.902 0.586 1.414 0.586s1.024-0.195 1.414-0.586c0.781-0.781 0.781-2.047 0-2.828z"></path>
@@ -335,10 +320,11 @@
             </label>
             <p class="upload-text">Add Files</p>
             <p class="upload-desc">Drag & Drop to upload or</p>
-        </div>
+        </form>
 
-        <div class="upload-box upload-box-err">
-            <input class="upload-file" type="file" id="upload-err" multiple>
+        <!-- form error -->
+        <form class="upload-box upload-box-err" method="post">
+            <input class="upload-file" type="file" id="upload-err" type="submit" multiple>
             <label class="upload-label upload-label--err" for="upload-err">
                 <svg class="upload-arrow" version="1.1" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 32 32">
                     <path d="M27.414 12.586l-10-10c-0.781-0.781-2.047-0.781-2.828 0l-10 10c-0.781 0.781-0.781 2.047 0 2.828s2.047 0.781 2.828 0l6.586-6.586v19.172c0 1.105 0.895 2 2 2s2-0.895 2-2v-19.172l6.586 6.586c0.39 0.39 0.902 0.586 1.414 0.586s1.024-0.195 1.414-0.586c0.781-0.781 0.781-2.047 0-2.828z"></path>
@@ -346,44 +332,227 @@
             </label>
             <p class="upload-text">Something went wrong</p>
             <p class="upload-desc">Please try again</p>
-        </div>
+        </form>
 
-        <div class="upload-box">
-            <p class="upload-text">% loaded</p>
-            <div class="upload-progress progress" data-percent="51">
-                <div class="upload-progress-width progress">
-                </div>
+        <!-- linear uploading process -->
+        <form class="upload-box">
+            <p class="upload-text atrr-progress" data-percent="69">% uploaded</p>
+            <div class="progress">
+                <span class="progress-percent"></span>
             </div>
             <p class="upload-desc">Please wait...</p>
-            <button class="upload-btn-cancel">Cancel</button>
-        </div>
+            <button class="upload-btn-cancel upload-btn-cancel--margin-top">Cancel</button>
+        </form>
 
-        <!-- <div class="upload-box" data-percent-circle="69">
-            <div class="progress-circle">
-            
+        <!-- circle uploading process -->
+        <form class="upload-box">
+            <div class="upload-circle">
+                <span class="progress-percent-inner" data-percent-inner="69">%</span>
             </div>
-            <p class="progress-desc">Loading...</p>
-            <button class="progress-btn">Cancel</button>
-        </div> -->
+            <p class="upload-desc">Uploading...</p>
+            <button class="upload-btn-cancel">Cancel</button>
+        </form>
+
+        <!-- already uploaded -->
+        <form class="upload-box" method="post">
+            <div class="upload-circle upload-complete">
+                <svg class="upload-check-mark" width="50" height="37" viewBox="0 0 50 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M49.3454 0.520134C50.1627 1.26315 50.2229 2.52804 49.4799 3.34536L19.4799 36.3454C18.7468 37.1517 17.5032 37.2228 16.683 36.5052L0.683018 22.5052C-0.148255 21.7778 -0.23249 20.5143 0.494874 19.683C1.22224 18.8517 2.48576 18.7675 3.31704 19.4949L17.8402 32.2026L46.5201 0.654668C47.2632 -0.162647 48.5281 -0.22288 49.3454 0.520134Z" fill="white"/>
+                </svg>
+            </div>
+            <p class="upload-text upload-text--padding-top">Loading Complete!</p>
+            <button class="upload-btn-cancel">Upload New</button>
+        </form>
     </div>
+
     <script>
         function moveProgress() {
-            const getProgress = document.querySelector('.upload-progress');
-            const percent = parseInt(getProgress.dataset.percent) / 100;
-            const getProgressWidth = document.querySelector('.upload-progress').offsetWidth;
-            const totalPercent = percent * getProgressWidth;
-            const animationLength = 2500;
-
-            console.log(totalPercent);
+            const attrPercent = document.querySelector('.atrr-progress');
+            const getPercent = parseInt(attrPercent.dataset.percent);
+            const progress = document.querySelector('.progress');
+            const progressPercent = document.querySelector('.progress-percent');
+            console.log(getPercent);
         }
-
         moveProgress();
-
-        document.defaultView.window;
-        console.log(window)
     </script>
 </div>
+	<div class="container">
 
-	<!-- <script src="./js/script.js"></script> -->
+    <!-- Big buttons -->
+    <p class="btn-title">Buttons Big</p>
+    <div class="btn-wrapp">
+        <div class="btn-list">
+            <button class="btn-style btn-focus">Download</button>
+            <button class="btn-style" disabled>Download</button>
+            <button class="btn-style">Download</button>
+            <button class="btn-style btn-style--blue-border">Download</button>
+        </div>
+        <div class="btn-list">
+            <button class="btn-style btn-focus">Download
+                <svg class="btn-svg btn-svg--padding-left" version="1.1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 32 32">
+                    <path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M5.333 16v9.333h21.333v-9.333"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 4.668v13.333"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 18.001l4.5-4.5"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 18.001l-4.5-4.5"></path>
+                </svg>
+            </button>
+
+            <button class="btn-style" disabled>Download
+                <svg class="btn-svg btn-svg--padding-left" version="1.1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 32 32">
+                    <path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M5.333 16v9.333h21.333v-9.333"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 4.668v13.333"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 18.001l4.5-4.5"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 18.001l-4.5-4.5"></path>
+                </svg>
+            </button>
+
+            <button class="btn-style">Download
+                <svg class="btn-svg btn-svg--color btn-svg--padding-left" version="1.1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 32 32">
+                    <path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M5.333 16v9.333h21.333v-9.333"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 4.668v13.333"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 18.001l4.5-4.5"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 18.001l-4.5-4.5"></path>
+                </svg>
+            </button>
+
+            <button class="btn-style btn-style--blue-border">Download
+                <svg class="btn-svg btn-svg--padding-left" version="1.1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 32 32">
+                    <path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M5.333 16v9.333h21.333v-9.333"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 4.668v13.333"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 18.001l4.5-4.5"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 18.001l-4.5-4.5"></path>
+                </svg>
+            </button>
+        </div>
+        <div class="btn-list">
+            <button class="btn-style btn-focus">
+                <svg class="btn-svg btn-svg--padding-right" version="1.1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 32 32">
+                    <path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M5.333 16v9.333h21.333v-9.333"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 4.668v13.333"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 18.001l4.5-4.5"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 18.001l-4.5-4.5"></path>
+                </svg>
+                Download
+            </button>
+
+            <button class="btn-style" disabled>
+                <svg class="btn-svg btn-svg--padding-right" version="1.1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 32 32">
+                    <path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M5.333 16v9.333h21.333v-9.333"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 4.668v13.333"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 18.001l4.5-4.5"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 18.001l-4.5-4.5"></path>
+                </svg>
+                Download
+            </button>
+
+            <button class="btn-style">
+                <svg class="btn-svg btn-svg--color btn-svg--padding-right" version="1.1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 32 32">
+                    <path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M5.333 16v9.333h21.333v-9.333"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 4.668v13.333"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 18.001l4.5-4.5"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 18.001l-4.5-4.5"></path>
+                </svg>
+                Download
+            </button>
+
+            <button class="btn-style btn-style--blue-border">
+                <svg class="btn-svg btn-svg--padding-right" version="1.1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 32 32">
+                    <path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M5.333 16v9.333h21.333v-9.333"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 4.668v13.333"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 18.001l4.5-4.5"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 18.001l-4.5-4.5"></path>
+                </svg>
+                Download
+            </button>
+        </div>
+    </div>
+
+    <!-- Small buttons -->
+    <p class="btn-title">Buttons Small</p>
+    <div class="btn-wrapp">
+        <div class="btn-list">
+            <button class="btn-style btn-style--small btn-focus">Download</button>
+            <button class="btn-style btn-style--small" disabled>Download</button>
+            <button class="btn-style btn-style--small">Download</button>
+            <button class="btn-style btn-style--small btn-style--blue-border">Download</button>
+        </div>
+        <div class="btn-list">
+            <button class="btn-style btn-focus btn-style--small">Download
+                <svg class="btn-svg btn-svg--padding-left" version="1.1" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32">
+                    <path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M5.333 16v9.333h21.333v-9.333"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 4.668v13.333"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 18.001l4.5-4.5"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 18.001l-4.5-4.5"></path>
+                </svg>
+            </button>
+            <button class="btn-style btn-style--small" disabled>Download
+                <svg class="btn-svg btn-svg--padding-left" version="1.1" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32">
+                    <path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M5.333 16v9.333h21.333v-9.333"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 4.668v13.333"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 18.001l4.5-4.5"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 18.001l-4.5-4.5"></path>
+                </svg>
+            </button>
+            <button class="btn-style btn-style--small">Download
+                <svg class="btn-svg btn-svg--color btn-svg--padding-left" version="1.1" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32">
+                    <path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M5.333 16v9.333h21.333v-9.333"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 4.668v13.333"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 18.001l4.5-4.5"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 18.001l-4.5-4.5"></path>
+                </svg>
+            </button>
+            <button class="btn-style btn-style--blue-border btn-style--small">Download
+                <svg class="btn-svg btn-svg--padding-left" version="1.1" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32">
+                    <path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M5.333 16v9.333h21.333v-9.333"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 4.668v13.333"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 18.001l4.5-4.5"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 18.001l-4.5-4.5"></path>
+                </svg>
+            </button>
+        </div>
+        <div class="btn-list">
+            <button class="btn-style btn-focus-red btn-style--small">
+                <svg class="btn-svg btn-svg--padding-right" version="1.1" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32">
+                    <path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M5.333 16v9.333h21.333v-9.333"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 4.668v13.333"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 18.001l4.5-4.5"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 18.001l-4.5-4.5"></path>
+                </svg>
+                Download
+            </button>
+            <button class="btn-style btn-style--small" disabled>
+                <svg class="btn-svg btn-svg--padding-right" version="1.1" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32">
+                    <path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M5.333 16v9.333h21.333v-9.333"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 4.668v13.333"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 18.001l4.5-4.5"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 18.001l-4.5-4.5"></path>
+                </svg>
+                Download
+             </button>
+
+            <button class="btn-style btn-style--small">
+                <svg class="btn-svg btn-svg--color btn-svg--padding-right" version="1.1" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32">
+                    <path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M5.333 16v9.333h21.333v-9.333"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 4.668v13.333"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 18.001l4.5-4.5"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 18.001l-4.5-4.5"></path>
+                </svg>
+                Download
+            </button>
+
+            <button class="btn-style btn-style--blue-border btn-style--small">
+                <svg class="btn-svg btn-svg--padding-right" version="1.1" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32">
+                    <path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M5.333 16v9.333h21.333v-9.333"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 4.668v13.333"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 18.001l4.5-4.5"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 18.001l-4.5-4.5"></path>
+                </svg>
+                Download
+            </button>
+        </div>
+    </div>
+
+    <!-- micro buttons -->
+    <div class="btn-list">
+        <button class="btn-style btn-micro">Tag</button>
+        <button class="btn-style btn-micro-middle">Tag
+            <svg class="btn-svg-close" version="1.1" xmlns="http://www.w3.org/2000/svg" width="6" height="6" viewBox="0 0 32 32">
+                <path d="M0.937 0.937c1.25-1.25 3.276-1.25 4.526 0l10.537 10.537 10.537-10.537c1.25-1.25 3.276-1.25 4.525 0s1.25 3.276 0 4.526l-10.537 10.537 10.537 10.537c1.25 1.25 1.25 3.276 0 4.525s-3.276 1.25-4.525 0l-10.537-10.537-10.537 10.537c-1.25 1.25-3.276 1.25-4.526 0s-1.25-3.276 0-4.525l10.537-10.537-10.537-10.537c-1.25-1.25-1.25-3.276 0-4.526z"></path>
+            </svg>
+        </button>
+        <button class="btn-style btn-focus btn-micro">Tag</button>
+        <button class="btn-style btn-focus btn-micro-middle">Tag
+            <svg class="btn-svg-close" version="1.1" xmlns="http://www.w3.org/2000/svg" width="6" height="6" viewBox="0 0 32 32">
+                <path fill="#fff" d="M0.937 0.937c1.25-1.25 3.276-1.25 4.526 0l10.537 10.537 10.537-10.537c1.25-1.25 3.276-1.25 4.525 0s1.25 3.276 0 4.526l-10.537 10.537 10.537 10.537c1.25 1.25 1.25 3.276 0 4.525s-3.276 1.25-4.525 0l-10.537-10.537-10.537 10.537c-1.25 1.25-3.276 1.25-4.526 0s-1.25-3.276 0-4.525l10.537-10.537-10.537-10.537c-1.25-1.25-1.25-3.276 0-4.526z"></path>
+            </svg>
+        </button>
+    </div>
+
+    <!-- buttons Tab-list -->
+    <div class="btn-list">
+        <div class="btn-tab-list">
+            <button class="btn-tab btn-tab--border-right btn-tab-current btn-tab--small-width">
+                <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill="#fff" fill-rule="evenodd" clip-rule="evenodd" d="M13 6C13 3.79086 11.2091 2 9 2C6.7909 2 5 3.79086 5 6C5 8.2091 6.7909 10 9 10C11.2091 10 13 8.2091 13 6ZM9 0C12.3137 0 15 2.68629 15 6C15 9.3137 12.3137 12 9 12C7.7042 12 6.5043 11.5892 5.5235 10.8907L1.7071 14.7071C1.3166 15.0976 0.6834 15.0976 0.2929 14.7071C-0.0976 14.3166 -0.0976 13.6834 0.2929 13.2929L4.1093 9.4765C3.4108 8.4957 3 7.2958 3 6C3 2.68629 5.6863 0 9 0Z" fill="#2C2C2C"/>
+                </svg>
+            </button>
+            <button class="btn-tab btn-tab--border btn-tab--small-width">
+                <svg class="btn-tab-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 32 32">
+                    <path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M5.333 16v9.333h21.333v-9.333"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 4.668v13.333"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 18.001l4.5-4.5"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 18.001l-4.5-4.5"></path>
+                </svg>
+            </button>
+            <button class="btn-tab btn-tab--border-left btn-tab--small-width">
+                <svg class="btn-tab-svg" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15 12.51H15.5V12.01V10.51H16.5V13.01C16.5 13.2869 16.2769 13.51 16 13.51H8C7.72314 13.51 7.5 13.2869 7.5 13.01V10.51H8.5V12.01V12.51H9H15Z"/><path d="M2.92205 6.30863L2.90861 6.29902L5.3096 3.10657L5.3101 3.1059C5.58912 2.73363 6.0385 2.50903 6.508 2.50903H17.508C17.9791 2.50903 18.4295 2.73545 18.7101 3.11188L18.7105 3.11237L21.1053 6.31638L21.0935 6.32544L21.3866 6.72011C21.4672 6.82871 21.5 6.92251 21.5 7.01003V18.01C21.5 18.8369 20.8269 19.51 20 19.51H4C3.17314 19.51 2.5 18.8369 2.5 18.01V7.01003C2.5 6.92206 2.53338 6.82686 2.615 6.71803L2.92205 6.30863ZM6.508 3.51003H6.2584L6.10838 3.70952L4.60438 5.70952L4.0024 6.51003H5.004H19.003H20.001L19.4035 5.71067L17.9085 3.71067L17.7585 3.51003H17.508H6.508ZM3.5 18.01V18.51H4H20.002H20.5021L20.502 18.0099L20.5 8.00993L20.4999 7.51003H20H4H3.5V8.01003V18.01Z"/>
+                </svg>
+            </button>
+        </div>
+
+        <div class="btn-tab-list">
+            <button class="btn-tab btn-tab--border-right btn-tab-current btn-tab--long-width">Tab 1</button>
+            <button class="btn-tab btn-tab--border-left btn-tab--long-width">Tab 1</button>
+        </div>
+
+        <div class="btn-tab-list">
+            <button class="btn-tab btn-tab--border-right btn-tab-current btn-tab--middle-width">S</button>
+            <button class="btn-tab btn-tab--border btn-tab--middle-width">M</button>
+            <button class="btn-tab btn-tab--border-left btn-tab--middle-width">L</button>
+        </div>
+    </div>
+</div>
+
+<script src="../js/progressbar.js"></script>
 </body>
 </html>
