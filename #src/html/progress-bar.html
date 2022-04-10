@@ -1,7 +1,9 @@
 <div class="container">
-    <div class="container__upload">    
-        <div class="upload-box">
-            <input class="upload-file" type="file" id="add-file" multiple>
+    <div class="container__upload">   
+         <!-- form for upload -->
+         
+        <form class="upload-box" method="post">
+            <input class="upload-file" type="file" id="add-file" type="submit" multiple>
             <label class="upload-label" for="add-file">
                 <svg class="upload-arrow" version="1.1" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 32 32">
                     <path d="M27.414 12.586l-10-10c-0.781-0.781-2.047-0.781-2.828 0l-10 10c-0.781 0.781-0.781 2.047 0 2.828s2.047 0.781 2.828 0l6.586-6.586v19.172c0 1.105 0.895 2 2 2s2-0.895 2-2v-19.172l6.586 6.586c0.39 0.39 0.902 0.586 1.414 0.586s1.024-0.195 1.414-0.586c0.781-0.781 0.781-2.047 0-2.828z"></path>
@@ -9,10 +11,11 @@
             </label>
             <p class="upload-text">Add Files</p>
             <p class="upload-desc">Drag & Drop to upload or</p>
-        </div>
+        </form>
 
-        <div class="upload-box upload-box-err">
-            <input class="upload-file" type="file" id="upload-err" multiple>
+        <!-- form error -->
+        <form class="upload-box upload-box-err" method="post">
+            <input class="upload-file" type="file" id="upload-err" type="submit" multiple>
             <label class="upload-label upload-label--err" for="upload-err">
                 <svg class="upload-arrow" version="1.1" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 32 32">
                     <path d="M27.414 12.586l-10-10c-0.781-0.781-2.047-0.781-2.828 0l-10 10c-0.781 0.781-0.781 2.047 0 2.828s2.047 0.781 2.828 0l6.586-6.586v19.172c0 1.105 0.895 2 2 2s2-0.895 2-2v-19.172l6.586 6.586c0.39 0.39 0.902 0.586 1.414 0.586s1.024-0.195 1.414-0.586c0.781-0.781 0.781-2.047 0-2.828z"></path>
@@ -20,40 +23,47 @@
             </label>
             <p class="upload-text">Something went wrong</p>
             <p class="upload-desc">Please try again</p>
-        </div>
+        </form>
 
-        <div class="upload-box">
-            <p class="upload-text">% loaded</p>
-            <div class="upload-progress progress" data-percent="51">
-                <div class="upload-progress-width progress">
-                </div>
+        <!-- linear uploading process -->
+        <form class="upload-box">
+            <p class="upload-text atrr-progress" data-percent="69">% uploaded</p>
+            <div class="progress">
+                <span class="progress-percent"></span>
             </div>
             <p class="upload-desc">Please wait...</p>
-            <button class="upload-btn-cancel">Cancel</button>
-        </div>
+            <button class="upload-btn-cancel upload-btn-cancel--margin-top">Cancel</button>
+        </form>
 
-        <!-- <div class="upload-box" data-percent-circle="69">
-            <div class="progress-circle">
-            
+        <!-- circle uploading process -->
+        <form class="upload-box">
+            <div class="upload-circle">
+                <span class="progress-percent-inner" data-percent-inner="69">%</span>
             </div>
-            <p class="progress-desc">Loading...</p>
-            <button class="progress-btn">Cancel</button>
-        </div> -->
+            <p class="upload-desc">Uploading...</p>
+            <button class="upload-btn-cancel">Cancel</button>
+        </form>
+
+        <!-- already uploaded -->
+        <form class="upload-box" method="post">
+            <div class="upload-circle upload-complete">
+                <svg class="upload-check-mark" width="50" height="37" viewBox="0 0 50 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M49.3454 0.520134C50.1627 1.26315 50.2229 2.52804 49.4799 3.34536L19.4799 36.3454C18.7468 37.1517 17.5032 37.2228 16.683 36.5052L0.683018 22.5052C-0.148255 21.7778 -0.23249 20.5143 0.494874 19.683C1.22224 18.8517 2.48576 18.7675 3.31704 19.4949L17.8402 32.2026L46.5201 0.654668C47.2632 -0.162647 48.5281 -0.22288 49.3454 0.520134Z" fill="white"/>
+                </svg>
+            </div>
+            <p class="upload-text upload-text--padding-top">Loading Complete!</p>
+            <button class="upload-btn-cancel">Upload New</button>
+        </form>
     </div>
-    <!-- <script>
+
+    <script>
         function moveProgress() {
-            const getProgress = document.querySelector('.upload-progress');
-            const percent = parseInt(getProgress.dataset.percent) / 100;
-            const getProgressWidth = document.querySelector('.upload-progress').offsetWidth;
-            const totalPercent = percent * getProgressWidth;
-            const animationLength = 2500;
-
-            console.log(totalPercent);
+            const attrPercent = document.querySelector('.atrr-progress');
+            const getPercent = parseInt(attrPercent.dataset.percent);
+            const progress = document.querySelector('.progress');
+            const progressPercent = document.querySelector('.progress-percent');
+            console.log(getPercent);
         }
-
         moveProgress();
-
-        document.defaultView.window;
-        console.log(window)
-    </script> -->
+    </script>
 </div>
