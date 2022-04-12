@@ -1016,3 +1016,155 @@ p {
 .btn-tab--border-right {
   border-radius: 5px 0 0 5px;
 }
+
+.tables-title {
+  font-size: 28px;
+  font-weight: 500;
+  padding: 30px 0 20px;
+}
+
+.table {
+  table-layout: fixed;
+  border-collapse: collapse;
+  border: 1px solid #e0e0e0;
+  width: 100%;
+  background-color: #fff;
+}
+
+.table-content {
+  border-color: #fff;
+  border-bottom: 1px solid #e0e0e0;
+}
+.table-content:hover, .table-content:focus {
+  background-color: #fffbe9;
+}
+
+.table-subtitle {
+  background-color: #f6f6f6;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.table-desc {
+  align-items: center;
+  text-align: start;
+  color: #2C2C2C;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 16px 12px;
+}
+
+.table-name {
+  padding: 16px 12px;
+  text-align: start;
+  font-size: 13px;
+  font-weight: 400;
+  color: #2C2C2C;
+}
+
+.table-location {
+  padding: 16px 12px;
+  text-align: start;
+  font-size: 13px;
+  font-weight: 400;
+  color: #2C2C2C;
+}
+
+.table-data {
+  position: relative;
+  padding: 16px 12px;
+  color: #959595;
+  text-align: start;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.table-btn {
+  position: absolute;
+  right: calc(0% + 12px);
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+}
+
+.search-box {
+  display: flex;
+  justify-content: space-between;
+}
+
+#table-search {
+  outline: none;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  width: 258px;
+  height: 36px;
+  margin-top: 30px;
+  padding: 0 8px 0 37px;
+}
+#table-search::placeholder {
+  color: #838383;
+  font-size: 13px;
+  line-height: 15px;
+  font-weight: 400;
+}
+
+.table-label {
+  position: relative;
+}
+
+.table-search-svg {
+  position: absolute;
+  bottom: calc(50% - 9px);
+  left: 13px;
+  fill: #838383;
+}
+
+.table-flex {
+  display: flex;
+}
+
+.table-checkbox {
+  padding-right: 26px;
+}
+
+.table-check-input {
+  position: relative;
+  appearance: none;
+}
+
+.table-check-label {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  border: 1px solid #e0e0e0;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.table-check-dash::before {
+  content: "";
+  position: absolute;
+  top: calc(50% - 1px);
+  left: calc(50% - 5px);
+  display: inline-block;
+  width: 10px;
+  height: 2px;
+  border-radius: 10px;
+  background-color: #fff;
+  opacity: 0;
+}
+
+.table-check-input:checked ~ .table-check-dash::before {
+  opacity: 1;
+}
+
+.table-check-input:checked ~ .table-check-label {
+  background-color: #18a0fb;
+  border: 1px solid #18a0fb;
+}
+
+.table-check-svg {
+  position: absolute;
+  top: calc(50% - 4px);
+  left: calc(50% - 5px);
+}
