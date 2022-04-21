@@ -8,10 +8,570 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
 	<title>UI KIT</title>
 </head>
 <body>
-	
+	<div class="container">
+    <div class="sec__color">
+        <div class="color">
+            <p class="color-title">Colors</p>
+            <div class="color-circle color-circle--black"></div>
+            <div class="color-circle color-circle--gray"></div>
+            <div class="color-circle color-circle--blue"></div>
+            <div class="color-circle color-circle--red"></div>
+            <div class="color-circle color-circle--green"></div>
+            <div class="color-circle color-circle--yellow"></div>
+        </div>
+    
+        <div class="color">
+            <p class="color-title">Forms</p>
+            <div class="color-circle color-circle__border-gray"></div>
+            <div class="color-circle color-circle__border-red"></div>
+            <div class="color-circle color-circle__border-blue"></div>
+        </div>
+    
+        <div class="color">
+            <p class="color-title">Elevation</p>
+            <div class="color-circle color-circle--shadow1"></div>
+            <div class="color-circle color-circle--shadow2"></div>
+            <div class="color-circle color-circle--shadow3"></div>
+            <div class="color-circle color-circle--shadow4"></div>
+        </div>
+    </div>
+</div>
+	<div class="container">
+    <div class="alert">
+        <div class="alert-row alert-row--blue">
+            <p class="alert-title">This is an alert</p>
+            <button class="alert-btn-close alert-btn-close--bcg-white">
+                <svg class="alert-btn-svg alert-btn-svg--blue" version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+                    <title>close</title>
+                    <path d="M0.937 0.937c1.25-1.25 3.276-1.25 4.526 0l10.537 10.537 10.537-10.537c1.25-1.25 3.276-1.25 4.525 0s1.25 3.276 0 4.526l-10.537 10.537 10.537 10.537c1.25 1.25 1.25 3.276 0 4.525s-3.276 1.25-4.525 0l-10.537-10.537-10.537 10.537c-1.25 1.25-3.276 1.25-4.526 0s-1.25-3.276 0-4.525l10.537-10.537-10.537-10.537c-1.25-1.25-1.25-3.276 0-4.526z"></path>
+                </svg>
+            </button>
+        </div>
+        <div class="alert-row alert-row--white">
+            <p class="alert-title">This is an alert</p>
+            <button class="alert-btn-close alert-btn-close--bcg-gray">
+                <svg class="alert-btn-svg alert-btn-svg--white" version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+                    <title>close</title>
+                    <path d="M0.937 0.937c1.25-1.25 3.276-1.25 4.526 0l10.537 10.537 10.537-10.537c1.25-1.25 3.276-1.25 4.525 0s1.25 3.276 0 4.526l-10.537 10.537 10.537 10.537c1.25 1.25 1.25 3.276 0 4.525s-3.276 1.25-4.525 0l-10.537-10.537-10.537 10.537c-1.25 1.25-3.276 1.25-4.526 0s-1.25-3.276 0-4.525l10.537-10.537-10.537-10.537c-1.25-1.25-1.25-3.276 0-4.526z"></path>
+                </svg>
+            </button>
+        </div>
+    </div>
+    
+    <div class="alert">
+        <div class="alert-row alert-row--blue">
+            <div class="alert-desc">
+                <p class="alert-title">This is an alert</p>
+                <p class="alert-sub">Alert details go here.</p>
+            </div>
+                <button class="alert-btn-close alert-btn-close--bcg-white">
+                    <svg class="alert-btn-svg alert-btn-svg--blue" version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+                        <title>close</title>
+                        <path d="M0.937 0.937c1.25-1.25 3.276-1.25 4.526 0l10.537 10.537 10.537-10.537c1.25-1.25 3.276-1.25 4.525 0s1.25 3.276 0 4.526l-10.537 10.537 10.537 10.537c1.25 1.25 1.25 3.276 0 4.525s-3.276 1.25-4.525 0l-10.537-10.537-10.537 10.537c-1.25 1.25-3.276 1.25-4.526 0s-1.25-3.276 0-4.525l10.537-10.537-10.537-10.537c-1.25-1.25-1.25-3.276 0-4.526z"></path>
+                    </svg>
+                </button>
+        </div>
+        <div class="alert-row alert-row--white">
+            <div>
+                <p class="alert-title">This is an alert</p>
+                <p class="alert-sub">Alert details go here.</p>
+            </div>
+            <button class="alert-btn-close alert-btn-close--bcg-gray">
+                <svg class="alert-btn-svg alert-btn-svg--white" version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+                    <title>close</title>
+                    <path d="M0.937 0.937c1.25-1.25 3.276-1.25 4.526 0l10.537 10.537 10.537-10.537c1.25-1.25 3.276-1.25 4.525 0s1.25 3.276 0 4.526l-10.537 10.537 10.537 10.537c1.25 1.25 1.25 3.276 0 4.525s-3.276 1.25-4.525 0l-10.537-10.537-10.537 10.537c-1.25 1.25-3.276 1.25-4.526 0s-1.25-3.276 0-4.525l10.537-10.537-10.537-10.537c-1.25-1.25-1.25-3.276 0-4.526z"></path>
+                </svg>
+            </button>
+        </div>
+    </div>
+    <div class="alert__warr">
+        <div class="warr-block warr-block--orange">
+            <div class="warr-sign warr-sign--white">!</div>
+            <div class="warr-desc">
+                <p class="warr-title">This is an alert</p>
+                <p class="warr-sub">Alert details go here.</p>
+            </div>
+            <div class="warr-btn-wrapp">
+                <button class="warr-btn warr-btn--white warr-btn--bold">Open</button>
+                <button class="warr-btn warr-btn--white">Dismiss</button>
+            </div>
+        </div>
+        <div class="warr-block warr-block--white">
+            <div class="warr-sign warr-sign--orange">!</div>
+            <div class="warr-desc">
+                <p class="warr-title">This is an alert</p>
+                <p class="warr-sub">Alert details go here.</p>
+            </div>
+            <div class="warr-btn-wrapp">
+                <button class="warr-btn warr-btn--black warr-btn--bold">Open</button>
+                <button disabled class="warr-btn">Dismiss</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="alert__modal">
+        <div class="modal-window">
+            <p class="modal-title">Modal Title</p>
+            <p class="modal-sub">Alert details go here.</p>
+            <button class="modal__close-btn">
+                <svg class="close-btn-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+                    <title>close</title>
+                    <path d="M0.937 0.937c1.25-1.25 3.276-1.25 4.526 0l10.537 10.537 10.537-10.537c1.25-1.25 3.276-1.25 4.525 0s1.25 3.276 0 4.526l-10.537 10.537 10.537 10.537c1.25 1.25 1.25 3.276 0 4.525s-3.276 1.25-4.525 0l-10.537-10.537-10.537 10.537c-1.25 1.25-3.276 1.25-4.526 0s-1.25-3.276 0-4.525l10.537-10.537-10.537-10.537c-1.25-1.25-1.25-3.276 0-4.526z"></path>
+                </svg>
+            </button>
+        <div class="modal__button">
+            <button class="button-cancel">Cancel</button>
+            <button class="button-submit">Submit</button>
+        </div>
+        </div>
+    </div>
+    </div>
+	<div class="container">
+    <form class="form__check-box">
+        <p class="check-box-title">Option</p>
+        <input type="checkbox" class="check-box" id="check" checked>
+        <label for="check" class="check-box-label"></label>
+    </form>
+
+    <!-- Checkbox list -->
+
+    <div class="wrapp-checkbox">
+        <!-- checked -->
+        <div> 
+            <form class="form__check-box">
+                <input type="checkbox" class="check-box" id="check-active" checked>
+                <label for="check-active" class="check-box-label"></label>
+            </form>
+            <form class="form__check-box">
+                <input type="checkbox" class="check-box" id="check-active-small" checked>
+                <label for="check-active-small" class="check-box-label check-box-label--small"></label>
+            </form>
+        </div>
+        <!-- unselect -->
+        <div>
+            <form class="form__check-box">
+                <input type="checkbox" class="check-box" id="check-unselect">
+                <label for="check-unselect" class="check-box-label"></label>
+            </form>
+            <form class="form__check-box">
+                <input type="checkbox" class="check-box" id="check-unselect-small">
+                <label for="check-unselect-small" class="check-box-label check-box-label--small"></label>
+            </form>
+        </div>
+        <!-- disabled -->
+        <div>
+            <form class="form__check-box">
+                <input disabled type="checkbox" class="check-box" id="check-disabled">
+                <label for="check-disabled" class="check-box-label check-box-label--dis"></label>
+            </form>
+            <form class="form__check-box">
+                <input disabled type="checkbox" class="check-box" id="check-disabled-small">
+                <label for="check-disabled-small" class="check-box-label check-box-label--small check-box-label--dis"></label>
+            </form>
+        </div>
+    </div>
+</div>
+	<div class="container">
+    <div class="wrapp__form">
+        <form class="form__radio">
+            <input checked name="radio-option" class="radio-btn" type="radio" id="choise">
+            <p class="radio-title">Option</p>
+            <label class="radio-label radio-label--circle" for="choise"></label>
+        </form>
+        <form class="form__radio">
+            <div class="radio-box">
+                <input name="radioBtn" class="radio-btn" type="radio" value="value1" id="choise1" checked>
+                <label class="radio-label radio-label--circle" for="choise1"></label>
+            </div>
+            <div class="radio-box">
+                <input name="radioBtn" class="radio-btn" type="radio" value="value2" id="choise2">
+                <label class="radio-label radio-label--circle" for="choise2"></label>
+            </div>
+            <div class="radio-box">
+                <input name="radioBtn" class="radio-btn" type="radio" value="value3" id="choise3" disabled>
+                <label class="radio-label radio-label--circle" for="choise3"></label>
+            </div>
+        </form>
+    </div>
+
+    <div class="wrapp__form">
+        <form  class="form__radio" action="">
+            <input checked class="radio-btn" type="radio">
+            <p class="radio-title">Option</p>
+            <label class="radio-label radio-label--square" for="">
+                <svg class="radio-svg-check" width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 3.5L4 6.5L9.5 1" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </label>
+        </form>
+        <form class="form__radio">
+            <div class="radio-box">
+                <input name="radioBtn" class="radio-btn" type="radio" value="value4" id="choise4" checked>
+                <label class="radio-label radio-label--square" for="choise4">
+                    <svg class="radio-svg-check" width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 3.5L4 6.5L9.5 1" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </label>
+            </div>
+            <div class="radio-box">
+                <input name="radioBtn" class="radio-btn" type="radio" value="value5" id="choise5">
+                <label class="radio-label radio-label--square" for="choise5">
+                    <svg class="radio-svg-check" width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 3.5L4 6.5L9.5 1" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </label>
+            </div>
+            <div class="radio-box">
+                <input name="radioBtn" class="radio-btn" type="radio" value="value6" id="choise6" disabled>
+                <label class="radio-label radio-label--square" for="choise6">
+                    <svg class="radio-svg-check" width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 3.5L4 6.5L9.5 1" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </label>
+            </div>
+        </form>
+    </div>
+</div>
+	<div class="container">
+     <!-- input forms -->
+     <div class="form-wrapp">
+        <div class="forms__input">
+            <form class="input-form" action="">
+                <label class="input-title" for="">Input Basic</label>
+                <input class="input-area" type="text" placeholder="Placeholder">
+            </form>
+            <form class="input-form" action="">
+                <label class="input-title" for="">Input Error</label>
+                <input class="input-area input-area--err" type="text" placeholder="Value">
+            </form>
+            <form class="input-form" action="">
+                <label class="input-title" for="">Input Focused</label>
+                <input class="input-area input-area--focus" type="text" placeholder="Value">
+            </form>
+            <form class="input-form" action="">
+                <label class="input-title input-title--disabled" for="">Input Disabled</label>
+                <input disabled class="input-area" type="text" placeholder="Value">
+            </form>
+        </div>
+        <div class="forms__input">
+<!-- Basic -->
+            <form class="input-form" action="">
+                <input class="input-area" type="text" placeholder="Placeholder">
+            </form>
+<!-- Disabled -->
+            <form class="input-form" action="">
+                <input disabled class="input-area" type="text" placeholder="Disabled">
+            </form>
+<!-- Error -->
+            <form class="input-form" action="">
+                <input class="input-area input-area--err" type="text" placeholder="Value">
+            </form>
+<!-- Focuse -->
+            <form class="input-form" action="">
+                <input class="input-area input-area--focus" type="text" placeholder="Value">
+            </form>
+        </div>
+<!-- Search -->
+        <div class="forms__search">
+            <form class="input-form" action="">
+                <svg class="search-svg-left" width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13 6C13 3.79086 11.2091 2 9 2C6.7909 2 5 3.79086 5 6C5 8.2091 6.7909 10 9 10C11.2091 10 13 8.2091 13 6ZM9 0C12.3137 0 15 2.68629 15 6C15 9.3137 12.3137 12 9 12C7.7042 12 6.5043 11.5892 5.5235 10.8907L1.7071 14.7071C1.3166 15.0976 0.6834 15.0976 0.2929 14.7071C-0.0976 14.3166 -0.0976 13.6834 0.2929 13.2929L4.1093 9.4765C3.4108 8.4957 3 7.2958 3 6C3 2.68629 5.6863 0 9 0Z"/>
+                </svg>
+                <input class="search search--padd-left" type="search" placeholder="Placeholder">
+            </form>
+
+            <form class="input-form" action="">
+                <svg class="search-svg-right" width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13 6C13 3.79086 11.2091 2 9 2C6.7909 2 5 3.79086 5 6C5 8.2091 6.7909 10 9 10C11.2091 10 13 8.2091 13 6ZM9 0C12.3137 0 15 2.68629 15 6C15 9.3137 12.3137 12 9 12C7.7042 12 6.5043 11.5892 5.5235 10.8907L1.7071 14.7071C1.3166 15.0976 0.6834 15.0976 0.2929 14.7071C-0.0976 14.3166 -0.0976 13.6834 0.2929 13.2929L4.1093 9.4765C3.4108 8.4957 3 7.2958 3 6C3 2.68629 5.6863 0 9 0Z"/>
+                </svg>
+                <input class="search search--padd-right" type="search" placeholder="Placeholder">
+            </form>
+
+            <form class="input-form" action="">
+                <label class="search-title">www.</label>
+                <input class="search search--padding" type="search" placeholder="2dots.co" id="search">
+            </form>
+        </div>
+<!-- Textarea -->
+        <div class="form__textarea">
+            <form class="input-form" action="">
+                <label class="textarea-label">Textarea</label>
+                <textarea class="textarea" placeholder="Placeholder" cols="30" rows="10"></textarea>
+            </form>
+            <form class="input-form" action="">
+                <label class="textarea-label">Textarea</label>
+                <textarea class="textarea textarea--err" placeholder="Value" cols="30" rows="10"></textarea>
+            </form>
+        </div>
+    </div>
+</div>
+	<div class="container">
+    <form action="">
+        <label for="select-first" class="select-title">Please choose:</label>
+        <select name="Value" id="select-first" class="select-option">
+            <option selected value="Option">Option</option>
+            <option value="Option 1">Option 1</option>
+            <option value="Option 2">Option 2</option>
+        </select>
+    </form>
+
+    <form action="select-sec">
+        <select name="value" id="select-sec" class="select-choose">
+            <option selected value="Choose">Choose</option>
+            <option value="Choose 1">Choose 1</option>
+            <option value="Choose 2">Choose 2</option>
+        </select>
+    </form>
+</div>
+	<div class="container">
+    <div class="container__upload">   
+         <!-- form for upload -->
+         
+        <form class="upload-box" method="post">
+            <input class="upload-file" type="file" id="add-file" type="submit" multiple>
+            <label class="upload-label" for="add-file">
+                <svg class="upload-arrow" version="1.1" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 32 32">
+                    <path d="M27.414 12.586l-10-10c-0.781-0.781-2.047-0.781-2.828 0l-10 10c-0.781 0.781-0.781 2.047 0 2.828s2.047 0.781 2.828 0l6.586-6.586v19.172c0 1.105 0.895 2 2 2s2-0.895 2-2v-19.172l6.586 6.586c0.39 0.39 0.902 0.586 1.414 0.586s1.024-0.195 1.414-0.586c0.781-0.781 0.781-2.047 0-2.828z"></path>
+                </svg>
+            </label>
+            <p class="upload-text">Add Files</p>
+            <p class="upload-desc">Drag & Drop to upload or</p>
+        </form>
+
+        <!-- form error -->
+        <form class="upload-box upload-box-err" method="post">
+            <input class="upload-file" type="file" id="upload-err" type="submit" multiple>
+            <label class="upload-label upload-label--err" for="upload-err">
+                <svg class="upload-arrow" version="1.1" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 32 32">
+                    <path d="M27.414 12.586l-10-10c-0.781-0.781-2.047-0.781-2.828 0l-10 10c-0.781 0.781-0.781 2.047 0 2.828s2.047 0.781 2.828 0l6.586-6.586v19.172c0 1.105 0.895 2 2 2s2-0.895 2-2v-19.172l6.586 6.586c0.39 0.39 0.902 0.586 1.414 0.586s1.024-0.195 1.414-0.586c0.781-0.781 0.781-2.047 0-2.828z"></path>
+                </svg>
+            </label>
+            <p class="upload-text">Something went wrong</p>
+            <p class="upload-desc">Please try again</p>
+        </form>
+
+        <!-- linear uploading process -->
+        <form class="upload-box">
+            <p class="upload-text atrr-progress" data-percent="69">% uploaded</p>
+            <div class="progress">
+                <span class="progress-percent"></span>
+            </div>
+            <p class="upload-desc">Please wait...</p>
+            <button class="upload-btn-cancel upload-btn-cancel--margin-top">Cancel</button>
+        </form>
+
+        <!-- circle uploading process -->
+        <form class="upload-box">
+            <div class="upload-circle">
+                <span class="progress-percent-inner" data-percent-inner="69">%</span>
+            </div>
+            <p class="upload-desc">Uploading...</p>
+            <button class="upload-btn-cancel">Cancel</button>
+        </form>
+
+        <!-- already uploaded -->
+        <form class="upload-box" method="post">
+            <div class="upload-circle upload-complete">
+                <svg class="upload-check-mark" width="50" height="37" viewBox="0 0 50 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M49.3454 0.520134C50.1627 1.26315 50.2229 2.52804 49.4799 3.34536L19.4799 36.3454C18.7468 37.1517 17.5032 37.2228 16.683 36.5052L0.683018 22.5052C-0.148255 21.7778 -0.23249 20.5143 0.494874 19.683C1.22224 18.8517 2.48576 18.7675 3.31704 19.4949L17.8402 32.2026L46.5201 0.654668C47.2632 -0.162647 48.5281 -0.22288 49.3454 0.520134Z" fill="white"/>
+                </svg>
+            </div>
+            <p class="upload-text upload-text--padding-top">Loading Complete!</p>
+            <button class="upload-btn-cancel">Upload New</button>
+        </form>
+    </div>
+
+    <!-- <script>
+        function moveProgress() {
+            const attrPercent = document.querySelector('.atrr-progress');
+            const getPercent = parseInt(attrPercent.dataset.percent);
+            const progress = document.querySelector('.progress');
+            const progressPercent = document.querySelector('.progress-percent');
+            console.log(getPercent);
+        }
+        moveProgress();
+    </script> -->
+</div>
+	<div class="container">
+
+    <!-- Big buttons -->
+    <p class="btn-title">Buttons Big</p>
+    <div class="btn-wrapp">
+        <div class="btn-list">
+            <button class="btn-style btn-focus">Download</button>
+            <button class="btn-style" disabled>Download</button>
+            <button class="btn-style">Download</button>
+            <button class="btn-style btn-style--blue-border">Download</button>
+        </div>
+        <div class="btn-list">
+            <button class="btn-style btn-focus">Download
+                <svg class="btn-svg btn-svg--padding-left" version="1.1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 32 32">
+                    <path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M5.333 16v9.333h21.333v-9.333"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 4.668v13.333"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 18.001l4.5-4.5"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 18.001l-4.5-4.5"></path>
+                </svg>
+            </button>
+
+            <button class="btn-style" disabled>Download
+                <svg class="btn-svg btn-svg--padding-left" version="1.1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 32 32">
+                    <path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M5.333 16v9.333h21.333v-9.333"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 4.668v13.333"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 18.001l4.5-4.5"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 18.001l-4.5-4.5"></path>
+                </svg>
+            </button>
+
+            <button class="btn-style">Download
+                <svg class="btn-svg btn-svg--color btn-svg--padding-left" version="1.1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 32 32">
+                    <path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M5.333 16v9.333h21.333v-9.333"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 4.668v13.333"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 18.001l4.5-4.5"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 18.001l-4.5-4.5"></path>
+                </svg>
+            </button>
+
+            <button class="btn-style btn-style--blue-border">Download
+                <svg class="btn-svg btn-svg--padding-left" version="1.1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 32 32">
+                    <path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M5.333 16v9.333h21.333v-9.333"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 4.668v13.333"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 18.001l4.5-4.5"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 18.001l-4.5-4.5"></path>
+                </svg>
+            </button>
+        </div>
+        <div class="btn-list">
+            <button class="btn-style btn-focus">
+                <svg class="btn-svg btn-svg--padding-right" version="1.1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 32 32">
+                    <path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M5.333 16v9.333h21.333v-9.333"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 4.668v13.333"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 18.001l4.5-4.5"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 18.001l-4.5-4.5"></path>
+                </svg>
+                Download
+            </button>
+
+            <button class="btn-style" disabled>
+                <svg class="btn-svg btn-svg--padding-right" version="1.1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 32 32">
+                    <path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M5.333 16v9.333h21.333v-9.333"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 4.668v13.333"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 18.001l4.5-4.5"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 18.001l-4.5-4.5"></path>
+                </svg>
+                Download
+            </button>
+
+            <button class="btn-style">
+                <svg class="btn-svg btn-svg--color btn-svg--padding-right" version="1.1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 32 32">
+                    <path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M5.333 16v9.333h21.333v-9.333"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 4.668v13.333"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 18.001l4.5-4.5"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 18.001l-4.5-4.5"></path>
+                </svg>
+                Download
+            </button>
+
+            <button class="btn-style btn-style--blue-border">
+                <svg class="btn-svg btn-svg--padding-right" version="1.1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 32 32">
+                    <path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M5.333 16v9.333h21.333v-9.333"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 4.668v13.333"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 18.001l4.5-4.5"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 18.001l-4.5-4.5"></path>
+                </svg>
+                Download
+            </button>
+        </div>
+    </div>
+
+    <!-- Small buttons -->
+    <p class="btn-title">Buttons Small</p>
+    <div class="btn-wrapp">
+        <div class="btn-list">
+            <button class="btn-style btn-style--small btn-focus">Download</button>
+            <button class="btn-style btn-style--small" disabled>Download</button>
+            <button class="btn-style btn-style--small">Download</button>
+            <button class="btn-style btn-style--small btn-style--blue-border">Download</button>
+        </div>
+        <div class="btn-list">
+            <button class="btn-style btn-focus btn-style--small">Download
+                <svg class="btn-svg btn-svg--padding-left" version="1.1" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32">
+                    <path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M5.333 16v9.333h21.333v-9.333"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 4.668v13.333"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 18.001l4.5-4.5"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 18.001l-4.5-4.5"></path>
+                </svg>
+            </button>
+            <button class="btn-style btn-style--small" disabled>Download
+                <svg class="btn-svg btn-svg--padding-left" version="1.1" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32">
+                    <path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M5.333 16v9.333h21.333v-9.333"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 4.668v13.333"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 18.001l4.5-4.5"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 18.001l-4.5-4.5"></path>
+                </svg>
+            </button>
+            <button class="btn-style btn-style--small">Download
+                <svg class="btn-svg btn-svg--color btn-svg--padding-left" version="1.1" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32">
+                    <path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M5.333 16v9.333h21.333v-9.333"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 4.668v13.333"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 18.001l4.5-4.5"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 18.001l-4.5-4.5"></path>
+                </svg>
+            </button>
+            <button class="btn-style btn-style--blue-border btn-style--small">Download
+                <svg class="btn-svg btn-svg--padding-left" version="1.1" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32">
+                    <path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M5.333 16v9.333h21.333v-9.333"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 4.668v13.333"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 18.001l4.5-4.5"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 18.001l-4.5-4.5"></path>
+                </svg>
+            </button>
+        </div>
+        <div class="btn-list">
+            <button class="btn-style btn-focus-red btn-style--small">
+                <svg class="btn-svg btn-svg--padding-right" version="1.1" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32">
+                    <path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M5.333 16v9.333h21.333v-9.333"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 4.668v13.333"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 18.001l4.5-4.5"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 18.001l-4.5-4.5"></path>
+                </svg>
+                Download
+            </button>
+            <button class="btn-style btn-style--small" disabled>
+                <svg class="btn-svg btn-svg--padding-right" version="1.1" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32">
+                    <path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M5.333 16v9.333h21.333v-9.333"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 4.668v13.333"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 18.001l4.5-4.5"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 18.001l-4.5-4.5"></path>
+                </svg>
+                Download
+             </button>
+
+            <button class="btn-style btn-style--small">
+                <svg class="btn-svg btn-svg--color btn-svg--padding-right" version="1.1" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32">
+                    <path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M5.333 16v9.333h21.333v-9.333"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 4.668v13.333"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 18.001l4.5-4.5"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 18.001l-4.5-4.5"></path>
+                </svg>
+                Download
+            </button>
+
+            <button class="btn-style btn-style--blue-border btn-style--small">
+                <svg class="btn-svg btn-svg--padding-right" version="1.1" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32">
+                    <path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M5.333 16v9.333h21.333v-9.333"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 4.668v13.333"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 18.001l4.5-4.5"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 18.001l-4.5-4.5"></path>
+                </svg>
+                Download
+            </button>
+        </div>
+    </div>
+
+    <!-- micro buttons -->
+    <div class="btn-list">
+        <button class="btn-style btn-micro">Tag</button>
+        <button class="btn-style btn-micro-middle">Tag
+            <svg class="btn-svg-close" version="1.1" xmlns="http://www.w3.org/2000/svg" width="6" height="6" viewBox="0 0 32 32">
+                <path d="M0.937 0.937c1.25-1.25 3.276-1.25 4.526 0l10.537 10.537 10.537-10.537c1.25-1.25 3.276-1.25 4.525 0s1.25 3.276 0 4.526l-10.537 10.537 10.537 10.537c1.25 1.25 1.25 3.276 0 4.525s-3.276 1.25-4.525 0l-10.537-10.537-10.537 10.537c-1.25 1.25-3.276 1.25-4.526 0s-1.25-3.276 0-4.525l10.537-10.537-10.537-10.537c-1.25-1.25-1.25-3.276 0-4.526z"></path>
+            </svg>
+        </button>
+        <button class="btn-style btn-focus btn-micro">Tag</button>
+        <button class="btn-style btn-focus btn-micro-middle">Tag
+            <svg class="btn-svg-close" version="1.1" xmlns="http://www.w3.org/2000/svg" width="6" height="6" viewBox="0 0 32 32">
+                <path fill="#fff" d="M0.937 0.937c1.25-1.25 3.276-1.25 4.526 0l10.537 10.537 10.537-10.537c1.25-1.25 3.276-1.25 4.525 0s1.25 3.276 0 4.526l-10.537 10.537 10.537 10.537c1.25 1.25 1.25 3.276 0 4.525s-3.276 1.25-4.525 0l-10.537-10.537-10.537 10.537c-1.25 1.25-3.276 1.25-4.526 0s-1.25-3.276 0-4.525l10.537-10.537-10.537-10.537c-1.25-1.25-1.25-3.276 0-4.526z"></path>
+            </svg>
+        </button>
+    </div>
+
+    <!-- buttons Tab-list -->
+    <div class="btn-list">
+        <div class="btn-tab-list">
+            <button class="btn-tab btn-tab--border-right btn-tab-current btn-tab--small-width">
+                <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill="#fff" fill-rule="evenodd" clip-rule="evenodd" d="M13 6C13 3.79086 11.2091 2 9 2C6.7909 2 5 3.79086 5 6C5 8.2091 6.7909 10 9 10C11.2091 10 13 8.2091 13 6ZM9 0C12.3137 0 15 2.68629 15 6C15 9.3137 12.3137 12 9 12C7.7042 12 6.5043 11.5892 5.5235 10.8907L1.7071 14.7071C1.3166 15.0976 0.6834 15.0976 0.2929 14.7071C-0.0976 14.3166 -0.0976 13.6834 0.2929 13.2929L4.1093 9.4765C3.4108 8.4957 3 7.2958 3 6C3 2.68629 5.6863 0 9 0Z" fill="#2C2C2C"/>
+                </svg>
+            </button>
+            <button class="btn-tab btn-tab--border btn-tab--small-width">
+                <svg class="btn-tab-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 32 32">
+                    <path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M5.333 16v9.333h21.333v-9.333"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 4.668v13.333"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 18.001l4.5-4.5"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 18.001l-4.5-4.5"></path>
+                </svg>
+            </button>
+            <button class="btn-tab btn-tab--border-left btn-tab--small-width">
+                <svg class="btn-tab-svg" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15 12.51H15.5V12.01V10.51H16.5V13.01C16.5 13.2869 16.2769 13.51 16 13.51H8C7.72314 13.51 7.5 13.2869 7.5 13.01V10.51H8.5V12.01V12.51H9H15Z"/><path d="M2.92205 6.30863L2.90861 6.29902L5.3096 3.10657L5.3101 3.1059C5.58912 2.73363 6.0385 2.50903 6.508 2.50903H17.508C17.9791 2.50903 18.4295 2.73545 18.7101 3.11188L18.7105 3.11237L21.1053 6.31638L21.0935 6.32544L21.3866 6.72011C21.4672 6.82871 21.5 6.92251 21.5 7.01003V18.01C21.5 18.8369 20.8269 19.51 20 19.51H4C3.17314 19.51 2.5 18.8369 2.5 18.01V7.01003C2.5 6.92206 2.53338 6.82686 2.615 6.71803L2.92205 6.30863ZM6.508 3.51003H6.2584L6.10838 3.70952L4.60438 5.70952L4.0024 6.51003H5.004H19.003H20.001L19.4035 5.71067L17.9085 3.71067L17.7585 3.51003H17.508H6.508ZM3.5 18.01V18.51H4H20.002H20.5021L20.502 18.0099L20.5 8.00993L20.4999 7.51003H20H4H3.5V8.01003V18.01Z"/>
+                </svg>
+            </button>
+        </div>
+
+        <div class="btn-tab-list">
+            <button class="btn-tab btn-tab--border-right btn-tab-current btn-tab--long-width">Tab 1</button>
+            <button class="btn-tab btn-tab--border-left btn-tab--long-width">Tab 1</button>
+        </div>
+
+        <div class="btn-tab-list">
+            <button class="btn-tab btn-tab--border-right btn-tab-current btn-tab--middle-width">S</button>
+            <button class="btn-tab btn-tab--border btn-tab--middle-width">M</button>
+            <button class="btn-tab btn-tab--border-left btn-tab--middle-width">L</button>
+        </div>
+    </div>
+</div>
 	<div class="container">
     <!-- First table -->
     <p class="tables-title">Tables</p>
