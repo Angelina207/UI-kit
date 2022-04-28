@@ -1283,6 +1283,26 @@ p {
   padding: 0 0 0 54px;
 }
 
+.loading-file-name::before {
+  content: attr(data-file);
+  position: absolute;
+  right: 48px;
+  top: 12px;
+  font-size: 13px;
+  font-weight: 400;
+  opacity: 0.4;
+}
+
+.loading-file-name::after {
+  content: attr(data-file-err);
+  position: absolute;
+  right: 48px;
+  top: 12px;
+  font-size: 13px;
+  font-weight: 400;
+  color: #FF3E1D;
+}
+
 .loading-file-time {
   display: inline-block;
   opacity: 0.6;
@@ -1308,6 +1328,13 @@ p {
 }
 .loading-btn:focus, .loading-btn:hover {
   background-color: #c7c7c7;
+}
+
+.loading-btn--red {
+  background-color: #FF3E1D;
+}
+.loading-btn--red:focus, .loading-btn--red:hover {
+  background-color: #d82000;
 }
 
 .loading-btn > .svg-close {
@@ -1385,6 +1412,72 @@ p {
   height: 100%;
   background-color: #ffd422;
   border-radius: 10px;
+}
+
+.tab-wrapp {
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  padding-top: 30px;
+}
+
+.tab-wrapp::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 6px;
+  display: inline-block;
+  height: 1px;
+  background-color: #e0e0e0;
+  width: 534px;
+}
+
+.tab-btn {
+  position: relative;
+  display: block;
+  margin-right: 10px;
+  padding: 10px 6px;
+  border: 0px;
+  outline: none;
+  background-color: transparent;
+  font-weight: 500;
+  font-size: 14px;
+  transition: 250ms;
+  cursor: pointer;
+}
+
+.tab-btn:hover,
+.tab-btn:focus {
+  color: #18a0fb;
+}
+
+.tab-current {
+  color: #18a0fb;
+}
+
+.tab-current::before {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 2px;
+  z-index: 5;
+  background-color: #18a0fb;
+  display: inline-block;
+}
+
+.tab-content {
+  display: none;
+  margin-top: 10px;
+  padding: 10px;
+  width: 520px;
+  height: auto;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  line-height: 20px;
+  font-size: 13px;
+  font-weight: 400;
 }
 
 .btn-title {

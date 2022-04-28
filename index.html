@@ -429,9 +429,9 @@
                 <svg class="loading-file-icon"  width="24" height="32" viewBox="0 0 24 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M15 1H5C2.79086 1 1 2.79086 1 5V27C1 29.2091 2.79086 31 5 31H19C21.2091 31 23 29.2091 23 27V8H17.5C16.1193 8 15 6.88071 15 5.5V1ZM24 7.5V27C24 29.7614 21.7614 32 19 32H5C2.23858 32 0 29.7614 0 27V5C0 2.23858 2.23858 0 5 0H15.5L19.2231 3.27846L24 7.5ZM21.9241 7H17.5C16.6716 7 16 6.32843 16 5.5V1.77274L18.5609 4.02778L21.9241 7Z" fill="#E0E0E0"/>
                 </svg>
-                <p class="loading-file-name" data-file="Failed">File Name.jpg</p>
+                <p class="loading-file-name" data-file-err="Failed">File Name.jpg</p>
                 <p class="loading-file-time">23 minutes ago</p>
-                <button class="loading-btn">
+                <button class="loading-btn loading-btn--red">
                     <svg class="svg-reload" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M10.6398 0.255005C11.054 0.255005 11.3898 0.590791 11.3898 1.005V4.42553C11.3898 4.83974 11.054 5.17553 10.6398 5.17553H7.21924C6.80502 5.17553 6.46924 4.83974 6.46924 4.42553C6.46924 4.01131 6.80502 3.67553 7.21924 3.67553H9.88976V1.005C9.88976 0.590791 10.2255 0.255005 10.6398 0.255005Z" fill="white"/><path fill-rule="evenodd" clip-rule="evenodd" d="M5.62327 0.653369C6.79567 0.552114 7.9685 0.843122 8.95758 1.4807C9.94666 2.11827 10.696 3.06629 11.0878 4.17589C11.2258 4.56647 11.021 4.99491 10.6304 5.13284C10.2398 5.27077 9.81137 5.06597 9.67344 4.6754C9.39225 3.8792 8.85459 3.19895 8.14487 2.74145C7.43516 2.28396 6.5936 2.07515 5.75234 2.14781C4.91108 2.22046 4.11778 2.57047 3.49702 3.14287C2.87625 3.71527 2.46318 4.47764 2.32267 5.31025C2.18216 6.14287 2.32217 6.99857 2.72072 7.74299C3.11926 8.4874 3.75377 9.07836 4.52459 9.42307C5.29542 9.76777 6.1589 9.8467 6.97944 9.64745C7.79999 9.4482 8.53111 8.98206 9.05801 8.32223C9.31648 7.99856 9.7884 7.94569 10.1121 8.20416C10.4358 8.46263 10.4886 8.93455 10.2301 9.25823C9.49585 10.1778 8.47693 10.8274 7.3334 11.1051C6.18986 11.3828 4.98649 11.2728 3.91225 10.7924C2.838 10.312 1.95374 9.48842 1.39831 8.45098C0.842888 7.41354 0.647764 6.22101 0.843582 5.06065C1.0394 3.90029 1.61507 2.83783 2.48019 2.04012C3.3453 1.24241 4.45087 0.754625 5.62327 0.653369Z" fill="white"/>
                     </svg>
@@ -466,6 +466,58 @@
         }
         moveProgress();
     </script> -->
+</div>
+	<div class="container">
+    <!-- 
+        ====================
+        Tab buttons.
+        ====================
+     -->
+    <div class="tab-wrapp">
+        <button class="tab-btn" data-tab="0">Current Tab</button>
+        <button class="tab-btn" data-tab="1">Second Tab</button>
+        <button class="tab-btn" data-tab="2">Thrid Tab</button>
+    </div>
+    <!-- 
+        ====================
+        Tab content.
+        ====================
+     -->
+     <div class="tab-content" style="display: block;">
+         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet architecto, mollitia maxime, deleniti vero pariatur hic voluptas similique accusantium natus dolorem expedita quis fuga ad libero voluptatum ex. Aperiam provident eos quos repudiandae, expedita quas dignissimos. Quis, expedita asperiores! Voluptate architecto odit, ab repellat in ipsum, velit placeat minima sit a maxime porro, harum ad labore.
+     </div>
+     <div class="tab-content">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, deserunt maiores. Cum, dolore quam! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet architecto, mollitia maxime, deleniti vero pariatur hic voluptas similique accusantium natus dolorem expedita quis fuga ad libero voluptatum ex. Aperiam provident eos quos repudiandae, expedita quas dignissimos. Quis, expedita asperiores! Voluptate architecto odit, ab repellat in ipsum, velit placeat minima sit a maxime porro, harum ad labore.
+    </div>
+    <div class="tab-content">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, optio libero. Laborum veniam ad sint dolorem quam quas voluptatum, nam repudiandae explicabo? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet architecto, mollitia maxime, deleniti vero pariatur hic voluptas similique accusantium natus dolorem expedita quis fuga ad libero voluptatum ex. Aperiam provident eos quos repudiandae, expedita quas dignissimos. Quis, expedita asperiores! Voluptate architecto odit, ab repellat in ipsum, velit placeat minima sit a maxime porro, harum ad labore.
+    </div>
+
+    <script>
+        document.querySelector('.tab-wrapp').addEventListener('click', showTabBody, addClass);
+
+        function showTabBody(event) {
+            if (event.target.className === 'tab-btn') {
+                // вкладка, которая будет отображена
+               const tabAttr = event.target.dataset.tab;
+                // все вкладки с содержимым    
+               const tabBody = document.getElementsByClassName('tab-content');
+
+               for(let i = 0; i < tabBody.length; i++) {
+                   if(tabAttr == i) {
+                    tabBody[i].style.display='block';
+                   } else {
+                    tabBody[i].style.display='none';
+                   }
+               }
+            }
+        };
+
+        function addClass() {
+            document.querySelector('.tab-btn').classList.toggle('tab-current')
+        };
+
+    </script>
 </div>
 	<div class="container">
 
