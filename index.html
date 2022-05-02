@@ -493,47 +493,6 @@
     <div class="tab-content">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, optio libero. Laborum veniam ad sint dolorem quam quas voluptatum, nam repudiandae explicabo? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet architecto, mollitia maxime, deleniti vero pariatur hic voluptas similique accusantium natus dolorem expedita quis fuga ad libero voluptatum ex. Aperiam provident eos quos repudiandae, expedita quas dignissimos. Quis, expedita asperiores! Voluptate architecto odit, ab repellat in ipsum, velit placeat minima sit a maxime porro, harum ad labore.
     </div>
-
-    <script>
-        document.querySelector('.tab-wrapp').addEventListener('click', showTabBody);
-        // все вкладки с содержимым    
-        const tabBody = document.getElementsByClassName('tab-content');
-
-        function showTabBody(event) {
-            if (event.target.className === 'tab-btn') {
-                // вкладка, которая будет отображена
-               const tabAttr = event.target.dataset.tab;
-
-               for(let i = 0; i < tabBody.length; i++) {
-                   if (tabAttr == i) {
-                    tabBody[i].style.display='block';
-                   } else {
-                    tabBody[i].style.display='none';
-                   }
-               }
-            }
-        };
-        
-        document.querySelector('.tab-wrapp').addEventListener('click', ()=> {
-            const btnList = document.querySelectorAll('.tab-btn');
-            
-            if(event.target.className === 'tab-btn') {
-                const tabAttr = event.target.dataset.tab;
-            for( let i = 0; i < btnList.length; i++) {
-                if(tabAttr == i) {
-                    btnList[i].classList.add('tab-current');
-                } else {
-                    btnList[i].classList.remove('tab-current');
-                }
-                }
-            }
-        });
-
-
-
-
-
-    </script>
 </div>
 	<div class="container">
     
@@ -604,7 +563,11 @@
 </div>
 
 <script>
-
+//
+//     =====================
+//     Swich Links
+//     =====================
+//
 document.querySelector('.pagination-btn').addEventListener('click', ()=> {
     const linkElem = document.querySelectorAll('.pagination-link');
 
@@ -1106,5 +1069,8 @@ document.querySelector('.pagination-btn').addEventListener('click', ()=> {
     </table> -->
     
 </div>
+
+	<script src="./js/script.js"></script>
+	<script src="./js/choices.min.js"></script>
 </body>
 </html>
