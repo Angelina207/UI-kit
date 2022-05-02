@@ -1414,6 +1414,13 @@ p {
   border-radius: 10px;
 }
 
+.tab-title {
+  font-weight: 600;
+  font-size: 25px;
+  line-height: 30px;
+  padding-top: 30px;
+}
+
 .tab-wrapp {
   overflow: hidden;
   position: relative;
@@ -1477,6 +1484,125 @@ p {
   line-height: 20px;
   font-size: 13px;
   font-weight: 400;
+}
+
+.pagination-title {
+  font-weight: 600;
+  font-size: 25px;
+  line-height: 30px;
+  padding: 30px 0;
+}
+
+.pagination__btn {
+  display: flex;
+  padding-bottom: 20px;
+}
+
+.btn-scuare {
+  position: relative;
+  display: block;
+  width: 36px;
+  height: 36px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  margin: 0 15px 0 0;
+  transition: 250ms;
+}
+.btn-scuare:hover, .btn-scuare:focus {
+  background-color: #18a0fb;
+  box-shadow: 0px 10px 23px rgba(0, 0, 0, 0.12);
+}
+
+.btn-scuare:hover > .btn-icon,
+.btn-scuare:focus > .btn-icon {
+  fill: #fff;
+}
+
+.btn-circle {
+  position: relative;
+  display: block;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  outline: none;
+  border: none;
+  transition: 250ms;
+}
+.btn-circle:hover, .btn-circle:focus {
+  background-color: #18a0fb;
+  box-shadow: 0px 10px 23px rgba(0, 0, 0, 0.12);
+}
+
+.btn-circle:hover > .btn-icon,
+.btn-circle:focus > .btn-icon {
+  fill: #fff;
+}
+
+.btn-num {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 12px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #18a0fb;
+}
+
+.btn-icon {
+  position: absolute;
+  top: calc(50% - 7px);
+  left: calc(50% - 4px);
+  fill: #919191;
+}
+
+.btn-icon--rotate {
+  transform: rotate(180deg);
+}
+
+.pagination-content {
+  display: flex;
+}
+
+.pagination-list {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pagination-link {
+  display: block;
+  text-decoration: none;
+  color: #919191;
+  padding: 0 16px;
+  transition: 250ms;
+}
+.pagination-link:hover, .pagination-link:focus {
+  color: #18a0fb;
+}
+
+.active-link {
+  color: #18a0fb;
+}
+
+.pagination-btn {
+  width: 24px;
+  height: 24px;
+  border: none;
+  transition: 250ms;
+  background-color: transparent;
+  padding: 0;
+}
+
+.btn-elem {
+  fill: #ababab;
+}
+
+.pagination-btn:focus > .btn-elem,
+.pagination-btn:hover > .btn-elem {
+  fill: #18a0fb;
 }
 
 .btn-title {
