@@ -386,6 +386,7 @@ p {
 .select-title {
   font-size: 13px;
   font-weight: 500;
+  padding-top: 30px;
 }
 
 .choices {
@@ -393,6 +394,7 @@ p {
   overflow: hidden;
   margin-bottom: 24px;
   font-size: 16px;
+  width: 260px;
 }
 
 .choices:focus {
@@ -435,7 +437,7 @@ p {
   border-color: #333 transparent transparent transparent;
   border-width: 5px;
   position: absolute;
-  left: 33%;
+  left: 90%;
   top: 65%;
   margin-top: -2.5px;
   pointer-events: none;
@@ -1428,18 +1430,18 @@ p {
   margin: 0;
 }
 
-.pagination-link {
+.pagination-elem {
   display: block;
   text-decoration: none;
   color: #919191;
   padding: 0 16px;
   transition: 250ms;
 }
-.pagination-link:hover, .pagination-link:focus {
+.pagination-elem:hover, .pagination-elem:focus {
   color: #18a0fb;
 }
 
-.active-link {
+.active-elem {
   color: #18a0fb;
 }
 
