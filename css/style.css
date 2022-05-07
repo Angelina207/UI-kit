@@ -1343,6 +1343,138 @@ p {
   font-weight: 400;
 }
 
+.wizard-title {
+  font-size: 25px;
+  font-weight: 600;
+  padding: 30px 0;
+}
+
+.wizard-container {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  max-width: 100%;
+  width: 405px;
+  margin-bottom: 30px;
+}
+
+.wizard-container::before {
+  content: "";
+  position: absolute;
+  background-color: #E0E0E0;
+  height: 2px;
+  width: 100%;
+  z-index: -1;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.wizard-progress {
+  position: absolute;
+  background-color: #18A0FB;
+  z-index: -1;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 2px;
+  width: 80%;
+  transition: 1s ease;
+}
+
+.wizard-circle {
+  position: relative;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: #E0E0E0;
+  cursor: pointer;
+  transition: 250ms ease;
+}
+
+.wizard-icon {
+  display: none;
+}
+
+.complete {
+  width: 12px;
+  height: 12px;
+  background-color: #18A0FB;
+  border: solid 3px #18A0FB;
+}
+
+.complete > .wizard-icon {
+  display: block;
+  position: absolute;
+  left: calc(50% - 7px);
+  top: calc(50% - 4px);
+}
+
+.wizard-circle ~ .active {
+  width: 12px;
+  height: 12px;
+  background-color: #fff;
+  border: solid 3px #18A0FB;
+}
+
+@media screen and (max-width: 768px) {
+  .wizard-container {
+    position: relative;
+    flex-direction: column;
+    max-height: 100%;
+    height: 405px;
+  }
+
+  .wizard-container::before {
+    height: 100%;
+    width: 2px;
+    left: 7.5px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .wizard-progress {
+    position: absolute;
+    background-color: #18A0FB;
+    left: 2%;
+    top: 0;
+    transform: translateY(0%);
+    height: 80%;
+    width: 2px;
+    transition: 1s ease;
+  }
+}
+.wizard-content {
+  display: flex;
+}
+
+.wizard-elem {
+  position: relative;
+  width: 90px;
+  height: 28px;
+  color: #18A0FB;
+  background-color: #e8f5ff;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.wizard-elem:nth-child(1) {
+  border-radius: 100px 0 0 100px;
+}
+
+.wizard-elem:nth-child(1):after {
+  border: 25px solid transparent;
+  border-left: 20px solid #e8f5ff;
+  content: "";
+  position: absolute;
+  right: -45px;
+  top: 0px;
+}
+
+.elem-active {
+  background-color: #18A0FB;
+}
+
 .pagination-title {
   font-weight: 600;
   font-size: 25px;
@@ -1353,6 +1485,7 @@ p {
 .pagination__btn {
   display: flex;
   padding-bottom: 20px;
+  cursor: pointer;
 }
 
 .btn-scuare {
@@ -1365,6 +1498,7 @@ p {
   border: none;
   margin: 0 15px 0 0;
   transition: 250ms;
+  cursor: pointer;
 }
 .btn-scuare:hover, .btn-scuare:focus {
   background-color: #18a0fb;
@@ -1385,6 +1519,7 @@ p {
   outline: none;
   border: none;
   transition: 250ms;
+  cursor: pointer;
 }
 .btn-circle:hover, .btn-circle:focus {
   background-color: #18a0fb;
@@ -1419,6 +1554,7 @@ p {
 
 .pagination-content {
   display: flex;
+  padding-bottom: 20px;
 }
 
 .pagination-list {
@@ -1440,6 +1576,10 @@ p {
   color: #18a0fb;
 }
 
+.elem-is-active {
+  color: #18a0fb;
+}
+
 .pagination-btn {
   width: 24px;
   height: 24px;
@@ -1447,6 +1587,7 @@ p {
   transition: 250ms;
   background-color: transparent;
   padding: 0;
+  cursor: pointer;
 }
 
 .btn-elem {
@@ -1455,6 +1596,85 @@ p {
 
 .pagination-btn:focus > .btn-elem,
 .pagination-btn:hover > .btn-elem {
+  fill: #18a0fb;
+}
+
+.pagination-form {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+}
+
+.pagination-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 89px;
+  height: 36px;
+  background-color: rgba(224, 224, 224, 0.3);
+  border-radius: 5px;
+  color: #8B8B8B;
+  border: none;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.pagination-button:active, .pagination-button:hover {
+  background-color: rgba(24, 160, 251, 0.1);
+  color: #18a0fb;
+}
+
+.pagination-select {
+  display: block;
+  width: 66px;
+  height: 36px;
+  background-color: rgba(224, 224, 224, 0.3);
+  border: none;
+  color: #949494;
+  border-radius: 5px;
+  font-weight: 500;
+  font-size: 13px;
+  outline: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  padding: 0 10px;
+}
+
+.pagination-select:hover,
+.pagination-select:focus {
+  background-color: rgba(24, 160, 251, 0.1);
+  color: #18a0fb;
+}
+
+.pagination-select::-ms-expand {
+  display: none;
+}
+
+.pagination-svg {
+  position: absolute;
+  fill: #949494;
+  left: 40%;
+}
+
+.pagination-select:hover ~ .pagination-svg,
+.pagination-select:focus ~ .pagination-svg {
+  fill: #18a0fb;
+}
+
+.pagination-label {
+  font-size: 13px;
+  font-weight: 500;
+  padding-left: 16px;
+}
+
+.button-svg {
+  fill: #949494;
+}
+
+.pagination-button:hover > .button-svg,
+.pagination-button:focus {
   fill: #18a0fb;
 }
 

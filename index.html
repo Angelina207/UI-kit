@@ -494,9 +494,86 @@
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, optio libero. Laborum veniam ad sint dolorem quam quas voluptatum, nam repudiandae explicabo? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet architecto, mollitia maxime, deleniti vero pariatur hic voluptas similique accusantium natus dolorem expedita quis fuga ad libero voluptatum ex. Aperiam provident eos quos repudiandae, expedita quas dignissimos. Quis, expedita asperiores! Voluptate architecto odit, ab repellat in ipsum, velit placeat minima sit a maxime porro, harum ad labore.
     </div>
 </div>
-	<div class="container">
-    
+	<!--
+==========================
+Turn-by-Turn Navigation.
+First Wizard
+==========================
+ -->
+<div class="container">
+    <p class="wizard-title">Wizzard Navigations</p>
+    <div class="wizard-container">
+        <div class="wizard-progress"></div>
+        <div class="wizard-circle complete"> 
+            <svg class="wizard-icon" width="14" height="8" viewBox="0 0 50 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M49.3454 0.520134C50.1627 1.26315 50.2229 2.52804 49.4799 3.34536L19.4799 36.3454C18.7468 37.1517 17.5032 37.2228 16.683 36.5052L0.683018 22.5052C-0.148255 21.7778 -0.23249 20.5143 0.494874 19.683C1.22224 18.8517 2.48576 18.7675 3.31704 19.4949L17.8402 32.2026L46.5201 0.654668C47.2632 -0.162647 48.5281 -0.22288 49.3454 0.520134Z" fill="white"/>
+            </svg>  
+        </div>
+        <div class="wizard-circle complete">
+            <svg class="wizard-icon" width="14" height="8" viewBox="0 0 50 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M49.3454 0.520134C50.1627 1.26315 50.2229 2.52804 49.4799 3.34536L19.4799 36.3454C18.7468 37.1517 17.5032 37.2228 16.683 36.5052L0.683018 22.5052C-0.148255 21.7778 -0.23249 20.5143 0.494874 19.683C1.22224 18.8517 2.48576 18.7675 3.31704 19.4949L17.8402 32.2026L46.5201 0.654668C47.2632 -0.162647 48.5281 -0.22288 49.3454 0.520134Z" fill="white"/>
+            </svg>  
+        </div>
+        <div class="wizard-circle active">
+            <svg class="wizard-icon" width="14" height="8" viewBox="0 0 50 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M49.3454 0.520134C50.1627 1.26315 50.2229 2.52804 49.4799 3.34536L19.4799 36.3454C18.7468 37.1517 17.5032 37.2228 16.683 36.5052L0.683018 22.5052C-0.148255 21.7778 -0.23249 20.5143 0.494874 19.683C1.22224 18.8517 2.48576 18.7675 3.31704 19.4949L17.8402 32.2026L46.5201 0.654668C47.2632 -0.162647 48.5281 -0.22288 49.3454 0.520134Z" fill="white"/>
+            </svg>  
+        </div>
+        <div class="wizard-circle">
+            <svg class="wizard-icon" width="14" height="8" viewBox="0 0 50 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M49.3454 0.520134C50.1627 1.26315 50.2229 2.52804 49.4799 3.34536L19.4799 36.3454C18.7468 37.1517 17.5032 37.2228 16.683 36.5052L0.683018 22.5052C-0.148255 21.7778 -0.23249 20.5143 0.494874 19.683C1.22224 18.8517 2.48576 18.7675 3.31704 19.4949L17.8402 32.2026L46.5201 0.654668C47.2632 -0.162647 48.5281 -0.22288 49.3454 0.520134Z" fill="white"/>
+            </svg>  
+        </div>
+    </div>
+
+    <!-- 
+        ====================
+        Second Wizard
+        ====================
+     -->
+    <div class="wizard-content">
+        <div class="wizard-elem">Step 1</div>
+        <div class="wizard-elem">Step 2</div>
+        <div class="wizard-elem">Step 3</div>
+    </div>
 </div>
+
+<script>
+
+    let wizardProgress = document.querySelector('.wizard-progress');
+    let wizardCircle = document.querySelectorAll('.wizard-circle');
+
+    let currentActive = 1;
+
+    () => {
+        for (let i = 0; i < wizardCircle.length; i++) {
+            wizardCircle[i].addEventListener('click', () => {
+                currentActive++;
+
+                if (currentActive > wizardCircle.length) {
+                    currentActive = wizardCircle.length;
+                }
+            })
+        }
+        update()
+    };
+
+    function update() {
+        wizardCircle.forEach((circle, idx) => {
+            if ( idx < currentActive) {
+                wizardCircle.classList.add('active')
+            } else {
+                wizardCircle.classList.remove('active')
+            }
+        });
+
+        const actives = document.querySelectorAll('.active');
+
+        wizardProgress.style.width = (actives.length - 1) / (circle.length - 1) * 100 + '%';
+
+    }
+
+</script>
 	<div class="container">
     <p class="pagination-title">Pagination</p>
 
@@ -538,20 +615,20 @@
         </svg>
     </button>
     <ul class="pagination-list">
-        <li class="pagination-elem">
-            <a class="pagination-link active-link" href="#">1</a>
+        <li class="pagination-elem elem-is-active">
+            1
         </li>
         <li class="pagination-elem">
-            <a class="pagination-link" href="#">2</a>
+            2
         </li>
         <li class="pagination-elem">
-            <a class="pagination-link" href="#">3</a>
+            3
         </li>
         <li class="pagination-elem">
-            <a class="pagination-link" href="#">4</a>
+            4
         </li>
         <li class="pagination-elem">
-            <a class="pagination-link" href="#">5</a>
+            5
         </li>
     </ul>
     <button class="pagination-btn">
@@ -560,27 +637,39 @@
         </svg>
     </button>
 </div>
+<div class="pagination-content">
+    <button class="pagination-button">
+        <svg class="button-svg btn-icon--rotate" width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M8 6.99996C8 6.64636 7.85952 6.30716 7.60948 6.05716L2.27613 0.723826C1.75547 0.203159 0.9112 0.203159 0.390533 0.723826C-0.130133 1.24449 -0.130133 2.08876 0.390533 2.60943L4.78107 6.99996L0.390533 11.3905C-0.130133 11.9112 -0.130133 12.7554 0.390533 13.2761C0.9112 13.7968 1.75547 13.7968 2.27613 13.2761L7.60948 7.94276C7.85952 7.69276 8 7.35356 8 6.99996Z"/>
+        </svg>
+        Prev
+    </button>
+    <form class="pagination-form" action="">
+        <select class="pagination-select" name="value" id="pagination">
+            <option selected value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+        </select>
+        <svg class="pagination-svg" width="11" height="6" viewBox="0 0 11 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6.001 5.2929L10.4403 0.8536C10.7553 0.5386 10.5322 0 10.0868 0H0.501008C0.0555479 0 -0.167532 0.5386 0.147448 0.8536L4.5868 5.2929C4.9773 5.6834 5.6105 5.6834 6.001 5.2929Z"/>
+        </svg>
+        <label class="pagination-label" for="pagination">of 10</label>
+    </form>
+    <button class="pagination-button">
+        Next
+        <svg class="button-svg" width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M8 6.99996C8 6.64636 7.85952 6.30716 7.60948 6.05716L2.27613 0.723826C1.75547 0.203159 0.9112 0.203159 0.390533 0.723826C-0.130133 1.24449 -0.130133 2.08876 0.390533 2.60943L4.78107 6.99996L0.390533 11.3905C-0.130133 11.9112 -0.130133 12.7554 0.390533 13.2761C0.9112 13.7968 1.75547 13.7968 2.27613 13.2761L7.60948 7.94276C7.85952 7.69276 8 7.35356 8 6.99996Z"/>
+        </svg>
+    </button>
 </div>
-
-<script>
-//
-//     =====================
-//     Swich Links
-//     =====================
-//
-document.querySelector('.pagination-btn').addEventListener('click', ()=> {
-    const linkElem = document.querySelectorAll('.pagination-link');
-
-    for( let i = 0; i < linkElem.length; i++) {
-        if(linkElem[i] === 0) {
-            linkElem[i].classList.add('active-link')
-        } else {
-            linkElem[i].classList.remove('active-link')
-        }
-    }
-});
-
-</script>
+</div>
 	<div class="container">
 
     <!-- Big buttons -->
@@ -936,141 +1025,9 @@ document.querySelector('.pagination-btn').addEventListener('click', ()=> {
             </tr>
         </tbody>
     </table>
-    <!-- Second table -->
-    <!-- <div class="search-box">
-        <form action="">
-            <p class="tables-title">Table Name</p>
-            <label class="table-label" for="table-search">
-                <svg class="table-search-svg" width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13 6C13 3.79086 11.2091 2 9 2C6.7909 2 5 3.79086 5 6C5 8.2091 6.7909 10 9 10C11.2091 10 13 8.2091 13 6ZM9 0C12.3137 0 15 2.68629 15 6C15 9.3137 12.3137 12 9 12C7.7042 12 6.5043 11.5892 5.5235 10.8907L1.7071 14.7071C1.3166 15.0976 0.6834 15.0976 0.2929 14.7071C-0.0976 14.3166 -0.0976 13.6834 0.2929 13.2929L4.1093 9.4765C3.4108 8.4957 3 7.2958 3 6C3 2.68629 5.6863 0 9 0Z"/>
-                </svg>                    
-            </label>
-            <input id="table-search" type="search" placeholder="Search">
-        </form>
-    </div> -->
-    <!-- <table class="table">
-        <tr class="table-subtitle">
-            <th class="table-desc table-flex">
-                <form class="table-checkbox">
-                    <input checked class="table-check-input" type="checkbox" id="check-sub">
-                    <label class="table-check-label table-check-dash" for="check-sub"></label>
-                </form>
-                Name
-            </th>
-            <th class="table-desc">Location</th>
-            <th class="table-desc">Last Updated</th>
-        </tr> 
-
-        <tr class="table-content">
-            <td class="table-name table-flex">
-                <form class="table-checkbox">
-                    <input class="table-check-input" type="checkbox" id="choise-name1">
-                    <label class="table-check-label" for="choise-name1">
-                        <svg class="table-check-svg" width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M1 3.5L4 6.5L9.5 1" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </label>
-                </form>
-                Devon Flores</td>
-            <td class="table-location">Tucson, United States</td>
-            <td class="table-data">3 mins ago
-                <button class="table-btn">
-                    <svg class="table-btn-svg" width="16" height="4" viewBox="0 0 16 4" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M2 4C3.10457 4 4 3.10457 4 2C4 0.89543 3.10457 0 2 0C0.89543 0 0 0.89543 0 2C0 3.10457 0.89543 4 2 4ZM8 4C9.10457 4 10 3.10457 10 2C10 0.89543 9.10457 0 8 0C6.89543 0 6 0.89543 6 2C6 3.10457 6.89543 4 8 4ZM16 2C16 3.10457 15.1046 4 14 4C12.8954 4 12 3.10457 12 2C12 0.89543 12.8954 0 14 0C15.1046 0 16 0.89543 16 2Z" fill="#E0E0E0"/>
-                    </svg>
-                </button>
-            </td>
-        </tr>
-
-        <tr class="table-content">
-            <td class="table-name table-flex">
-                <form class="table-checkbox">
-                    <input class="table-check-input" type="checkbox" id="choise-name2">
-                    <label class="table-check-label" for="choise-name2">
-                        <svg class="table-check-svg" width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M1 3.5L4 6.5L9.5 1" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </label>
-                </form>
-                Nathan Webb</td>
-            <td class="table-location">Orange, United States</td>
-            <td class="table-data">Yesterday
-                <button class="table-btn">
-                    <svg class="table-btn-svg" width="16" height="4" viewBox="0 0 16 4" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M2 4C3.10457 4 4 3.10457 4 2C4 0.89543 3.10457 0 2 0C0.89543 0 0 0.89543 0 2C0 3.10457 0.89543 4 2 4ZM8 4C9.10457 4 10 3.10457 10 2C10 0.89543 9.10457 0 8 0C6.89543 0 6 0.89543 6 2C6 3.10457 6.89543 4 8 4ZM16 2C16 3.10457 15.1046 4 14 4C12.8954 4 12 3.10457 12 2C12 0.89543 12.8954 0 14 0C15.1046 0 16 0.89543 16 2Z" fill="#E0E0E0"/>
-                    </svg>
-                </button>
-            </td>
-        </tr>
-
-        <tr class="table-content">
-            <td class="table-name table-flex">
-                <form class="table-checkbox">
-                    <input class="table-check-input" type="checkbox" id="choise-name3">
-                    <label class="table-check-label" for="choise-name3">
-                        <svg class="table-check-svg" width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M1 3.5L4 6.5L9.5 1" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </label>
-                </form>
-                Beth Black</td>
-            <td class="table-location">Westminster, United States</td>
-            <td class="table-data">Dec 31, 2019
-                <button class="table-btn">
-                    <svg class="table-btn-svg" width="16" height="4" viewBox="0 0 16 4" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M2 4C3.10457 4 4 3.10457 4 2C4 0.89543 3.10457 0 2 0C0.89543 0 0 0.89543 0 2C0 3.10457 0.89543 4 2 4ZM8 4C9.10457 4 10 3.10457 10 2C10 0.89543 9.10457 0 8 0C6.89543 0 6 0.89543 6 2C6 3.10457 6.89543 4 8 4ZM16 2C16 3.10457 15.1046 4 14 4C12.8954 4 12 3.10457 12 2C12 0.89543 12.8954 0 14 0C15.1046 0 16 0.89543 16 2Z" fill="#E0E0E0"/>
-                    </svg>
-                </button>
-            </td>
-        </tr>
-        
-        <tr class="table-content">
-            <td class="table-name table-flex">
-                <form class="table-checkbox">
-                    <input class="table-check-input" type="checkbox" id="choise-name4">
-                    <label class="table-check-label" for="choise-name4">
-                        <svg class="table-check-svg" width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M1 3.5L4 6.5L9.5 1" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </label>
-                </form>
-                Bernard Flores</td>
-            <td class="table-location">Stamford United States</td>
-            <td class="table-data">Dec 17, 2019
-                <button class="table-btn">
-                    <svg class="table-btn-svg" width="16" height="4" viewBox="0 0 16 4" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M2 4C3.10457 4 4 3.10457 4 2C4 0.89543 3.10457 0 2 0C0.89543 0 0 0.89543 0 2C0 3.10457 0.89543 4 2 4ZM8 4C9.10457 4 10 3.10457 10 2C10 0.89543 9.10457 0 8 0C6.89543 0 6 0.89543 6 2C6 3.10457 6.89543 4 8 4ZM16 2C16 3.10457 15.1046 4 14 4C12.8954 4 12 3.10457 12 2C12 0.89543 12.8954 0 14 0C15.1046 0 16 0.89543 16 2Z" fill="#E0E0E0"/>
-                    </svg>
-                </button>
-            </td>
-        </tr>
-        
-        <tr class="table-content">
-            <td class="table-name table-flex">
-                <form class="table-checkbox">
-                    <input class="table-check-input" type="checkbox" id="choise-name5">
-                    <label class="table-check-label" for="choise-name5">
-                        <svg class="table-check-svg" width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M1 3.5L4 6.5L9.5 1" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </label>
-                </form>
-                Theresa Alexander
-            </td>
-            <td class="table-location">Santa Ana United States</td>
-            <td class="table-data">Nov 20, 2019
-                <button class="table-btn">
-                    <svg class="table-btn-svg" width="16" height="4" viewBox="0 0 16 4" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M2 4C3.10457 4 4 3.10457 4 2C4 0.89543 3.10457 0 2 0C0.89543 0 0 0.89543 0 2C0 3.10457 0.89543 4 2 4ZM8 4C9.10457 4 10 3.10457 10 2C10 0.89543 9.10457 0 8 0C6.89543 0 6 0.89543 6 2C6 3.10457 6.89543 4 8 4ZM16 2C16 3.10457 15.1046 4 14 4C12.8954 4 12 3.10457 12 2C12 0.89543 12.8954 0 14 0C15.1046 0 16 0.89543 16 2Z" fill="#E0E0E0"/>
-                    </svg>
-                </button>
-            </td>
-        </tr>
-    </table> -->
-    
 </div>
 
-	<script src="./js/script.js"></script>
-	<script src="./js/choices.min.js"></script>
+	<!-- <script src="./js/script.js"></script>
+	<script src="./js/choices.min.js"></script> -->
 </body>
 </html>
