@@ -9,8 +9,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 281px;
-    width: 270px;
+    height: 279px;
+    width: 271px;
     margin: 50px 30px 0 0;
     border: dashed 2px #E0E0E0FF;
     border-radius: 4px;
@@ -60,9 +60,9 @@
     line-height: 25px;
 }
 .upload-desc{
-    padding-top: 10px;
+    padding-top: 22px;
     font-weight: 400;
-    font-size: 13px;
+    font-size: 15px;
     line-height: 16px;
     color: #ABABABFF;
 }
@@ -71,8 +71,7 @@
     font-size: 13px;
     font-weight: 500;
     font-family: Inter;
-    width: 91px;
-    height: 36px;
+    padding: 10px 24px;
     border-radius: 4px;
     color: #2C2C2CFF;
     border: solid 1px #E0E0E0FF;
@@ -87,22 +86,247 @@
     }
 }
 
-// linear progress-bar
+// linear progressbar
+.upload-text::before{
+    content: attr(data-percent);
+    font-weight: 500;
+    font-size: 21px;
+    line-height: 25px;
+}
 .progress{
-    width: 183px;
-    height: 6px;
-    border-radius: 10px;
-}
-.upload-progress {
     position: relative;
-    overflow: hidden;
+    height: 6px;
+    width: 183px;
+    border-radius: 10px;
+    margin-top: 17px;
     background-color: #E0E0E0FF;
-    margin-top: 10px;
 }
-.upload-progress-width{
+.progress-percent{
     position: absolute;
+    height: 100%;
+    width: 69%;
+    border-radius: 10px;
     background-color: #18A0FBFF;
-    top: 0;
-    left: 0;
+}
+.upload-btn-cancel--margin-top{
+    margin-top: 38px;
+}
+
+
+// circle progressbar
+.upload-circle{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 6px solid #E0E0E0FF;
+    width: 102px;
+    height: 102px;
+    background-color: transparent;
+}
+.progress-percent-inner{
+    font-weight: 900px;
+    font-size: 30px;
+}
+.progress-percent-inner::before{
+    content: attr(data-percent-inner);
+}
+
+
+// comlete progressbar
+.upload-complete {
+    position: relative;
+    border: 6px solid #00D200FF;
+    background-color: #00D200FF;
+}
+.upload-check-mark{
+    position: absolute;
+    top: calc(50% - 18px);
+    left: calc(50% - 25px);
+}
+.upload-text--padding-top{
+    padding-top: 20px;
+}
+
+// loading status
+.loading-wrapp{
+    position: relative;
+    display: block;
+    flex-direction: column;
+    height: auto;
+    width: 273px;
+    margin: 25px 0 0;
+}
+.loading-title{
+    display: block;
+    padding: 23px 0 0 20px;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 15px;
 
 }
+.loading-file-input{
+    visibility: hidden;
+    display: block;
+}
+.loading-file-label{
+    position: absolute;
+    top: 12px;
+    left: 165px;
+    width: 96px;
+    height: 34px;
+    border: solid 1px #E0E0E0FF;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.loading-label-desc{
+    padding: 10px 0 0 10px;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 15px;
+}
+.loading-file-svg{
+    position: absolute;
+    top: calc(50% - 10px);
+    left: 69px;
+    stroke: #2C2C2C;
+}
+.loading-status{
+    position: relative;
+    display: block;
+    margin: 16px 0 0;
+}
+.loading-status--margin{
+    margin: 0;
+}
+.loading-file-icon{
+    position: absolute;
+    top: 5px;
+    left: 20px;
+}
+.loading-file-name{
+    display: inline-block;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 15px;
+    padding: 0 0 0 54px;
+}
+.loading-file-name::before{
+    content: attr(data-file);
+    position: absolute;
+    right: 48px;
+    top: 12px;
+    font-size: 13px;
+    font-weight: 400;
+    opacity: 0.4;
+}
+.loading-file-name::after{
+    content: attr(data-file-err);
+    position: absolute;
+    right: 48px;
+    top: 12px;
+    font-size: 13px;
+    font-weight: 400;
+    color: #FF3E1D;
+}
+.loading-file-time{
+    display: inline-block;
+    opacity: 0.6;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 10px;
+    padding: 7px 0 12px 54px;
+}
+.loading-btn{
+    position: absolute;
+    right: 20px;
+    top: 9px;
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #E0E0E0;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: 250ms;
+    &:focus,
+    &:hover {
+        background-color: #C7C7C7FF;
+    }
+}
+.loading-btn--red{
+    background-color: #FF3E1D;
+    &:focus,
+    &:hover {
+        background-color: #D82000FF;
+    }
+}
+.loading-btn > .svg-close {
+    position: absolute;
+    top: calc(50% - 4px);
+    left: calc(50% - 4px);
+}
+.loading-btn > .svg-view {
+    position: absolute;
+    top: calc(50% - 4px);
+    left: calc(50% - 7px);
+}
+.loading-btn > .svg-close {
+    position: absolute;
+    top: calc(50% - 4px);
+    left: calc(50% - 4px);
+}
+.loading-btn > .svg-view {
+    position: absolute;
+    top: calc(50% - 4px);
+    left: calc(50% - 7px);
+}
+.loading-btn > .svg-reload {
+    position: absolute;
+    top: calc(50% - 6px);
+    left: calc(50% - 6px);
+}
+.loading-line{
+    position: relative;
+    content: '';
+    left: 20px;
+    display: block;
+    width: 233px;
+    height: 2px;
+    border-radius: 10px;
+    background-color: #E0E0E0FF;
+}
+.loading-process{
+    position: absolute;
+    content: '';
+    width: 22%;
+    height: 100%;
+    background-color: #18A0FB;
+    border-radius: 10px;
+}
+.loading-complete{
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: #00D200;
+    border-radius: 10px;
+}
+.loading-failed{
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: #FF3E1D;
+    border-radius: 10px;
+}
+.loading-cancel{
+    position: absolute;
+    content: '';
+    width: 42%;
+    height: 100%;
+    background-color: #FFD422FF;
+    border-radius: 10px;
+}
+
