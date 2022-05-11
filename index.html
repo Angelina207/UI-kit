@@ -583,6 +583,54 @@ First Wizard
     </ul>
 </div>
 	<div class="container">
+    <p class="range-title">Input Range</p>
+    <!-- 
+        =======================
+        Range Input #1
+        =======================
+     -->
+     <form id="rangeForm" action="">
+        <div id="rangeValue"></div>
+        <input id="range" type="range" max="100" min="0" value="0">
+        <div id="rangeProgress"></div>
+    </form>
+    <!-- 
+        =======================
+        Range Input #2
+        =======================
+     -->
+     <form id="rangeForm" action="">
+        <input id="range" type="range" max="100" min="0" value="0">
+        <div id="rangeProgress"></div>
+    </form>
+        <!-- 
+        =======================
+        Range Input #3
+        =======================
+     -->
+     <form class="range-form" action="">
+        <input class="range" type="range" max="50" min="0" value="15">
+        <input class="range" type="range" max="50" min="0" value="35">
+        <div id="rangeProgress"></div>
+    </form>
+</div>
+
+<script>
+
+let range = document.getElementById('range');
+let rangeValue = document.getElementById('rangeValue');
+let rangeProgress = document.getElementById('rangeProgress');
+
+rangeValue.innerHTML = '0';
+
+    range.oninput = () => {
+        rangeValue.style.left = range.value - 2 + '%';
+        rangeProgress.style.width = range.value + '%';
+        rangeValue.innerHTML = range.value;
+    }
+
+</script>
+	<div class="container">
     <p class="pagination-title">Pagination</p>
 
     <div class="pagination__btn">
