@@ -1579,17 +1579,19 @@ p {
 .range-title {
   font-size: 25px;
   font-weight: 600;
-  padding: 30px 0 60px;
+  padding: 30px 0 0;
 }
 
 #rangeForm {
   position: relative;
-  padding-bottom: 20px;
   width: 30%;
+  margin-top: 40px;
 }
 
 #range {
   -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   width: 100%;
   height: 2px;
   background-color: #E0E0E0;
@@ -1600,6 +1602,8 @@ p {
 #range::-webkit-slider-thumb {
   position: relative;
   -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   width: 10px;
   height: 10px;
   border-radius: 50%;
@@ -1611,7 +1615,7 @@ p {
 
 #rangeValue {
   position: absolute;
-  top: -60%;
+  top: -25px;
   left: -2%;
   color: #fff;
   display: flex;
@@ -1644,30 +1648,140 @@ p {
 
 .range-form {
   display: flex;
-  margin: 0;
   position: relative;
   padding-bottom: 20px;
   width: 30%;
+  margin-top: 50px;
 }
 
 .range {
+  position: absolute;
   -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   width: 100%;
-  height: 2px;
-  border-radius: 10px;
-  background-color: #E0E0E0;
+  outline: none;
+  top: 0;
+  bottom: 0;
+  background-color: transparent;
+  pointer-events: none;
 }
 
 .range::-webkit-slider-thumb {
-  position: relative;
   -webkit-appearance: none;
   width: 10px;
   height: 10px;
   border-radius: 50%;
   background-color: #18A0FB;
-  box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.04);
+  pointer-events: auto;
   cursor: pointer;
-  z-index: 20;
+}
+
+.range::-ms-thumb {
+  -webkit-appearance: none;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #18A0FB;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.range::-moz-range-thumb {
+  -webkit-appearance: none;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #18A0FB;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+#rangeTrack {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  border-radius: 10px;
+  background-color: #E0E0E0;
+  left: 0;
+  top: 9px;
+  z-index: -20;
+}
+
+#rangeValueFirst {
+  position: absolute;
+  top: -30px;
+  left: 0;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  font-size: 13px;
+}
+
+#rangeValueFirst::after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: #18A0FB;
+  border-radius: 0 50% 50% 50%;
+  transform: rotate(-135deg);
+  z-index: -10;
+}
+
+#rangeValueSec {
+  position: absolute;
+  top: -30px;
+  right: 0;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  font-size: 13px;
+}
+
+#rangeValueSec::after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: #18A0FB;
+  border-radius: 0 50% 50% 50%;
+  transform: rotate(-135deg);
+  z-index: -10;
+}
+
+#rangeSlider {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 2px;
+  background-color: #E0E0E0;
+  border-radius: 10px;
+}
+
+#rangeSlider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 24px;
+  height: 24px;
+  background-color: #fff;
+  border-radius: 50%;
+  border: 1px solid #E0E0E0;
+  z-index: 30;
+}
+
+#rangePercent {
+  position: absolute;
+  top: 14px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #18A0FB;
+  border-radius: 10px;
 }
 
 .pagination-title {

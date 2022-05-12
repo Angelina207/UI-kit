@@ -599,8 +599,12 @@ First Wizard
         Range Input #2
         =======================
      -->
-     <form id="rangeForm" action="">
-        <input id="range" type="range" max="100" min="0" value="0">
+     <form class="range-form" action="">
+        <input class="range" id="rangeSlider1" type="range" min="0" max="100" value="15">
+        <div id="rangeValueFirst"></div>
+        <input class="range" id="rangeSlider2" type="range" min="0" max="100" value="60">
+        <div id="rangeValueSec"></div>
+        <div id="rangeTrack"></div>
         <div id="rangeProgress"></div>
     </form>
         <!-- 
@@ -608,10 +612,9 @@ First Wizard
         Range Input #3
         =======================
      -->
-     <form class="range-form" action="">
-        <input class="range" type="range" max="50" min="0" value="15">
-        <input class="range" type="range" max="50" min="0" value="35">
-        <div id="rangeProgress"></div>
+     <form id="rangeForm" action="">
+        <input id="rangeSlider" type="range" max="100" min="0" value="12">
+        <div id="rangePercent"></div>
     </form>
 </div>
 
@@ -629,6 +632,46 @@ rangeValue.innerHTML = '0';
         rangeValue.innerHTML = range.value;
     }
 
+    // =======================
+    //     Range Input #2
+    //     Range Slider with two intervals of values
+    // =======================
+
+    let rangeSliderFirst = document.getElementById('rangeSlider1');
+    let rangeSliderSec = document.getElementById('rangeSlider2');
+    let rangeValueFirst = document.getElementById('rangeValueFirst');
+    let rangeValueSec = document.getElementById('rangeValueSec');
+
+    rangeValueFirst.innerHTML = rangeSliderFirst.value;
+    rangeValueSec.innerHTML = rangeSliderSec.value;
+    
+    function changeValue(elemFirst, elemSec) {
+        elemFirst.oninput = () => {
+            rangeValueFirst.innerHTML = elemFirst.value;
+        };
+        elemSec.oninput = () => {
+            rangeValueSec.innerHTML = elemSec.value;
+        };
+    };
+    changeValue(rangeSliderFirst, rangeSliderSec);
+
+    function moveProgress() {
+
+    }
+
+    // =======================
+    //     Range Input #3
+    //     Simple Range Slider
+    // =======================
+
+ 
+    let rangeSlider = document.getElementById('rangeSlider');
+    let rangePercent = document.getElementById('rangePercent');
+    console.log(rangePercent.width);
+
+    rangeSlider.oninput = () => {
+        rangePercent.style.width = rangeSlider.value;
+    };
 </script>
 	<div class="container">
     <p class="pagination-title">Pagination</p>
