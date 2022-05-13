@@ -978,7 +978,7 @@ p {
 }
 
 .upload-desc {
-  padding-top: 22px;
+  padding-top: 15px;
   font-weight: 400;
   font-size: 15px;
   line-height: 16px;
@@ -1004,15 +1004,10 @@ p {
   border: solid 1px #18a0fb;
 }
 
-.upload-text::before {
-  content: attr(data-percent);
-  font-weight: 500;
-  font-size: 21px;
-  line-height: 25px;
-}
-
-.progress {
+.progress-track {
   position: relative;
+  top: 0;
+  left: 0;
   height: 6px;
   width: 183px;
   border-radius: 10px;
@@ -1022,8 +1017,10 @@ p {
 
 .progress-percent {
   position: absolute;
-  height: 100%;
-  width: 69%;
+  top: 0;
+  left: 0;
+  height: 6px;
+  width: 100%;
   border-radius: 10px;
   background-color: #18a0fb;
 }
@@ -1734,7 +1731,7 @@ p {
 #rangeValueSec {
   position: absolute;
   top: -30px;
-  right: 0;
+  left: 0;
   color: #fff;
   display: flex;
   justify-content: center;
@@ -1755,6 +1752,7 @@ p {
 }
 
 #rangeSlider {
+  position: relative;
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
@@ -1762,10 +1760,14 @@ p {
   height: 2px;
   background-color: #E0E0E0;
   border-radius: 10px;
+  outline: none;
 }
 
 #rangeSlider::-webkit-slider-thumb {
+  position: relative;
   -webkit-appearance: none;
+  -ms-progress-appearance: none;
+  -moz-appearance: none;
   width: 24px;
   height: 24px;
   background-color: #fff;
@@ -1778,7 +1780,7 @@ p {
   position: absolute;
   top: 14px;
   left: 0;
-  width: 0%;
+  width: 12%;
   height: 2px;
   background-color: #18A0FB;
   border-radius: 10px;

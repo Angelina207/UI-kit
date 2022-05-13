@@ -356,9 +356,9 @@
 
         <!-- linear uploading process -->
         <form class="upload-box">
-            <p class="upload-text atrr-progress" data-percent="69">% uploaded</p>
-            <div class="progress">
-                <span class="progress-percent"></span>
+            <p class="upload-text" id="numProgress"></p>
+            <div class="progress-track">
+                <div class="progress-percent"></div>
             </div>
             <p class="upload-desc">Please wait...</p>
             <button class="upload-btn-cancel upload-btn-cancel--margin-top">Cancel</button>
@@ -455,18 +455,20 @@
             </div>
         </div>
     </div>
-
-    <!-- <script>
-        function moveProgress() {
-            const attrPercent = document.querySelector('.atrr-progress');
-            const getPercent = parseInt(attrPercent.dataset.percent);
-            const progress = document.querySelector('.progress');
-            const progressPercent = document.querySelector('.progress-percent');
-            console.log(getPercent);
-        }
-        moveProgress();
-    </script> -->
 </div>
+
+    <script>
+
+        let progressBox = document.querySelector('.progress-track');
+        let progressPercent = document.querySelector('.progress-percent');
+        let numProgress = document.getElementById('numProgress');
+
+        function moveProgress() {
+                numProgress.innerHTML = progressPercent.clientWidth + '% uploaded'
+        };
+        moveProgress();
+        
+    </script>
 	<div class="container">
     <p class="tab-title">Tabs</p>
     <!-- 
@@ -605,7 +607,7 @@ First Wizard
         <input class="range" id="rangeSlider2" type="range" min="0" max="100" value="60">
         <div id="rangeValueSec"></div>
         <div id="rangeTrack"></div>
-        <div id="rangeProgress"></div>
+        <div id="rangeProgressResult"></div>
     </form>
         <!-- 
         =======================
@@ -633,14 +635,30 @@ rangeValue.innerHTML = '0';
     }
 
     // =======================
-    //     Range Input #2
-    //     Range Slider with two intervals of values
+    // Range Input #2
+    // Range Slider with two intervals of values
     // =======================
 
     let rangeSliderFirst = document.getElementById('rangeSlider1');
     let rangeSliderSec = document.getElementById('rangeSlider2');
     let rangeValueFirst = document.getElementById('rangeValueFirst');
     let rangeValueSec = document.getElementById('rangeValueSec');
+    let rangeProgressResult = document.getElementById('rangeProgressResult');
+
+    function upperValue() {
+        rangeValueFirst.style.left = rangeSliderFirst.value + '%';
+        rangeValueSec.style.left = rangeSliderSec.value + '%';
+    };
+    upperValue();
+
+    // const firstCount = 0;
+    // function limitedMove(count) {
+
+    //     if (count >= rangeSliderFirst.value) {
+
+    //     }
+    // };
+    // limitedMove(firstCount);
 
     rangeValueFirst.innerHTML = rangeSliderFirst.value;
     rangeValueSec.innerHTML = rangeSliderSec.value;
@@ -648,16 +666,14 @@ rangeValue.innerHTML = '0';
     function changeValue(elemFirst, elemSec) {
         elemFirst.oninput = () => {
             rangeValueFirst.innerHTML = elemFirst.value;
+            rangeValueFirst.style.left = elemFirst.value + '%';
         };
         elemSec.oninput = () => {
             rangeValueSec.innerHTML = elemSec.value;
+            rangeValueSec.style.left = elemSec.value + '%';
         };
     };
     changeValue(rangeSliderFirst, rangeSliderSec);
-
-    function moveProgress() {
-
-    }
 
     // =======================
     //     Range Input #3
@@ -667,10 +683,9 @@ rangeValue.innerHTML = '0';
  
     let rangeSlider = document.getElementById('rangeSlider');
     let rangePercent = document.getElementById('rangePercent');
-    console.log(rangePercent.width);
 
     rangeSlider.oninput = () => {
-        rangePercent.style.width = rangeSlider.value;
+        rangePercent.style.width = rangeSlider.value + '%';
     };
 </script>
 	<div class="container">
