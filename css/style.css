@@ -1019,17 +1019,19 @@ p {
   position: absolute;
   top: 0;
   left: 0;
+  width: 69%;
+  content: "";
   height: 6px;
-  width: 100%;
-  border-radius: 10px;
   background-color: #18a0fb;
+  border-radius: 10px;
+  transition: ease 100ms;
 }
 
 .upload-btn-cancel--margin-top {
   margin-top: 38px;
 }
 
-.upload-circle {
+#circleLoading {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1040,13 +1042,17 @@ p {
   background-color: transparent;
 }
 
-.progress-percent-inner {
-  font-weight: 900px;
+#circlePercent {
+  font-weight: 900;
   font-size: 30px;
 }
 
-.progress-percent-inner::before {
-  content: attr(data-percent-inner);
+#circleStatus {
+  padding-top: 15px;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 16px;
+  color: #ababab;
 }
 
 .upload-complete {
