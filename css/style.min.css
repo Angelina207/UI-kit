@@ -1031,28 +1031,27 @@ p {
   margin-top: 38px;
 }
 
-#circleLoading {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  border: 6px solid #e0e0e0;
-  width: 102px;
-  height: 102px;
-  background-color: transparent;
+.circle-ring {
+  position: relative;
 }
 
-#circlePercent {
-  font-weight: 900;
-  font-size: 30px;
+.circle-progress {
+  transform-origin: center;
+  transform: rotate(-90deg);
+  transition: stroke-dashoffset linear 8s;
 }
 
-#circleStatus {
-  padding-top: 15px;
-  font-weight: 400;
-  font-size: 15px;
-  line-height: 16px;
-  color: #ababab;
+.circle-percent {
+  position: absolute;
+  top: calc(50% - 25px);
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.circle-status {
+  opacity: 0.4;
+  font-weight: 500;
+  font-size: 16px;
 }
 
 .upload-complete {
