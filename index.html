@@ -309,6 +309,7 @@
         </div>
     </div>
 </div>
+	
 	<div class="container">
     <form action="">
         <label for="select-first" class="select-title">Please choose:</label>
@@ -354,27 +355,30 @@
             <p class="upload-desc">Please try again</p>
         </form>
 
-        <!-- linear uploading process -->
-        <form class="upload-box">
+        <!-- Linear Progress Bar -->
+        <div class="upload-box">
             <p class="upload-text" id="numProgress"></p>
             <div class="progress-track">
                 <div class="progress-percent"></div>
             </div>
             <p class="upload-desc">Please wait...</p>
             <button class="upload-btn-cancel upload-btn-cancel--margin-top">Cancel</button>
-        </form>
+        </div>
 
-        <!-- circle uploading process -->
-        <form class="upload-box">
-            <div id="circleLoading">
-                <div id="circlePercent"></div>
-            </div>
-            <p id="circleStatus"></p>
-            <button class="upload-btn-cancel">Cancel</button>
-        </form>
+        <!-- Circle Progress Bar -->
+        <div class="upload-box">
+            <svg class="circle-box" width="135" height="135">
+                <circle class="circle-ring" fill="transparent" stroke="#E0E0E0" stroke-width="6"
+                cx="67" cy="67" r="55"/>
+                <circle class="circle-progress" fill="transparent" stroke="#18A0FB" stroke-width="6"
+                cx="67" cy="67" r="55" stroke-linecap="round"/>
+            </svg>
+            <div class="circle-percent"></div>
+            <div class="circle-status">Uploading ...</div>
+        </div>
 
         <!-- already uploaded -->
-        <!-- <form class="upload-box" method="post">
+        <form class="upload-box" method="post">
             <div class="upload-circle upload-complete">
                 <svg class="upload-check-mark" width="50" height="37" viewBox="0 0 50 37" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M49.3454 0.520134C50.1627 1.26315 50.2229 2.52804 49.4799 3.34536L19.4799 36.3454C18.7468 37.1517 17.5032 37.2228 16.683 36.5052L0.683018 22.5052C-0.148255 21.7778 -0.23249 20.5143 0.494874 19.683C1.22224 18.8517 2.48576 18.7675 3.31704 19.4949L17.8402 32.2026L46.5201 0.654668C47.2632 -0.162647 48.5281 -0.22288 49.3454 0.520134Z" fill="white"/>
@@ -382,7 +386,7 @@
             </div>
             <p class="upload-text upload-text--padding-top">Loading Complete!</p>
             <button class="upload-btn-cancel">Upload New</button>
-        </form> -->
+        </form>
 
         <!-- loading status -->
         <div class="loading-wrapp">
@@ -458,25 +462,38 @@
 </div>
 
     <script>
-// Linear progress bar
-        let progressPercent = document.querySelector('.progress-percent');
-        let numProgress = document.getElementById('numProgress');
-        let progress = 0;
-
-        const moveInterval = setInterval(() => {
-            progressPercent.style.width = progress + '%';
-            numProgress.innerHTML = progress + '% uploaded';
-            if(progress >= 69) {
-                clearInterval(moveInterval)
-            }
-            progress += 1;
-        }, 100);
-
+        
 // Circle progress bar
-        const uploadStatus = document.getElementById('circleStatus');
 
+const circle = document.querySelector('.circle-progress');
+    const circleRadius = circle.r.baseVal.value;
+    const circumference = 2 * Math.PI * circleRadius;
+    const circlePercent = document.querySelector('.circle-percent');
+    let count = 0;
 
-        uploadStatus.innerHTML = 'Uploading ...';
+    circle.style.strokeDasharray = `${circumference} ${circumference}`;
+    circle.style.strokeDashoffset = circumference;
+    console.log(circumference)
+
+    function setProgress(percent) {
+
+        const offsetCount = setInterval(() => {
+            circlePercent.innerHTML = count + '%';
+
+            if(circle.style.strokeDashoffset >= circumference) {
+                clearInterval(offsetCount);
+            } 
+            circle.style.strokeDashoffset -= 1;
+            circle.style.strokeDashoffset = circumference - (percent / 100) * circumference;
+
+            if (count >= percent) {
+                clearInterval(offsetCount)
+            } 
+            count += 1;
+        }, 100)
+    }; 
+    setProgress(80);
+
     </script>
 	<div class="container">
     <p class="tab-title">Tabs</p>
@@ -631,18 +648,6 @@ First Wizard
 
 <script>
 
-let range = document.getElementById('range');
-let rangeValue = document.getElementById('rangeValue');
-let rangeProgress = document.getElementById('rangeProgress');
-
-rangeValue.innerHTML = '0';
-
-    range.oninput = () => {
-        rangeValue.style.left = range.value - 2 + '%';
-        rangeProgress.style.width = range.value + '%';
-        rangeValue.innerHTML = range.value;
-    }
-
     // =======================
     // Range Input #2
     // Range Slider with two intervals of values
@@ -683,19 +688,6 @@ rangeValue.innerHTML = '0';
         };
     };
     changeValue(rangeSliderFirst, rangeSliderSec);
-
-    // =======================
-    //     Range Input #3
-    //     Simple Range Slider
-    // =======================
-
- 
-    let rangeSlider = document.getElementById('rangeSlider');
-    let rangePercent = document.getElementById('rangePercent');
-
-    rangeSlider.oninput = () => {
-        rangePercent.style.width = rangeSlider.value + '%';
-    };
 </script>
 	<div class="container">
     <p class="pagination-title">Pagination</p>
@@ -1150,7 +1142,11 @@ rangeValue.innerHTML = '0';
     </table>
 </div>
 
-	<!-- <script src="./js/script.js"></script>
-	<script src="./js/choices.min.js"></script> -->
+	<script src="./js/lib.js"></script>
+	<script src="./js/choices.min.js"></script> 
+	<script src="./js/calendar-main.min.js"></script>
+	<script src="./js/progress-bar.js"></script>
+	<script src="./js/tab.js"></script>
+	<script src="./js/range.js"></script>
 </body>
 </html>
