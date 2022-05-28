@@ -460,41 +460,6 @@
         </div>
     </div>
 </div>
-
-    <script>
-        
-// Circle progress bar
-
-const circle = document.querySelector('.circle-progress');
-    const circleRadius = circle.r.baseVal.value;
-    const circumference = 2 * Math.PI * circleRadius;
-    const circlePercent = document.querySelector('.circle-percent');
-    let count = 0;
-
-    circle.style.strokeDasharray = `${circumference} ${circumference}`;
-    circle.style.strokeDashoffset = circumference;
-    console.log(circumference)
-
-    function setProgress(percent) {
-
-        const offsetCount = setInterval(() => {
-            circlePercent.innerHTML = count + '%';
-
-            if(circle.style.strokeDashoffset >= circumference) {
-                clearInterval(offsetCount);
-            } 
-            circle.style.strokeDashoffset -= 1;
-            circle.style.strokeDashoffset = circumference - (percent / 100) * circumference;
-
-            if (count >= percent) {
-                clearInterval(offsetCount)
-            } 
-            count += 1;
-        }, 100)
-    }; 
-    setProgress(80);
-
-    </script>
 	<div class="container">
     <p class="tab-title">Tabs</p>
     <!-- 
@@ -627,15 +592,17 @@ First Wizard
         Range Input #2
         =======================
      -->
-     <form class="range-form" action="">
-        <input class="range" id="rangeSlider1" type="range" min="0" max="100" value="15">
-        <div id="rangeValueFirst"></div>
-        <input class="range" id="rangeSlider2" type="range" min="0" max="100" value="60">
-        <div id="rangeValueSec"></div>
-        <div id="rangeTrack"></div>
-        <div id="rangeProgressResult"></div>
+     <form id="sliderForm" action="">
+        <input class="slider" id="sliderLeft" type="range" min="0" max="100" value="15">
+        <div id="valueLeft"><div>15</div></div>
+
+        <input class="slider" id="sliderRight" type="range" min="0" max="100" value="60">
+        <div id="valueRight"><div>60</div></div>
+
+        <div id="sliderTrack"></div>
+        <div id="sliderRange"></div>
     </form>
-        <!-- 
+    <!-- 
         =======================
         Range Input #3
         =======================
@@ -647,47 +614,55 @@ First Wizard
 </div>
 
 <script>
-
+// use strict
     // =======================
     // Range Input #2
-    // Range Slider with two intervals of values
+    // Range Slider with two points of values
     // =======================
 
-    let rangeSliderFirst = document.getElementById('rangeSlider1');
-    let rangeSliderSec = document.getElementById('rangeSlider2');
-    let rangeValueFirst = document.getElementById('rangeValueFirst');
-    let rangeValueSec = document.getElementById('rangeValueSec');
-    let rangeProgressResult = document.getElementById('rangeProgressResult');
+    const sliderLeft = document.getElementById('sliderLeft');
+    const sliderRight = document.getElementById('sliderRight');
+    const sliderRange = document.getElementById('sliderRange');
+    const valueLeft = document.getElementById('valueLeft');
+    const valueChangeLeft = document.querySelector('#valueLeft > div');
+    const valueRight = document.getElementById('valueRight');
+    const valueChangeRight = document.querySelector('#valueRight > div');
 
-    function upperValue() {
-        rangeValueFirst.style.left = rangeSliderFirst.value + '%';
-        rangeValueSec.style.left = rangeSliderSec.value + '%';
+    valueLeft.style.left = sliderLeft.value - 4 + '%';
+    sliderRange.style.left = sliderLeft.value + '%';
+
+    valueRight.style.left = sliderRight.value - 4 + '%';
+
+    function changeRangeWidth() {
+        let pointLeft = parseInt(sliderLeft.min) + parseInt(sliderLeft.value);
+        let pointRight = parseInt(sliderRight.min) + parseInt(sliderRight.value);
+        let width = parseInt(pointRight) - parseInt(pointLeft);
+
+        sliderRange.style.width = width +'%';
     };
-    upperValue();
+    changeRangeWidth();
 
-    // const firstCount = 0;
-    // function limitedMove(count) {
+    function setValueLeft () {
+        sliderLeft.oninput = () => {
+            valueChangeLeft.innerHTML = sliderLeft.value;
+            valueLeft.style.left = sliderLeft.value - 4 + '%';
+            sliderRange.style.left = sliderLeft.value + '%';
 
-    //     if (count >= rangeSliderFirst.value) {
-
-    //     }
-    // };
-    // limitedMove(firstCount);
-
-    rangeValueFirst.innerHTML = rangeSliderFirst.value;
-    rangeValueSec.innerHTML = rangeSliderSec.value;
-    
-    function changeValue(elemFirst, elemSec) {
-        elemFirst.oninput = () => {
-            rangeValueFirst.innerHTML = elemFirst.value;
-            rangeValueFirst.style.left = elemFirst.value + '%';
-        };
-        elemSec.oninput = () => {
-            rangeValueSec.innerHTML = elemSec.value;
-            rangeValueSec.style.left = elemSec.value + '%';
-        };
+            sliderLeft = changeRangeWidth();
+        }
     };
-    changeValue(rangeSliderFirst, rangeSliderSec);
+    setValueLeft();
+
+    function setValueRight() {
+        sliderRight.oninput = () => {
+            valueChangeRight.innerHTML = sliderRight.value;
+            valueRight.style.left = sliderRight.value - 4 + '%';
+
+            sliderRight = changeRangeWidth();
+        }
+    };
+    setValueRight();
+
 </script>
 	<div class="container">
     <p class="pagination-title">Pagination</p>
@@ -1141,12 +1116,12 @@ First Wizard
         </tbody>
     </table>
 </div>
-
+<!-- 
 	<script src="./js/lib.js"></script>
 	<script src="./js/choices.min.js"></script> 
 	<script src="./js/calendar-main.min.js"></script>
 	<script src="./js/progress-bar.js"></script>
 	<script src="./js/tab.js"></script>
-	<script src="./js/range.js"></script>
+	<script src="./js/range.js"></script> -->
 </body>
 </html>
