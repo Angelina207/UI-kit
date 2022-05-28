@@ -20,46 +20,48 @@ rangeValue.innerHTML = '0';
 //     Range Input #2
 //     Simple Range Slider
 // =======================
-    const sliderLeft = document.getElementById('sliderLeft');
-    const sliderRight = document.getElementById('sliderRight');
-    const valueLeft = document.getElementById('valueLeft');
-    const valueRight = document.getElementById('valueRight');
-    const sliderRange = document.getElementById('sliderRange');
+const sliderLeft = document.getElementById('sliderLeft');
+const sliderRight = document.getElementById('sliderRight');
+const sliderRange = document.getElementById('sliderRange');
+const valueLeft = document.getElementById('valueLeft');
+const valueChangeLeft = document.querySelector('#valueLeft > div');
+const valueRight = document.getElementById('valueRight');
+const valueChangeRight = document.querySelector('#valueRight > div');
 
-    valueLeft.innerHTML = sliderLeft.value;
-    valueLeft.style.left = sliderLeft.value + '%';
-    sliderRange.style.left = sliderLeft.value + '%';
+valueLeft.style.left = sliderLeft.value - 4 + '%';
+sliderRange.style.left = sliderLeft.value + '%';
 
-    valueRight.innerHTML = sliderRight.value;
-    valueRight.style.left = sliderRight.value + '%';
+valueRight.style.left = sliderRight.value - 4 + '%';
 
-    function changeRangeWidth() {
-        let pointLeft = parseInt(sliderLeft.min) + parseInt(sliderLeft.value);
-        let pointRight = parseInt(sliderRight.min) + parseInt(sliderRight.value);
-        let width = parseInt(pointRight) - parseInt(pointLeft);
+function changeRangeWidth() {
+    let pointLeft = parseInt(sliderLeft.min) + parseInt(sliderLeft.value);
+    let pointRight = parseInt(sliderRight.min) + parseInt(sliderRight.value);
+    let width = parseInt(pointRight) - parseInt(pointLeft);
 
-        sliderRange.style.width = width +'%';
-    };
-    changeRangeWidth();
+    sliderRange.style.width = width +'%';
+};
+changeRangeWidth();
 
-    function setValueLeft () {
-        sliderLeft.oninput = () => {
-            valueLeft.innerHTML = sliderLeft.value;
-            valueLeft.style.left = sliderLeft.value + '%';
-            sliderRange.style.left = sliderLeft.value + '%';
-            sliderRange = changeRangeWidth();
-        }
-    };
-    setValueLeft();
+function setValueLeft () {
+    sliderLeft.oninput = () => {
+        valueChangeLeft.innerHTML = sliderLeft.value;
+        valueLeft.style.left = sliderLeft.value - 4 + '%';
+        sliderRange.style.left = sliderLeft.value + '%';
 
-    function setValueRight() {
-        sliderRight.oninput = () => {
-            valueRight.innerHTML = sliderRight.value;
-            valueRight.style.left = sliderRight.value + '%';
-            sliderRight = changeRangeWidth();
-        }
-    };
-    setValueRight();
+        sliderLeft = changeRangeWidth();
+    }
+};
+setValueLeft();
+
+function setValueRight() {
+    sliderRight.oninput = () => {
+        valueChangeRight.innerHTML = sliderRight.value;
+        valueRight.style.left = sliderRight.value - 4 + '%';
+
+        sliderRight = changeRangeWidth();
+    }
+};
+setValueRight();
     
 // =======================
 //     Range Input #3
