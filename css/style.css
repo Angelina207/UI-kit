@@ -1657,6 +1657,7 @@ p {
 }
 
 .slider {
+  display: block;
   position: absolute;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -1667,6 +1668,10 @@ p {
   bottom: 0;
   background-color: transparent;
   pointer-events: none;
+}
+
+#sliderLeft {
+  left: -2px;
 }
 
 .slider::-webkit-slider-thumb {
@@ -1699,6 +1704,50 @@ p {
   cursor: pointer;
 }
 
+#valueLeft {
+  position: absolute;
+  top: -35px;
+  width: 30px;
+  height: 30px;
+  background-color: #18A0FB;
+  border-radius: 0 50% 50% 50%;
+  transform: rotate(-135deg);
+}
+
+#valueLeft > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  width: 30px;
+  transform: rotate(135deg);
+  font-size: 13px;
+  font-weight: 500;
+  color: #fff;
+}
+
+#valueRight {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: -35px;
+  background-color: #18A0FB;
+  border-radius: 0 50% 50% 50%;
+  transform: rotate(-135deg);
+}
+
+#valueRight > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  width: 30px;
+  transform: rotate(135deg);
+  font-size: 13px;
+  font-weight: 500;
+  color: #fff;
+}
+
 #sliderTrack {
   position: absolute;
   width: 100%;
@@ -1708,52 +1757,6 @@ p {
   left: 0;
   top: 9px;
   z-index: -20;
-}
-
-#valueRight {
-  position: absolute;
-  top: -30px;
-  left: 0;
-  color: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: 500;
-  font-size: 13px;
-}
-
-#valueRight::after {
-  content: "";
-  position: absolute;
-  width: 30px;
-  height: 30px;
-  background-color: #18A0FB;
-  border-radius: 0 50% 50% 50%;
-  transform: rotate(-135deg);
-  z-index: -10;
-}
-
-#valueLeft {
-  position: absolute;
-  top: -30px;
-  left: 0;
-  color: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: 500;
-  font-size: 13px;
-}
-
-#valueLeft::after {
-  content: "";
-  position: absolute;
-  width: 30px;
-  height: 30px;
-  background-color: #18A0FB;
-  border-radius: 0 50% 50% 50%;
-  transform: rotate(-135deg);
-  z-index: -10;
 }
 
 #sliderRange {
