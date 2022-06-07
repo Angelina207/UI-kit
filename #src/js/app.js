@@ -1,12 +1,17 @@
 import * as flsFunctions from "./modules/functions.js";
-import * as selectLibrary from "./modules/choices.min.js";
-import * as script from "./modules/script.js";
-
 flsFunctions.isWebp();
-selectLibrary();
-script();
 
-/*
-import Swiper, { Navigation, Pagination } from 'swiper';
-const swiper = new Swiper();
-*/
+import * as tabFunction from "./modules/tab.js";
+tabFunction.isTab();
+
+import * as rangeFunction from "./modules/range.js";
+rangeFunction.isRange();
+
+import * as progressBarFunction from "./modules/progress-bar.js";
+progressBarFunction.isProgressBar();
+
+import * as libsFunction from "./modules/libs.js";
+libsFunction.libsFunction();
+
+import * as choiceFinction from "./modules/choices.min.js";
+choiceFinction.selectChoice();
