@@ -1,7 +1,8 @@
-.container__upload{
+.upload-container{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
 }
 .upload-box{
     position: relative;
@@ -11,7 +12,7 @@
     justify-content: center;
     height: 279px;
     width: 271px;
-    margin: 50px 30px 0 0;
+    margin-top: 30px;
     border: dashed 2px #E0E0E0FF;
     border-radius: 4px;
 }
@@ -60,7 +61,7 @@
     line-height: 25px;
 }
 .upload-desc{
-    padding-top: 22px;
+    padding-top: 15px;
     font-weight: 400;
     font-size: 15px;
     line-height: 16px;
@@ -86,15 +87,11 @@
     }
 }
 
-// linear progressbar
-.upload-text::before{
-    content: attr(data-percent);
-    font-weight: 500;
-    font-size: 21px;
-    line-height: 25px;
-}
-.progress{
+// linear progress bar
+.progress-track{
     position: relative;
+    top: 0;
+    left: 0;
     height: 6px;
     width: 183px;
     border-radius: 10px;
@@ -103,39 +100,46 @@
 }
 .progress-percent{
     position: absolute;
-    height: 100%;
+    top: 0;
+    left: 0; 
     width: 69%;
-    border-radius: 10px;
+    content: '';
+    height: 6px;
     background-color: #18A0FBFF;
+    border-radius: 10px;
+    transition: ease 100ms;
 }
 .upload-btn-cancel--margin-top{
     margin-top: 38px;
 }
 
 
-// circle progressbar
-.upload-circle{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    border: 6px solid #E0E0E0FF;
-    width: 102px;
-    height: 102px;
-    background-color: transparent;
+// circle progress bar
+.circle-ring{
+    position: relative;
 }
-.progress-percent-inner{
-    font-weight: 900px;
-    font-size: 30px;
+.circle-progress{
+    transform-origin: center;
+    transform: rotate(-90deg);
+    transition: stroke-dashoffset linear 8s;
 }
-.progress-percent-inner::before{
-    content: attr(data-percent-inner);
+.circle-percent{
+    position: absolute;
+    top: calc(50% - 25px);
+    font-size: 32px;
+    font-weight: 700;
 }
-
-
+.circle-status{
+    opacity: 0.4;
+    font-weight: 500;
+    font-size: 16px;
+}
 // comlete progressbar
 .upload-complete {
     position: relative;
+    width: 102px;
+    height: 102px;
+    border-radius: 50%;
     border: 6px solid #00D200FF;
     background-color: #00D200FF;
 }
@@ -330,3 +334,8 @@
     border-radius: 10px;
 }
 
+@media screen and(min-width: 768px) {
+    .upload-container{
+        justify-content: space-evenly;
+    }
+}

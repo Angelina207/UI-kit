@@ -1,17 +1,13 @@
-// common styles
-.btn-title{
-    font-size: 28px;
-    font-weight: 600;
-    color: #2C2C2CFF;
-    padding: 30px 0 15px;
-}
 .btn-wrapp{
     display: flex;
     flex-direction: column;
+    justify-content: center;
 }
 .btn-list{
     display: flex;
     flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
 }
 .btn-style{
     display: flex;
@@ -19,9 +15,9 @@
     justify-content: center;
     color: #2C2C2CFF;
     border: 1px solid #E0E0E0FF;
-    margin: 15px;
     width: 144px;
     height: 46px;
+    margin-top: 15px;
     font-size: 13px;
     font-weight: 600;
     border-radius: 5px;
@@ -96,8 +92,9 @@
     stroke: #fff;
 }
 
-// micro buttons
-
+//======================
+// Micro Buttons
+//======================
 .btn-micro{
     width: 51px;
     height: 28px;
@@ -118,13 +115,14 @@
     fill: #fff;
 }
 
-// buttons Tab-list
-
+//======================
+// Tab Buttons
+//======================
 .btn-tab-list{
     display: flex;
     flex-direction: row;
     height: 46px;
-    margin: 30px 20px 0 0;
+    margin-top: 15px;
 }
 .btn-tab{
     border: none;

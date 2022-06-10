@@ -1,10 +1,13 @@
-.alert {
+// ====================
+// Alert
+// ====================
+.alert-wrapp {
     display: flex;
-    flex-direction: row;
-    margin-bottom: 30px;
+    justify-content: center;
+    padding: 30px 0 0;
   }
   
-  .alert-row {
+  .alert {
     position: relative;
     display: flex;
     width: 313px;
@@ -12,30 +15,29 @@
     box-shadow: 0px 10px 23px rgba(0, 0, 0, 0.12);
   }
   
-  .alert-row--blue {
+  .alert--blue {
     background-color: #18A0FB;
     color: #fff;
-    margin-right: 30px;
   }
   
-  .alert-row--white {
+  .alert--white {
     background-color: #fff;
     color: #2C2C2C;
   }
   
-  .alert-title {
+  .alert-sub {
     font-weight: 700;
     font-size: 13px;
     padding: 13px 0 13px 13px;
   }
   
-  .alert-sub {
+  .alert-desc {
     font-weight: 400;
     font-size: 13px;
-    padding: 0 0 15px 13px;
+    padding: 0 0 13px 13px;
   }
   
-  .alert-btn-close {
+  .alert-close {
     position: absolute;
     top: 10px;
     right: 10px;
@@ -47,7 +49,7 @@
     height: 22px;
   }
   
-  .alert-btn-svg {
+  .alert-svg {
     position: absolute;
     top: calc(50% - 5px);
     left: calc(50% - 5px);
@@ -56,28 +58,26 @@
     height: 10px;
   }
   
-  .alert-btn-close--bcg-white {
+  .alert-close--bcg-white {
     background-color: #fff;
   }
   
-  .alert-btn-close--bcg-gray {
+  .alert-close--bcg-gray {
     background-color: #E0E0E0;
   }
   
-  .alert-btn-svg--blue {
+  .alert-svg--blue {
     fill: #18A0FB;
   }
   
-  .alert-btn-svg--white {
+  .alert-svg--white {
     fill: #fff;
   }
-  
-  .alert__warr {
-    display: flex;
-    flex-direction: row;
-  }
-  
-  .warr-block {
+
+  // ====================
+  // Alert Warning
+  // ====================  
+  .alert-content {
     position: relative;
     display: flex;
     border-radius: 5px;
@@ -85,18 +85,17 @@
     box-shadow: 0px 10px 23px rgba(0, 0, 0, 0.12);
   }
   
-  .warr-block--orange {
+  .alert-content--orange {
     background-color: #FF3E1D;
     color: #fff;
-    margin-right: 30px;
   }
   
-  .warr-block--white {
+  .alert-content--white {
     background-color: #fff;
     color: #2C2C2C;
   }
   
-  .warr-sign {
+  .alert-exclamation {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -108,29 +107,17 @@
     font-weight: 700;
   }
   
-  .warr-sign--white {
+  .alert-exclamation--white {
     background-color: #fff;
     color: #FF3E1D;
   }
   
-  .warr-sign--orange {
+  .alert-exclamation--orange {
     background-color: #FF3E1D;
     color: #fff;
   }
   
-  .warr-title {
-    font-weight: 700;
-    font-size: 13px;
-    padding: 13px 0 10px 9px;
-  }
-  
-  .warr-sub {
-    font-weight: 400;
-    font-size: 13px;
-    padding: 0 0 15px 9px;
-  }
-  
-  .warr-btn-wrapp {
+  .alert-buttons {
     position: absolute;
     top: 0;
     right: 0;
@@ -138,7 +125,20 @@
     flex-direction: column;
   }
   
-  .warr-btn {
+  .alert-open {
+    background-color: transparent;
+    cursor: pointer;
+    font-weight: 400;
+    font-size: 13px;
+    border: 1px transparent;
+    border-left: solid 1px #E0E0E0;
+    outline: none;
+    width: 89px;
+    height: 35px;
+    font-weight: 700;
+    border-bottom: solid 1px #E0E0E0;
+  }
+  .alert-dismiss{
     background-color: transparent;
     cursor: pointer;
     font-weight: 400;
@@ -149,28 +149,33 @@
     width: 89px;
     height: 35px;
   }
-  
-  .warr-btn--white {
+  .alert-open--white {
+    color: #fff;
+  }
+  .alert-dismiss--white{
     color: #fff;
   }
   
-  .warr-btn--black {
+  .alert-dismiss--black {
     color: #2C2C2C;
   }
-  
-  .warr-btn--bold {
-    font-weight: 700;
-    border-bottom: solid 1px #E0E0E0;
+
+  // ====================
+  // Modal Window
+  // ====================
+  .modal-wrapp{
+    display: flex;
+    justify-content: center;
+    padding: 30px 0 0;
   }
   
-  .alert__modal {
+  .modal-content {
     display: flex;
-    max-width: 658px;
     height: 296px;
+    width: 100%;
     background-color: #2C2C2C;
     opacity: 0.7;
     align-items: center;
-    margin-top: 50px;
   }
   
   .modal-window {
@@ -196,7 +201,7 @@
     padding: 0 0 24px;
   }
   
-  .modal__close-btn {
+  .modal-close {
     position: absolute;
     top: 16px;
     right: 16px;
@@ -204,23 +209,28 @@
     border: none;
     cursor: pointer;
     background-color: transparent;
+    transition: 250ms;
   }
   
-  .close-btn-svg {
+  .modal-svg {
     width: 10px;
     height: 10px;
     fill: #2C2C2C;
-    opacity: 0.5;
+    transition: 250ms;
+  }
+  .modal-close > .modal-svg:hover,
+  .modal-close > .modal-svg:focus{
+    fill: #18A0FB;
   }
   
-  .modal__button {
+  .modal-buttons {
     display: flex;
     flex-direction: row;
     justify-content: end;
     align-items: flex-end;
   }
   
-  .button-cancel {
+  .modal-cancel {
     outline: none;
     border: 1px solid #E0E0E0;
     cursor: pointer;
@@ -234,27 +244,38 @@
     transition: all 250ms;
   }
   
-  .button-cancel:hover,
-  .button-cancel:focus {
+  .modal-cancel:hover,
+  .modal-cancel:focus {
     border: 1px solid #18A0FB;
-    box-shadow: 0px 10px 23px rgba(0, 0, 0, 0.12);
+    background-color: #18A0FB;
+    color: #fff;
   }
   
-  .button-submit {
+  .modal-submit {
     outline: none;
-    border: none;
+    border: 1px solid #E0E0E0;
     cursor: pointer;
     height: 36px;
     width: 92px;
     font-size: 13px;
     font-weight: 500;
     border-radius: 5px;
-    background-color: #18A0FB;
-    color: #fff;
+    background-color: transparent;
     transition: all 250ms;
   }
   
-  .button-submit:hover,
-  .button-submit:focus {
-    box-shadow: 0px 10px 23px rgba(0, 0, 0, 0.12);
+  .modal-submit:hover,
+  .modal-submit:focus {
+    border: 1px solid #18A0FB;
+    background-color: #18A0FB;
+    color: #fff;  
+  }
+
+  @media screen and(min-width: 768px){
+    .alert-row{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
   }

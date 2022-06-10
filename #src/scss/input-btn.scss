@@ -1,0 +1,173 @@
+// ==================
+// Checkbox
+// ==================
+.checkbox-content{
+    display: flex;
+    flex-direction: row;
+}
+.checkbox-wrapp{
+    padding: 30px 0 0 0;  
+    display: flex;
+    flex-direction: column;
+}
+.checkbox-form{
+    display: flex;
+    height: 40px;
+    width: 60px;
+    align-items: center;
+}
+.checkbox-desc{
+    color: #2C2C2C;
+    font-size: 13px;
+    font-weight: 500;
+    padding-left: 60px;
+    padding-top: 10px;
+}
+.checkbox{
+    position: relative;
+    appearance: none;
+}
+.checkbox-label {
+    position: absolute;
+    width: 52px;
+    height: 32px;
+    background-color: #fff;
+    border-radius: 23px;
+    border: solid 1px #D5D5D5FF;
+    cursor: pointer;
+    transition: 250ms;
+    &:hover,
+    &:focus {
+        box-shadow: 0px 10px 23px rgba(0, 0, 0, 0.12);
+    }
+}
+.checkbox-label::before {
+    position: absolute;
+    content: '';
+    display: inline-block;
+    background-color: #D5D5D5FF;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    top: calc(50% - 12px);
+    left: 3px;
+    transition: 250ms;
+}
+.checkbox:checked ~ .checkbox-label {
+    background-color: #00D200;
+}
+.checkbox:checked ~ .checkbox-label::before {
+    left: 25px;
+    background-color: #fff;
+}
+.checkbox:disabled ~ .checkbox-label{
+    background-color: #E0E0E0FF;
+}
+.checkbox:disabled ~ .checkbox-label::before{
+    background-color: #fff;
+}
+
+// ==================
+// Checkbox Small
+// ==================
+.checkbox-label--small{
+    height: 24px;
+}
+.checkbox-label--small::before{
+    height: 20px;
+    width: 20px;
+    top: calc(50% - 10px);
+    left: 2px;
+}
+.checkbox:checked ~ .checkbox-label--small::before{
+    left: 30px;
+}
+
+
+// ===============================================================================================================
+// ==================
+// Circle Radio Buttons
+// ==================
+.radio-wrapp{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 30px;
+}
+.radio-form {
+    display: flex;
+    flex-direction: row;
+}
+.radio-box{
+    position: relative;
+    width: 18px;
+    height: 18px;
+    padding: 10px 10px 0 0;
+}
+.radio-title{
+    padding-left: 25px;
+    font-size: 13px;
+    font-weight: 500;
+}
+.radio-btn{
+    appearance: none;
+    position: absolute;
+}
+.radio-circle{
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background-color: #fff;
+    border: 1px solid #E0E0E0FF;
+    cursor: pointer;
+    border-radius: 50%;
+}
+.radio-circle::before{
+    position: absolute;
+    top: calc(50% - 4px);
+    left: calc(50% - 4px);
+    display: inline-block;
+    content: "";
+    width: 8px;
+    height: 8px;
+    background-color: #fff;
+    border-radius: 50%;
+    opacity: 0;
+}
+.radio-btn:checked ~ .radio-circle:before{
+    opacity: 1;
+}
+.radio-btn:checked ~ .radio-circle{
+    background-color: #18A0FBFF;
+    border: 1px solid #18A0FBFF;
+}   
+.radio-btn:disabled ~ .radio-circle{
+    background-color:  #F6F6F6FF;
+}
+
+
+// ==================
+// Square Radio Buttons
+// ==================
+
+.radio-square{
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background-color: #fff;
+    border: 1px solid #E0E0E0FF;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.radio-svg{
+    position: absolute;
+    top: calc(50% - 4px);
+    left: calc(50% - 5.5px);
+    opacity: 0;
+}
+.radio-btn:checked ~ .radio-square{
+    background-color: #18A0FBFF;
+}
+.radio-btn:checked ~ .radio-square > .radio-svg{
+    opacity: 1;
+}

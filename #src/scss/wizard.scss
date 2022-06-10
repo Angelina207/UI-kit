@@ -1,18 +1,13 @@
 // ====================
-// First Wizard
+// Wizard First 
 // ====================
-.wizard-title{
-    font-size: 25px;
-    font-weight: 600;
-    padding: 30px 0;
-}
 .wizard-container{
     display: flex;
     justify-content: space-between;
     position: relative;
     max-width: 100%;
     width: 405px;
-    margin-bottom: 30px;
+    margin-top: 30px;
 }
 .wizard-container::before{
     content: '';
@@ -94,10 +89,11 @@
 }
 
 // ====================
-// Second Wizard
+// Wizard Second 
 // ====================
 .wizard-content{
     display: flex;
+    padding-top: 30px;
     overflow: hidden;
 }
 .wizard-elem{
@@ -168,4 +164,64 @@
 .wizard-elem:hover > .wizard-triangle,
 .wizard-elem:focus > .wizard-triangle {
     border-left: 8px solid #18A0FB;
+}
+
+// ====================
+// Wizard Third
+// ====================
+
+.wizard-wrapp{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    max-width: 100%;
+    width: 296px;
+    margin-top: 30px;
+}
+.wizard-wrapp::before{
+    position: absolute;
+    top: 45%;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 2px;
+    background-color: #E0E0E0;
+    z-index: -1;
+}
+.wizard-result{
+    position: absolute;
+    top: 45%;
+    left: 0;
+    width: 75%;
+    height: 2px;
+    background-color: #18A0FB;
+    transition: 1s ease;
+}
+.wizard-item{
+    position: relative;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #E0E0E0;
+    cursor: pointer;
+}
+.wizard-step-wrapp{
+    position: absolute;
+    left: 0;
+    top: 20px;
+    display: flex;
+}
+.wizard-step{
+    color: #959595FF;
+    font-weight: 500;
+    font-size: 13px;
+}
+.wizard-step:nth-child(2) {
+    padding: 0 88px;
+}
+.success-item{
+    background-color: #18A0FB;
+}
+.success-step{
+    color: #2C2C2C;
 }

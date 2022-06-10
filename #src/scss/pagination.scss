@@ -1,12 +1,6 @@
-.pagination-title{
-    font-weight: 600;
-    font-size: 25px;
-    line-height: 30px;
-    padding: 30px 0;
-}
 .pagination__btn{
     display: flex;
-    padding-bottom: 20px;
+    padding-top: 30px;
     cursor: pointer;
 
 }
@@ -76,7 +70,7 @@
 // =====================
 .pagination-content{
     display: flex;
-    padding-bottom: 20px;
+    padding-top: 30px;
 }
 .pagination-list{
     display: flex;
@@ -119,13 +113,51 @@
 // =====================
 // Pagination & Select
 // =====================
-.pagination-form{
+.pagination__select{
     position: relative;
     display: flex;
     align-items: center;
     padding: 0 16px;
 }
-.pagination-button{
+.select{
+    display: block;
+    width: 66px;
+    height: 36px;
+    background-color: rgba(224, 224, 224, 0.3);
+    border: none;
+    color: #949494FF;
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: 13px;
+    outline: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    padding:  0 10px;
+}
+.select:hover,
+.select:focus {
+    background-color: rgba(24, 160, 251, 0.1);
+    color: #18A0FBFF;
+}
+.select::-ms-expand{
+    display: none;
+}
+.select-svg{
+    position: absolute;
+    fill: #949494FF;
+    left: 40%;
+}
+.select:hover ~ .select-svg,
+.select:focus ~ .select-svg {
+    fill: #18A0FBFF;
+}
+.select-label{
+    font-size: 13px;
+    font-weight: 500;
+    padding-left: 16px;
+}
+.select-prev{
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -144,48 +176,36 @@
         color: #18A0FBFF;
     }
 }
-.pagination-select{
-    display: block;
-    width: 66px;
+.select-next{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 89px;
     height: 36px;
     background-color: rgba(224, 224, 224, 0.3);
-    border: none;
-    color: #949494FF;
     border-radius: 5px;
-    font-weight: 500;
-    font-size: 13px;
-    outline: none;
-    -moz-appearance: none;
-    -webkit-appearance: none;
-    appearance: none;
-    padding:  0 10px;
-}
-.pagination-select:hover,
-.pagination-select:focus {
-    background-color: rgba(24, 160, 251, 0.1);
-    color: #18A0FBFF;
-}
-.pagination-select::-ms-expand{
-    display: none;
-}
-.pagination-svg{
-    position: absolute;
-    fill: #949494FF;
-    left: 40%;
-}
-.pagination-select:hover ~ .pagination-svg,
-.pagination-select:focus ~ .pagination-svg {
-    fill: #18A0FBFF;
-}
-.pagination-label{
+    color: #8B8B8B;
+    border: none;
     font-size: 13px;
     font-weight: 500;
-    padding-left: 16px;
+    cursor: pointer;
+    &:active,
+    &:hover {
+        background-color: rgba(24, 160, 251, 0.1);
+        color: #18A0FBFF;
+    }
 }
-.button-svg{
+.select-prev-svg{
+    fill: #949494FF;
+    transform: rotate(180deg);
+}
+.select-next-svg{
     fill: #949494FF;
 }
-.pagination-button:hover > .button-svg,
-.pagination-button:focus {
+.select-prev:hover > .select-prev-svg{
     fill: #18A0FBFF;
 }
+.select-next:hover > .select-next-svg{
+    fill: #18A0FBFF;
+}
+ 
