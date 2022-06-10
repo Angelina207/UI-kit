@@ -13,5 +13,4 @@ progressBarFunction.isProgressBar();
 import * as libsFunction from "./modules/libs.js";
 libsFunction.libsFunction();
 
-import * as choiceFinction from "./modules/choices.min.js";
-choiceFinction.selectChoice();
+import "./modules/airDatepicker.js"
