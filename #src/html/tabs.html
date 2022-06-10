@@ -1,27 +1,87 @@
 <div class="container">
-    <p class="tab-title">Tabs</p>
+    <p class="title">Tab</p>
     <!-- 
         ====================
-        Tab buttons.
+        Tab buttons
         ====================
      -->
+     
     <div class="tab-wrapp">
         <button class="tab-btn tab-current" data-tab="0">Current Tab</button>
         <button class="tab-btn" data-tab="1">Second Tab</button>
         <button class="tab-btn" data-tab="2">Thrid Tab</button>
+        <span class="tab-underline"></span>
     </div>
-    <!-- 
-        ====================
-        Tab content.
-        ====================
-     -->
-     <div class="tab-content" style="display: block;">
-         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet architecto, mollitia maxime, deleniti vero pariatur hic voluptas similique accusantium natus dolorem expedita quis fuga ad libero voluptatum ex. Aperiam provident eos quos repudiandae, expedita quas dignissimos. Quis, expedita asperiores! Voluptate architecto odit, ab repellat in ipsum, velit placeat minima sit a maxime porro, harum ad labore.
-     </div>
-     <div class="tab-content">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, deserunt maiores. Cum, dolore quam! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet architecto, mollitia maxime, deleniti vero pariatur hic voluptas similique accusantium natus dolorem expedita quis fuga ad libero voluptatum ex. Aperiam provident eos quos repudiandae, expedita quas dignissimos. Quis, expedita asperiores! Voluptate architecto odit, ab repellat in ipsum, velit placeat minima sit a maxime porro, harum ad labore.
+    <div class="tab-content" style="display: block;">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet architecto, mollitia maxime, deleniti vero pariatur hic voluptas similique accusantium natus dolorem expedita quis fuga ad libero voluptatum ex. Aperiam provident eos quos repudiandae, expedita quas dignissimos. Quis, expedita asperiores! Voluptate architecto odit, ab repellat in ipsum, velit placeat minima sit a maxime porro, harum ad labore.
     </div>
     <div class="tab-content">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, optio libero. Laborum veniam ad sint dolorem quam quas voluptatum, nam repudiandae explicabo? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet architecto, mollitia maxime, deleniti vero pariatur hic voluptas similique accusantium natus dolorem expedita quis fuga ad libero voluptatum ex. Aperiam provident eos quos repudiandae, expedita quas dignissimos. Quis, expedita asperiores! Voluptate architecto odit, ab repellat in ipsum, velit placeat minima sit a maxime porro, harum ad labore.
+       Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, deserunt maiores. Cum, dolore quam! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet architecto, mollitia maxime, deleniti vero pariatur hic voluptas similique accusantium natus dolorem expedita quis fuga ad libero voluptatum ex. Aperiam provident eos quos repudiandae, expedita quas dignissimos. Quis, expedita asperiores! Voluptate architecto odit, ab repellat in ipsum, velit placeat minima sit a maxime porro, harum ad labore.
+   </div>
+   <div class="tab-content">
+       Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, optio libero. Laborum veniam ad sint dolorem quam quas voluptatum, nam repudiandae explicabo? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet architecto, mollitia maxime, deleniti vero pariatur hic voluptas similique accusantium natus dolorem expedita quis fuga ad libero voluptatum ex. Aperiam provident eos quos repudiandae, expedita quas dignissimos. Quis, expedita asperiores! Voluptate architecto odit, ab repellat in ipsum, velit placeat minima sit a maxime porro, harum ad labore.
+   </div>
+
+    <!-- 
+        ====================
+        Tabs Input
+        ====================
+     -->
+    <p class="title">Tabs & Icons</p>
+
+    <div class="tab-wrapper">
+        <input class="tab-radio" type="radio" name="tab" id="tab-1" checked>
+        <input class="tab-radio" type="radio" name="tab" id="tab-2">
+        <label class="tab-label" for="tab-1" >
+            <svg class="tab-svg" width="15" height="15" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M13 6C13 3.79086 11.2091 2 9 2C6.7909 2 5 3.79086 5 6C5 8.2091 6.7909 10 9 10C11.2091 10 13 8.2091 13 6ZM9 0C12.3137 0 15 2.68629 15 6C15 9.3137 12.3137 12 9 12C7.7042 12 6.5043 11.5892 5.5235 10.8907L1.7071 14.7071C1.3166 15.0976 0.6834 15.0976 0.2929 14.7071C-0.0976 14.3166 -0.0976 13.6834 0.2929 13.2929L4.1093 9.4765C3.4108 8.4957 3 7.2958 3 6C3 2.68629 5.6863 0 9 0Z"/>
+            </svg>
+            Current Tab</label>
+        <label class="tab-label" for="tab-2">
+            <svg class="tab-svg tab-svg--stroke" width="17" height="17" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15 12.51H15.5V12.01V10.51H16.5V13.01C16.5 13.2869 16.2769 13.51 16 13.51H8C7.72314 13.51 7.5 13.2869 7.5 13.01V10.51H8.5V12.01V12.51H9H15Z"/>
+                <path d="M2.92205 6.30863L2.90861 6.29902L5.3096 3.10657L5.3101 3.1059C5.58912 2.73363 6.0385 2.50903 6.508 2.50903H17.508C17.9791 2.50903 18.4295 2.73545 18.7101 3.11188L18.7105 3.11237L21.1053 6.31638L21.0935 6.32544L21.3866 6.72011C21.4672 6.82871 21.5 6.92251 21.5 7.01003V18.01C21.5 18.8369 20.8269 19.51 20 19.51H4C3.17314 19.51 2.5 18.8369 2.5 18.01V7.01003C2.5 6.92206 2.53338 6.82686 2.615 6.71803L2.92205 6.30863ZM6.508 3.51003H6.2584L6.10838 3.70952L4.60438 5.70952L4.0024 6.51003H5.004H19.003H20.001L19.4035 5.71067L17.9085 3.71067L17.7585 3.51003H17.508H6.508ZM3.5 18.01V18.51H4H20.002H20.5021L20.502 18.0099L20.5 8.00993L20.4999 7.51003H20H4H3.5V8.01003V18.01Z"/>
+            </svg>
+            Current Tab</label>
+    </div>
+
+    <div class="tab-wrapper">
+        <input class="tab-radio" type="radio" name="tab1" id="tab-3" checked>
+        <input class="tab-radio" type="radio" name="tab1" id="tab-4">
+        <label class="tab-label" for="tab-3">
+            <svg class="tab-svg" width="15" height="15" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M13 6C13 3.79086 11.2091 2 9 2C6.7909 2 5 3.79086 5 6C5 8.2091 6.7909 10 9 10C11.2091 10 13 8.2091 13 6ZM9 0C12.3137 0 15 2.68629 15 6C15 9.3137 12.3137 12 9 12C7.7042 12 6.5043 11.5892 5.5235 10.8907L1.7071 14.7071C1.3166 15.0976 0.6834 15.0976 0.2929 14.7071C-0.0976 14.3166 -0.0976 13.6834 0.2929 13.2929L4.1093 9.4765C3.4108 8.4957 3 7.2958 3 6C3 2.68629 5.6863 0 9 0Z"/>
+            </svg>
+            Current Tab</label>
+        <label class="tab-label" for="tab-4">
+            <svg class="tab-svg tab-svg--stroke" width="17" height="17" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15 12.51H15.5V12.01V10.51H16.5V13.01C16.5 13.2869 16.2769 13.51 16 13.51H8C7.72314 13.51 7.5 13.2869 7.5 13.01V10.51H8.5V12.01V12.51H9H15Z"/>
+                <path d="M2.92205 6.30863L2.90861 6.29902L5.3096 3.10657L5.3101 3.1059C5.58912 2.73363 6.0385 2.50903 6.508 2.50903H17.508C17.9791 2.50903 18.4295 2.73545 18.7101 3.11188L18.7105 3.11237L21.1053 6.31638L21.0935 6.32544L21.3866 6.72011C21.4672 6.82871 21.5 6.92251 21.5 7.01003V18.01C21.5 18.8369 20.8269 19.51 20 19.51H4C3.17314 19.51 2.5 18.8369 2.5 18.01V7.01003C2.5 6.92206 2.53338 6.82686 2.615 6.71803L2.92205 6.30863ZM6.508 3.51003H6.2584L6.10838 3.70952L4.60438 5.70952L4.0024 6.51003H5.004H19.003H20.001L19.4035 5.71067L17.9085 3.71067L17.7585 3.51003H17.508H6.508ZM3.5 18.01V18.51H4H20.002H20.5021L20.502 18.0099L20.5 8.00993L20.4999 7.51003H20H4H3.5V8.01003V18.01Z"/>
+            </svg>
+            Second Tab</label>
+            <span class="tab-underline"></span>
+    </div>
+
+    <div class="tab-wrapper">
+        <input class="tab-radio" type="radio" name="tab2" id="tab-5" checked>
+        <input class="tab-radio" type="radio" name="tab2" id="tab-6">
+        <input class="tab-radio" type="radio" name="tab2" id="tab-7">
+        <label class="tab-label" for="tab-5">
+            <svg class="tab-svg" width="15" height="15" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M13 6C13 3.79086 11.2091 2 9 2C6.7909 2 5 3.79086 5 6C5 8.2091 6.7909 10 9 10C11.2091 10 13 8.2091 13 6ZM9 0C12.3137 0 15 2.68629 15 6C15 9.3137 12.3137 12 9 12C7.7042 12 6.5043 11.5892 5.5235 10.8907L1.7071 14.7071C1.3166 15.0976 0.6834 15.0976 0.2929 14.7071C-0.0976 14.3166 -0.0976 13.6834 0.2929 13.2929L4.1093 9.4765C3.4108 8.4957 3 7.2958 3 6C3 2.68629 5.6863 0 9 0Z"/>
+            </svg>
+            Current Tab</label>
+        <label class="tab-label" for="tab-6">
+            <svg class="tab-svg tab-svg--stroke" width="17" height="17" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15 12.51H15.5V12.01V10.51H16.5V13.01C16.5 13.2869 16.2769 13.51 16 13.51H8C7.72314 13.51 7.5 13.2869 7.5 13.01V10.51H8.5V12.01V12.51H9H15Z"/>
+                <path d="M2.92205 6.30863L2.90861 6.29902L5.3096 3.10657L5.3101 3.1059C5.58912 2.73363 6.0385 2.50903 6.508 2.50903H17.508C17.9791 2.50903 18.4295 2.73545 18.7101 3.11188L18.7105 3.11237L21.1053 6.31638L21.0935 6.32544L21.3866 6.72011C21.4672 6.82871 21.5 6.92251 21.5 7.01003V18.01C21.5 18.8369 20.8269 19.51 20 19.51H4C3.17314 19.51 2.5 18.8369 2.5 18.01V7.01003C2.5 6.92206 2.53338 6.82686 2.615 6.71803L2.92205 6.30863ZM6.508 3.51003H6.2584L6.10838 3.70952L4.60438 5.70952L4.0024 6.51003H5.004H19.003H20.001L19.4035 5.71067L17.9085 3.71067L17.7585 3.51003H17.508H6.508ZM3.5 18.01V18.51H4H20.002H20.5021L20.502 18.0099L20.5 8.00993L20.4999 7.51003H20H4H3.5V8.01003V18.01Z"/>
+            </svg>
+            Second Tab</label>
+        <label class="tab-label" for="tab-7">
+            <svg class="tab-svg tab-svg--stroke" version="1.1" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 32 32">
+                <path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M5.333 16v9.333h21.333v-9.333"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 4.668v13.333"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 18.001l4.5-4.5"></path><path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M16 18.001l-4.5-4.5"></path>
+            </svg>
+            Third Tab</label>
+            <span class="tab-underline"></span>
     </div>
 </div>

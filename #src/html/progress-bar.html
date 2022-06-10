@@ -1,7 +1,8 @@
 <div class="container">
-    <div class="container__upload">   
-         <!-- form for upload -->
-         
+    <p class="title">Progress Bar</p>
+
+    <div class="upload-container">   
+         <!-- Form for Upload -->
         <form class="upload-box" method="post">
             <input class="upload-file" type="file" id="add-file" type="submit" multiple>
             <label class="upload-label" for="add-file">
@@ -13,7 +14,7 @@
             <p class="upload-desc">Drag & Drop to upload or</p>
         </form>
 
-        <!-- form error -->
+        <!-- Form Error -->
         <form class="upload-box upload-box-err" method="post">
             <input class="upload-file" type="file" id="upload-err" type="submit" multiple>
             <label class="upload-label upload-label--err" for="upload-err">
@@ -25,28 +26,31 @@
             <p class="upload-desc">Please try again</p>
         </form>
 
-        <!-- linear uploading process -->
-        <form class="upload-box">
-            <p class="upload-text atrr-progress" data-percent="69">% uploaded</p>
-            <div class="progress">
-                <span class="progress-percent"></span>
+        <!-- Linear Progress Bar -->
+        <div class="upload-box">
+            <p class="upload-text" id="numProgress"></p>
+            <div class="progress-track">
+                <div class="progress-percent"></div>
             </div>
             <p class="upload-desc">Please wait...</p>
             <button class="upload-btn-cancel upload-btn-cancel--margin-top">Cancel</button>
-        </form>
+        </div>
 
-        <!-- circle uploading process -->
-        <form class="upload-box">
-            <div class="upload-circle">
-                <span class="progress-percent-inner" data-percent-inner="69">%</span>
-            </div>
-            <p class="upload-desc">Uploading...</p>
-            <button class="upload-btn-cancel">Cancel</button>
-        </form>
+        <!-- Circle Progress Bar -->
+        <div class="upload-box">
+            <svg class="circle-box" width="135" height="135">
+                <circle class="circle-ring" fill="transparent" stroke="#E0E0E0" stroke-width="6"
+                cx="67" cy="67" r="55"/>
+                <circle class="circle-progress" fill="transparent" stroke="#18A0FB" stroke-width="6"
+                cx="67" cy="67" r="55" stroke-linecap="round"/>
+            </svg>
+            <div class="circle-percent"></div>
+            <div class="circle-status">Uploading ...</div>
+        </div>
 
-        <!-- already uploaded -->
+        <!-- Already Uploaded -->
         <form class="upload-box" method="post">
-            <div class="upload-circle upload-complete">
+            <div class="upload-complete">
                 <svg class="upload-check-mark" width="50" height="37" viewBox="0 0 50 37" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M49.3454 0.520134C50.1627 1.26315 50.2229 2.52804 49.4799 3.34536L19.4799 36.3454C18.7468 37.1517 17.5032 37.2228 16.683 36.5052L0.683018 22.5052C-0.148255 21.7778 -0.23249 20.5143 0.494874 19.683C1.22224 18.8517 2.48576 18.7675 3.31704 19.4949L17.8402 32.2026L46.5201 0.654668C47.2632 -0.162647 48.5281 -0.22288 49.3454 0.520134Z" fill="white"/>
                 </svg>
@@ -55,7 +59,7 @@
             <button class="upload-btn-cancel">Upload New</button>
         </form>
 
-        <!-- loading status -->
+        <!-- Loading Status -->
         <div class="loading-wrapp">
             <p class="loading-title">Recent Uploads</p>
             <input class="loading-file-input" type="file" id="add-file" type="submit" multiple>
@@ -65,7 +69,7 @@
                 </svg>
             </label>
 
-            <!-- loading process -->
+            <!-- Loading Process -->
             <div class="loading-status loading-status--margin">
                 <svg class="loading-file-icon" width="24" height="32" viewBox="0 0 24 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M15 1H5C2.79086 1 1 2.79086 1 5V27C1 29.2091 2.79086 31 5 31H19C21.2091 31 23 29.2091 23 27V8H17.5C16.1193 8 15 6.88071 15 5.5V1ZM24 7.5V27C24 29.7614 21.7614 32 19 32H5C2.23858 32 0 29.7614 0 27V5C0 2.23858 2.23858 0 5 0H15.5L19.2231 3.27846L24 7.5ZM21.9241 7H17.5C16.6716 7 16 6.32843 16 5.5V1.77274L18.5609 4.02778L21.9241 7Z" fill="#E0E0E0"/>
@@ -80,7 +84,7 @@
                 <div class="loading-line"><span class="loading-process"></span></div>
             </div>
 
-            <!-- is downloaded -->
+            <!-- is Downloaded -->
             <div class="loading-status">
                 <svg class="loading-file-icon"  width="24" height="32" viewBox="0 0 24 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M15 1H5C2.79086 1 1 2.79086 1 5V27C1 29.2091 2.79086 31 5 31H19C21.2091 31 23 29.2091 23 27V8H17.5C16.1193 8 15 6.88071 15 5.5V1ZM24 7.5V27C24 29.7614 21.7614 32 19 32H5C2.23858 32 0 29.7614 0 27V5C0 2.23858 2.23858 0 5 0H15.5L19.2231 3.27846L24 7.5ZM21.9241 7H17.5C16.6716 7 16 6.32843 16 5.5V1.77274L18.5609 4.02778L21.9241 7Z" fill="#E0E0E0"/>
@@ -95,7 +99,7 @@
                 <div class="loading-line"><span class="loading-complete"></span></div>
             </div>
 
-            <!-- something went wrong -->
+            <!-- Something Went Wrong -->
             <div class="loading-status">
                 <svg class="loading-file-icon"  width="24" height="32" viewBox="0 0 24 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M15 1H5C2.79086 1 1 2.79086 1 5V27C1 29.2091 2.79086 31 5 31H19C21.2091 31 23 29.2091 23 27V8H17.5C16.1193 8 15 6.88071 15 5.5V1ZM24 7.5V27C24 29.7614 21.7614 32 19 32H5C2.23858 32 0 29.7614 0 27V5C0 2.23858 2.23858 0 5 0H15.5L19.2231 3.27846L24 7.5ZM21.9241 7H17.5C16.6716 7 16 6.32843 16 5.5V1.77274L18.5609 4.02778L21.9241 7Z" fill="#E0E0E0"/>
@@ -110,7 +114,7 @@
                 <div class="loading-line"><span class="loading-failed"></span></div>
             </div>
 
-            <!-- resume a file download -->
+            <!-- Resume a File Download -->
             <div class="loading-status">
                 <svg class="loading-file-icon"  width="24" height="32" viewBox="0 0 24 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M15 1H5C2.79086 1 1 2.79086 1 5V27C1 29.2091 2.79086 31 5 31H19C21.2091 31 23 29.2091 23 27V8H17.5C16.1193 8 15 6.88071 15 5.5V1ZM24 7.5V27C24 29.7614 21.7614 32 19 32H5C2.23858 32 0 29.7614 0 27V5C0 2.23858 2.23858 0 5 0H15.5L19.2231 3.27846L24 7.5ZM21.9241 7H17.5C16.6716 7 16 6.32843 16 5.5V1.77274L18.5609 4.02778L21.9241 7Z" fill="#E0E0E0"/>
@@ -126,15 +130,4 @@
             </div>
         </div>
     </div>
-
-    <!-- <script>
-        function moveProgress() {
-            const attrPercent = document.querySelector('.atrr-progress');
-            const getPercent = parseInt(attrPercent.dataset.percent);
-            const progress = document.querySelector('.progress');
-            const progressPercent = document.querySelector('.progress-percent');
-            console.log(getPercent);
-        }
-        moveProgress();
-    </script> -->
 </div>
