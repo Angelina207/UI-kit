@@ -8,7 +8,6 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-	<script src="https://cdn.jsdelivr.net/npm/choices.js@9.0.1/public/assets/scripts/choices.min.js"></script>
 	<title>UI KIT</title>
 </head>
 <body>
@@ -283,27 +282,6 @@
     </div>
     </div>
 	<div class="container">
-    <p class="title">Select</p>
-    <div class="select-wrapp">
-        <form class="select-form" action="">
-            <label for="select-first" class="select-title">Please choose:</label>
-            <select name="Value" id="select-first" class="select-option">
-                <option selected value="Option">Option</option>
-                <option value="Option 1">Option 1</option>
-                <option value="Option 2">Option 2</option>
-            </select>
-        </form>
-    
-        <form  class="select-form" action="select-sec">
-            <select name="value" id="select-sec" class="select-choose">
-                <option selected value="Choose">Choose</option>
-                <option value="Choose 1">Choose 1</option>
-                <option value="Choose 2">Choose 2</option>
-            </select>
-        </form>
-    </div>
-</div>
-	<div class="container">
     <p class="title">Application Forms</p>
      <!-- input forms -->
      <div class="input-content">
@@ -377,6 +355,35 @@
                 <textarea class="textarea textarea--err" placeholder="Value" cols="30" rows="10"></textarea>
             </form>
         </div>
+    </div>
+</div>
+	<div class="container">
+    <p class="title">Calendar</p>
+
+    <div class="calendar">
+        <div id="airdatepicker"></div>
+    </div>
+</div>
+
+	<div class="container">
+    <p class="title">Select</p>
+    <div class="select-wrapp">
+        <form class="select-form" action="">
+            <label for="select-first" class="select-title">Please choose:</label>
+            <select name="Value" id="select-first" class="select-option">
+                <option selected value="Option">Option</option>
+                <option value="Option 1">Option 1</option>
+                <option value="Option 2">Option 2</option>
+            </select>
+        </form>
+    
+        <form  class="select-form" action="select-sec">
+            <select name="value" id="select-sec" class="select-choose">
+                <option selected value="Choose">Choose</option>
+                <option value="Choose 1">Choose 1</option>
+                <option value="Choose 2">Choose 2</option>
+            </select>
+        </form>
     </div>
 </div>
 	<div class="container">
@@ -1352,15 +1359,8 @@ First Wizard
     </button>
 </div>
 </div>
-	<div class="container">
-    <p class="title">Calendar</p>
 
-    <div>
-        <div id="airdatepicker"></div>
-    </div>
-</div>
-
-	
+	<script src="https://cdn.jsdelivr.net/npm/choices.js@9.0.1/public/assets/scripts/choices.min.js"></script>
 	<script src="/js/app.min.js"></script>
 </body>
 </html>
