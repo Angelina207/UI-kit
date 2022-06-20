@@ -2232,7 +2232,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .circle-percent {
   position: absolute;
-  top: calc(50% - 25px);
+  top: calc(50% - 55px);
   font-size: 32px;
   font-weight: 700;
 }
