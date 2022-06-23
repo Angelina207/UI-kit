@@ -181,12 +181,15 @@
   .modal-window {
     position: relative;
     padding: 16px 16px;
-    width: 281px;
+    width: 260px;
     height: 102px;
     background-color: #fff;
     color: #2C2C2C;
     border-radius: 4px;
     margin: 0 auto;
+    @media screen and (min-width: 480px) {
+      width: 281px;
+    }
   }
   
   .modal-title {

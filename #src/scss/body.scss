@@ -4,7 +4,7 @@ body {
     box-sizing: border-box;
     margin: 0 auto;
     padding: 0;
-    min-width: 320px;
+    min-width: 380px;
     color: #2C2C2C;
 }
 .container{
@@ -34,8 +34,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 .title{
     display: flex;
+    text-align: center;
     justify-content: center;
     font-weight: 700;
     font-size: 25px;
-    padding: 30px 0 0 0;
+    padding: 60px 0 0 0;
 }

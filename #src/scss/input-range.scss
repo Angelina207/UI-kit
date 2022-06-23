@@ -3,8 +3,11 @@
 // =====================
 #rangeForm{
     position: relative;
-    width: 30%;
+    width: 70%;
     margin-top: 40px;
+    @media screen and (min-width: 768px) {
+        width: 40%;
+    }
 }
 #range{
     -webkit-appearance: none;
@@ -67,8 +70,11 @@
     display: flex;
     position: relative;
     padding-bottom: 20px;
-    width: 30%;
+    width: 70%;
     margin-top: 50px;
+    @media screen and (min-width: 768px) {
+        width: 40%;
+    }
 }
 .slider{
     display: block;
@@ -216,8 +222,11 @@
 .range-wrapp{
     display: flex;
     position: relative;
-    width: 30%;
+    width: 70%;
     margin-top: 50px;
+    @media screen and (min-width: 768px) {
+        width: 40%;
+    }
 }
 .range{
     position: absolute;

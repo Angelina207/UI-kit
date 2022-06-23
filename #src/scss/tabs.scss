@@ -11,7 +11,7 @@
     left: 6px;
     height: 1px;
     background-color: #E0E0E0FF;
-    width: 534px;
+    width: 100%;
 }
 .tab-btn{
     position: relative;
@@ -147,62 +147,3 @@
 #tab-7:checked ~ .tab-label[for='tab-7'] > .tab-svg--stroke {
     stroke: #18a0fb;
 }
-
-// ==================
-// Tabs & Icon
-// ==================
-// .tab-icon-wrapp{
-//     overflow: hidden;
-//     position: relative;
-//     display: flex;
-//     padding-top: 30px;
-// }
-// .tab-btn-icon{
-//     position: relative;
-//     overflow: hidden;
-//     display: block;
-//     margin-right : 10px;
-//     padding: 10px 6px 10px 28px;
-//     border: 0px;
-//     outline: none;
-//     background-color: transparent;
-//     font-weight: 500;
-//     font-size: 14px;
-//     cursor: pointer;
-//     color: #2C2C2C;
-//     transition: 250ms;
-//     &:hover,
-//     &:focus {
-//         color: #18a0fb;
-//     }
-// }
-// .tab-btn-svg{
-//     transition: 250ms;
-//     position: absolute;
-//     top: 30%;
-//     left: 5%;
-//     fill: #2C2C2C;
-// }
-// .tab-btn-svg--stroke{
-//     stroke: #2C2C2C;
-// }
-// .tab-btn-icon:hover > .tab-btn-svg,
-// .tab-btn-icon:focus > .tab-btn-svg {
-//     fill: #18a0fb;
-// }
-// .tab-btn-icon:hover > .tab-btn-svg--stroke,
-// .tab-btn-icon:focus > .tab-btn-svg--stroke {
-//     stroke: #18a0fb;
-// }
-// .tab-icon-content{
-//     display: none;
-//     margin-top: 10px;
-//     border-radius: 5px;
-//     line-height: 20px;
-//     font-size: 13px;
-//     font-weight: 400;
-//     padding: 10px;
-//     max-width: 520px;
-//     background: rgb(27,99,221);
-//     background: linear-gradient(39deg, rgba(27,99,221,0.9051995798319328) 0%, rgba(29,161,253,0.9556197478991597) 50%, rgba(69,252,161,0.9472163865546218) 100%);
-// }
