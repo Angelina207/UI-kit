@@ -1,0 +1,341 @@
+.upload-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.upload-box{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 279px;
+    width: 271px;
+    margin-top: 30px;
+    border: dashed 2px #E0E0E0FF;
+    border-radius: 4px;
+}
+.upload-box-err{
+    border: dashed 2px #FF3E1DFF;
+    background-color: #FFF5F4FF;
+}
+.upload-box-err > .upload-text{
+    color: #FF3E1DFF;
+}
+.upload-box-err > .upload-desc{
+    color: #ABA5A4FF;
+}
+.upload-file {
+    visibility: hidden;
+    opacity: 0;
+}
+.upload-label{
+    position: absolute;
+    top: 55px;
+    left: calc(50% - 25px);
+    width: 51px;
+    height: 51px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: solid 2px #C0C0C0FF;
+    background-color: transparent;
+
+}
+.upload-label--err{
+    border: 2px solid #FFBEB4FF; 
+    & > .upload-arrow {
+        fill: #FFBEB4FF;
+    }
+}
+
+.upload-arrow {
+    position: absolute;
+    fill: #C0C0C0FF;
+    top: calc(50% - 15px);
+    left: calc(50% - 15px);
+}
+.upload-text{
+    font-weight: 500;
+    font-size: 21px;
+    line-height: 25px;
+}
+.upload-desc{
+    padding-top: 15px;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 16px;
+    color: #ABABABFF;
+}
+.upload-btn-cancel{
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+    font-family: Inter;
+    padding: 10px 24px;
+    border-radius: 4px;
+    color: #2C2C2CFF;
+    border: solid 1px #E0E0E0FF;
+    background-color: #fff;
+    transition: 250ms;
+    margin-top: 25px;
+    &:hover,
+    &:focus {
+        color: #fff;
+        background-color: #18A0FBFF;
+        border: solid 1px #18A0FBFF;
+    }
+}
+
+// linear progress bar
+.progress-track{
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 6px;
+    width: 183px;
+    border-radius: 10px;
+    margin-top: 17px;
+    background-color: #E0E0E0FF;
+}
+.progress-percent{
+    position: absolute;
+    top: 0;
+    left: 0; 
+    width: 69%;
+    content: '';
+    height: 6px;
+    background-color: #18A0FBFF;
+    border-radius: 10px;
+    transition: ease 100ms;
+}
+.upload-btn-cancel--margin-top{
+    margin-top: 38px;
+}
+
+
+// circle progress bar
+.circle-ring{
+    position: relative;
+}
+.circle-progress{
+    transform-origin: center;
+    transform: rotate(-90deg);
+    transition: stroke-dashoffset linear 8s;
+}
+.circle-percent{
+    position: absolute;
+    top: calc(50% - 55px);
+    font-size: 32px;
+    font-weight: 700;
+}
+.circle-status{
+    opacity: 0.4;
+    font-weight: 500;
+    font-size: 16px;
+}
+// comlete progressbar
+.upload-complete {
+    position: relative;
+    width: 102px;
+    height: 102px;
+    border-radius: 50%;
+    border: 6px solid #00D200FF;
+    background-color: #00D200FF;
+}
+.upload-check-mark{
+    position: absolute;
+    top: calc(50% - 18px);
+    left: calc(50% - 25px);
+}
+.upload-text--padding-top{
+    padding-top: 20px;
+}
+
+// loading status
+.loading-wrapp{
+    position: relative;
+    display: block;
+    flex-direction: column;
+    height: auto;
+    width: 273px;
+    margin: 25px 0 0;
+}
+.loading-title{
+    display: block;
+    padding: 23px 0 0 20px;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 15px;
+
+}
+.loading-file-input{
+    visibility: hidden;
+    display: block;
+}
+.loading-file-label{
+    position: absolute;
+    top: 12px;
+    left: 165px;
+    width: 96px;
+    height: 34px;
+    border: solid 1px #E0E0E0FF;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.loading-label-desc{
+    padding: 10px 0 0 10px;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 15px;
+}
+.loading-file-svg{
+    position: absolute;
+    top: calc(50% - 10px);
+    left: 69px;
+    stroke: #2C2C2C;
+}
+.loading-status{
+    position: relative;
+    display: block;
+    margin: 16px 0 0;
+}
+.loading-status--margin{
+    margin: 0;
+}
+.loading-file-icon{
+    position: absolute;
+    top: 5px;
+    left: 20px;
+}
+.loading-file-name{
+    display: inline-block;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 15px;
+    padding: 0 0 0 54px;
+}
+.loading-file-name::before{
+    content: attr(data-file);
+    position: absolute;
+    right: 48px;
+    top: 12px;
+    font-size: 13px;
+    font-weight: 400;
+    opacity: 0.4;
+}
+.loading-file-name::after{
+    content: attr(data-file-err);
+    position: absolute;
+    right: 48px;
+    top: 12px;
+    font-size: 13px;
+    font-weight: 400;
+    color: #FF3E1D;
+}
+.loading-file-time{
+    display: inline-block;
+    opacity: 0.6;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 10px;
+    padding: 7px 0 12px 54px;
+}
+.loading-btn{
+    position: absolute;
+    right: 20px;
+    top: 9px;
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #E0E0E0;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: 250ms;
+    &:focus,
+    &:hover {
+        background-color: #C7C7C7FF;
+    }
+}
+.loading-btn--red{
+    background-color: #FF3E1D;
+    &:focus,
+    &:hover {
+        background-color: #D82000FF;
+    }
+}
+.loading-btn > .svg-close {
+    position: absolute;
+    top: calc(50% - 4px);
+    left: calc(50% - 4px);
+}
+.loading-btn > .svg-view {
+    position: absolute;
+    top: calc(50% - 4px);
+    left: calc(50% - 7px);
+}
+.loading-btn > .svg-close {
+    position: absolute;
+    top: calc(50% - 4px);
+    left: calc(50% - 4px);
+}
+.loading-btn > .svg-view {
+    position: absolute;
+    top: calc(50% - 4px);
+    left: calc(50% - 7px);
+}
+.loading-btn > .svg-reload {
+    position: absolute;
+    top: calc(50% - 6px);
+    left: calc(50% - 6px);
+}
+.loading-line{
+    position: relative;
+    content: '';
+    left: 20px;
+    display: block;
+    width: 233px;
+    height: 2px;
+    border-radius: 10px;
+    background-color: #E0E0E0FF;
+}
+.loading-process{
+    position: absolute;
+    content: '';
+    width: 22%;
+    height: 100%;
+    background-color: #18A0FB;
+    border-radius: 10px;
+}
+.loading-complete{
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: #00D200;
+    border-radius: 10px;
+}
+.loading-failed{
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: #FF3E1D;
+    border-radius: 10px;
+}
+.loading-cancel{
+    position: absolute;
+    content: '';
+    width: 42%;
+    height: 100%;
+    background-color: #FFD422FF;
+    border-radius: 10px;
+}
+
+@media screen and(min-width: 768px) {
+    .upload-container{
+        justify-content: space-evenly;
+    }
+}

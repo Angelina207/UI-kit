@@ -1,0 +1,42 @@
+body {
+    height: 100vh;
+    font-family: 'Inter', sans-serif;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 0;
+    min-width: 380px;
+    color: #2C2C2C;
+}
+.container{
+    padding: 0 20px;
+    margin: 0 auto;
+
+    @media screen and(min-width: 480px) {
+        max-width: 480px;
+        margin: 0 auto;
+    }
+    @media screen and(min-width: 768px) {
+        padding: 0 30px;
+        max-width: 708px;
+        margin: 0 auto;
+    }
+    @media screen and(min-width: 1024px) {
+        max-width: 964px;
+        margin: 0 auto;
+    }
+}
+p {
+    margin: 0;
+}
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+}
+.title{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 25px;
+    padding: 60px 0 0 0;
+}

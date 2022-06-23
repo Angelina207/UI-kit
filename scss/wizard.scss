@@ -1,0 +1,227 @@
+// ====================
+// Wizard First 
+// ====================
+.wizard-container{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    max-width: 100%;
+    width: 405px;
+    margin-top: 30px;
+}
+.wizard-container::before{
+    content: '';
+    position: absolute;
+    background-color: #E0E0E0;
+    height: 2px;
+    width: 100%;
+    z-index: -1;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.wizard-progress{
+    position: absolute;
+    background-color: #18A0FB;
+    z-index: -1;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 2px;
+    width: 80%;
+    transition: 1s ease;
+}
+.wizard-circle{
+    position: relative;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: #E0E0E0;
+    cursor: pointer;
+    transition: 250ms ease;
+}
+.wizard-icon{
+    display: none;
+}
+.complete{
+    width: 12px;
+    height: 12px;
+    background-color: #18A0FB;
+    border: solid 3px #18A0FB;
+}
+.complete > .wizard-icon{
+    display: block;
+    position: absolute;
+    left: calc(50% - 7px);
+    top: calc(50% - 4px);
+}
+.wizard-circle ~ .active{
+    width: 12px;
+    height: 12px;
+    background-color: #fff;
+    border: solid 3px #18A0FB;
+}
+
+@media screen and(max-width: 768px) {
+    .wizard-container{
+        position: relative;
+        flex-direction: column;
+        max-height: 100%;
+        height: 405px;
+    }
+    .wizard-container::before{
+        height: 100%;
+        width: 2px;
+        left: 7.5px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    .wizard-progress{
+        position: absolute;
+        background-color: #18A0FB;
+        left: 2%;
+        top: 0;
+        transform: translateY(0%);
+        height: 80%;
+        width: 2px;
+        transition: 1s ease;
+    }
+}
+
+// ====================
+// Wizard Second 
+// ====================
+.wizard-content{
+    display: flex;
+    padding-top: 30px;
+    overflow: hidden;
+}
+.wizard-elem{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 90px;
+    height: 28px;
+    color: #18A0FB;
+    background-color: #E8F5FFFF;
+    font-size: 13px;
+    font-weight: 500;
+    transition: 250ms ease;
+    margin-right: 2px;
+    cursor: pointer;
+    &:hover,
+    &:focus {
+        color: #fff;
+        background-color: #18A0FB;
+    }
+}
+.wizard-elem-active{
+    color: #fff;
+    background-color: #18A0FB;
+}
+.wizard-elem-active > .wizard-triangle{
+    border-left: 8px solid #18A0FB;
+}
+.wizard-elem:nth-child(1)::after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 8px solid #fff;    
+    z-index: 10;
+    transform: translateX(32px);
+}
+.wizard-elem:nth-child(2)::after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 8px solid #fff;    
+    z-index: 10;
+    transform: translateX(31px);
+}
+.wizard-elem:nth-child(1){
+    border-radius: 50px 0 0 50px;
+}
+.wizard-elem:nth-child(3){
+    border-radius: 0 50px 50px 0;
+}
+.wizard-triangle {
+    width: 0;
+    height: 0;
+    position: absolute;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 8px solid #E8F5FFFF;
+    top: -1px;
+    left: 90px;
+    z-index: 20;
+    transition: 250ms ease;
+}
+.wizard-elem:hover > .wizard-triangle,
+.wizard-elem:focus > .wizard-triangle {
+    border-left: 8px solid #18A0FB;
+}
+
+// ====================
+// Wizard Third
+// ====================
+
+.wizard-wrapp{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    max-width: 100%;
+    width: 296px;
+    margin-top: 30px;
+}
+.wizard-wrapp::before{
+    position: absolute;
+    top: 45%;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 2px;
+    background-color: #E0E0E0;
+    z-index: -1;
+}
+.wizard-result{
+    position: absolute;
+    top: 45%;
+    left: 0;
+    width: 75%;
+    height: 2px;
+    background-color: #18A0FB;
+    transition: 1s ease;
+}
+.wizard-item{
+    position: relative;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #E0E0E0;
+    cursor: pointer;
+}
+.wizard-step-wrapp{
+    position: absolute;
+    left: 0;
+    top: 20px;
+    display: flex;
+}
+.wizard-step{
+    color: #959595FF;
+    font-weight: 500;
+    font-size: 13px;
+}
+.wizard-step:nth-child(2) {
+    padding: 0 88px;
+}
+.success-item{
+    background-color: #18A0FB;
+}
+.success-step{
+    color: #2C2C2C;
+}
