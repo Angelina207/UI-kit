@@ -4,7 +4,7 @@ body {
   box-sizing: border-box;
   margin: 0 auto;
   padding: 0;
-  min-width: 320px;
+  min-width: 380px;
   color: #2C2C2C;
 }
 
@@ -43,10 +43,11 @@ h1, h2, h3, h4, h5, h6 {
 
 .title {
   display: flex;
+  text-align: center;
   justify-content: center;
   font-weight: 700;
   font-size: 25px;
-  padding: 30px 0 0 0;
+  padding: 60px 0 0 0;
 }
 
 .colors-wrapp {
@@ -333,12 +334,17 @@ h1, h2, h3, h4, h5, h6 {
 .modal-window {
   position: relative;
   padding: 16px 16px;
-  width: 281px;
+  width: 260px;
   height: 102px;
   background-color: #fff;
   color: #2C2C2C;
   border-radius: 4px;
   margin: 0 auto;
+}
+@media screen and (min-width: 480px) {
+  .modal-window {
+    width: 281px;
+  }
 }
 
 .modal-title {
@@ -670,6 +676,7 @@ h1, h2, h3, h4, h5, h6 {
 .checkbox-content {
   display: flex;
   flex-direction: row;
+  justify-content: center;
 }
 
 .checkbox-wrapp {
@@ -760,8 +767,13 @@ h1, h2, h3, h4, h5, h6 {
 .radio-wrapp {
   display: flex;
   flex-direction: column;
+  padding-top: 30px;
+}
+
+.radio-content {
+  display: flex;
   justify-content: center;
-  padding-left: 30px;
+  align-items: center;
 }
 
 .radio-form {
@@ -769,11 +781,18 @@ h1, h2, h3, h4, h5, h6 {
   flex-direction: row;
 }
 
+.radio-form:nth-child(1) {
+  padding-right: 20px;
+}
+
 .radio-box {
   position: relative;
   width: 18px;
   height: 18px;
-  padding: 10px 10px 0 0;
+}
+
+.radio-box:nth-child(even) {
+  padding: 0 10px;
 }
 
 .radio-title {
@@ -842,6 +861,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .radio-btn:checked ~ .radio-square {
   background-color: #18a0fb;
+  border: 1px solid #18a0fb;
 }
 
 .radio-btn:checked ~ .radio-square > .radio-svg {
@@ -1000,8 +1020,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 #rangeForm {
   position: relative;
-  width: 30%;
+  width: 70%;
   margin-top: 40px;
+}
+@media screen and (min-width: 768px) {
+  #rangeForm {
+    width: 40%;
+  }
 }
 
 #range {
@@ -1066,8 +1091,13 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   position: relative;
   padding-bottom: 20px;
-  width: 30%;
+  width: 70%;
   margin-top: 50px;
+}
+@media screen and (min-width: 768px) {
+  #sliderForm {
+    width: 40%;
+  }
 }
 
 .slider {
@@ -1220,8 +1250,13 @@ h1, h2, h3, h4, h5, h6 {
 .range-wrapp {
   display: flex;
   position: relative;
-  width: 30%;
+  width: 70%;
   margin-top: 50px;
+}
+@media screen and (min-width: 768px) {
+  .range-wrapp {
+    width: 40%;
+  }
 }
 
 .range {
@@ -2483,7 +2518,7 @@ h1, h2, h3, h4, h5, h6 {
   left: 6px;
   height: 1px;
   background-color: #e0e0e0;
-  width: 534px;
+  width: 100%;
 }
 
 .tab-btn {
