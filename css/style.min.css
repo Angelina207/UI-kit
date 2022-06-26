@@ -3481,7 +3481,8 @@ table thead {
 }
 
 #table-search::-webkit-search-results-button {
-  display: none;
+  appearance: none;
+  -webkit-appearance: none;
 }
 
 .table-label {
