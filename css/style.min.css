@@ -238,14 +238,6 @@ table {
   border-spacing: 0;
 }
 
-html,
-button,
-input,
-select,
-textarea {
-  color: #222;
-}
-
 ::-moz-selection {
   background: #b3d4fc;
   text-shadow: none;
@@ -1199,8 +1191,13 @@ h1, h2, h3, h4, h5, h6 {
   color: #ababab;
 }
 
+input[type=search] {
+  -webkit-appearance: none;
+  border: solid 2px #e4e4e4;
+  border-radius: 4px;
+}
+
 .search {
-  width: 260px;
   height: 37px;
   outline: none;
   border: solid 2px #e4e4e4;
@@ -1217,7 +1214,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 13px;
   font-weight: 500;
   width: 57px;
-  height: 33px;
+  height: 37px;
   z-index: 10;
   color: #919191;
   border-radius: 4px 0 0 4px;
@@ -1230,6 +1227,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .search--padd-left {
+  width: 213px;
   padding-left: 35px;
 }
 
@@ -1248,7 +1246,7 @@ h1, h2, h3, h4, h5, h6 {
   position: absolute;
   fill: #959595;
   top: 42px;
-  right: 45px;
+  right: 13px;
 }
 
 .textarea {
@@ -2681,9 +2679,8 @@ h1, h2, h3, h4, h5, h6 {
   position: absolute;
   right: 20px;
   top: 9px;
-  display: block;
-  width: 20px;
-  height: 20px;
+  display: inline-block;
+  padding: 10px;
   border-radius: 50%;
   background-color: #E0E0E0;
   outline: none;
@@ -2700,18 +2697,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 .loading-btn--red:focus, .loading-btn--red:hover {
   background-color: #d82000;
-}
-
-.loading-btn > .svg-close {
-  position: absolute;
-  top: calc(50% - 4px);
-  left: calc(50% - 4px);
-}
-
-.loading-btn > .svg-view {
-  position: absolute;
-  top: calc(50% - 4px);
-  left: calc(50% - 7px);
 }
 
 .loading-btn > .svg-close {
@@ -3743,7 +3728,7 @@ table thead {
   outline: none;
   border: 1px solid #e0e0e0;
   border-radius: 5px;
-  width: 258px;
+  width: 213px;
   height: 36px;
   margin-top: 30px;
   padding: 0 8px 0 37px;
