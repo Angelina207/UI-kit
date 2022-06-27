@@ -245,9 +245,8 @@
     position: absolute;
     right: 20px;
     top: 9px;
-    display: block;
-    width: 20px;
-    height: 20px;
+    display: inline-block;
+    padding: 10px;
     border-radius: 50%;
     background-color: #E0E0E0;
     outline: none;
@@ -265,16 +264,6 @@
     &:hover {
         background-color: #D82000FF;
     }
-}
-.loading-btn > .svg-close {
-    position: absolute;
-    top: calc(50% - 4px);
-    left: calc(50% - 4px);
-}
-.loading-btn > .svg-view {
-    position: absolute;
-    top: calc(50% - 4px);
-    left: calc(50% - 7px);
 }
 .loading-btn > .svg-close {
     position: absolute;

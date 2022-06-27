@@ -81,7 +81,7 @@ table thead {
     outline: none;
     border: 1px solid #E0E0E0FF;
     border-radius: 5px;
-    width: 258px;
+    width: calc(258px - 45px);
     height: 36px;
     margin-top: 30px;
     padding: 0 8px 0 37px;
@@ -164,7 +164,7 @@ table thead {
     .table-row{
         width: calc(768px / 2);
     }
-.table-subtitle{
+    .table-subtitle{
     background-color: #F6F6F6FF;
     border-bottom: 1px solid #E0E0E0FF;
     }

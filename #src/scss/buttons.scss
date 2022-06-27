@@ -118,59 +118,63 @@
 //======================
 // Tab Buttons
 //======================
-.btn-tab-list{
+.tab-wrapper{
+    position: relative;
     display: flex;
-    flex-direction: row;
+    padding-top: 30px;
+}
+.switch-tab{
+    appearance: none;
+    position: absolute;
+}
+.switch-label{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 58px;
     height: 46px;
-    margin-top: 15px;
-}
-.btn-tab{
-    border: none;
-    height: 47px;
+    border: 1px solid #E0E0E0;
     background-color: transparent;
-    font-weight: 500;
-    font-size: 15px;
-    border: 1px solid #E0E0E0FF;
-    border-radius: 5px;
-    transition: 250ms;
-    &:hover,
-    &:focus {
-        background-color: #18A0FBFF;
-        color: #fff;
-        border: 1px solid #18A0FBFF;
-    }
+    cursor: pointer;
+    transition: all 250ms;
 }
-.btn-tab-current{
-    background-color:#18A0FBFF;
-    border: 1px solid #18A0FBFF ;
+.switch-label--border-left{
+    border-radius: 5px 0px 0px 5px;
+}
+.switch-label--border-right{
+    border-radius: 0px 5px 5px 0px;
+}
+.switch-label-middle{
+    width: 105px;
+}
+.switch-label-large{
+    width: 134px;
+}
+.switch-svg{
+    fill: #2C2C2CFF;
+    stroke: #2C2C2CFF;
+}
+.switch-svg--without-stroke{
+    stroke: none;
+}
+#switch-1:checked ~ .switch-label[for='switch-1'],
+#switch-2:checked ~ .switch-label[for='switch-2'],
+#switch-3:checked ~ .switch-label[for='switch-3'],
+#switch-4:checked ~ .switch-label[for='switch-4'],
+#switch-5:checked ~ .switch-label[for='switch-5'],
+#switch-6:checked ~ .switch-label[for='switch-6'],
+#switch-7:checked ~ .switch-label[for='switch-7'],
+#switch-8:checked ~ .switch-label[for='switch-8'] {
+    background-color: #18A0FBFF;
+    border: 1px solid #18A0FBFF;
     color: #fff;
 }
-.btn-tab-svg{
-    fill: #2C2C2C;
-    stroke: #2C2C2C;
-    transition: 250ms;
+#switch-1:checked ~ .switch-label[for='switch-1'] > .switch-svg {
+    fill: #fff;
 }
-.btn-tab:hover > .btn-tab-svg,
-.btn-tab:focus > .btn-tab-svg{
+#switch-2:checked ~ .switch-label[for='switch-2'] > .switch-svg,
+#switch-3:checked ~ .switch-label[for='switch-3'] > .switch-svg {
     fill: #fff;
     stroke: #fff;
 }
-.btn-tab--small-width{
-    width: 56px;
-}
-.btn-tab--middle-width{
-    width: 105px;
-}
-.btn-tab--long-width{
-    width: 146px;
-}
-.btn-tab--border{
-    border-radius: 0px;
-}
-.btn-tab--border-left{
-    border-radius: 0px 5px 5px 0;
-}
-.btn-tab--border-right{
-    border-radius: 5px 0 0 5px;
-}
-

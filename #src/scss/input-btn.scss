@@ -87,43 +87,43 @@
 
 // ===============================================================================================================
 // ==================
-// Circle Radio Buttons
+// Circle Check Buttons
 // ==================
-.radio-wrapp{
+.check-wrapp{
     display: flex;
     flex-direction: column;
     padding-top: 30px;
 }
-.radio-content{
+.check-content{
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.radio-form {
+.check-form {
     display: flex;
     flex-direction: row;
 }
-.radio-form:nth-child(1) {
+.check-form:nth-child(1) {
     padding-right: 20px;
 }
-.radio-box{
+.check-box{
     position: relative;
     width: 18px;
     height: 18px;
 }
-.radio-box:nth-child(even) {
+.check-box:nth-child(even) {
     padding: 0 10px;
 }
-.radio-title{
+.check-title{
     padding-left: 25px;
     font-size: 13px;
     font-weight: 500;
 }
-.radio-btn{
+.check-btn{
     appearance: none;
     position: absolute;
 }
-.radio-circle{
+.check-circle{
     position: absolute;
     width: 16px;
     height: 16px;
@@ -132,11 +132,11 @@
     cursor: pointer;
     border-radius: 50%;
 }
-.radio-circle::before{
+.check-circle::before{
     position: absolute;
     top: calc(50% - 4px);
     left: calc(50% - 4px);
-    display: inline-block;
+    display: block;
     content: "";
     width: 8px;
     height: 8px;
@@ -144,23 +144,23 @@
     border-radius: 50%;
     opacity: 0;
 }
-.radio-btn:checked ~ .radio-circle:before{
+.check-btn:checked ~ .check-circle:before{
     opacity: 1;
 }
-.radio-btn:checked ~ .radio-circle{
+.check-btn:checked ~ .check-circle{
     background-color: #18A0FBFF;
     border: 1px solid #18A0FBFF;
 }   
-.radio-btn:disabled ~ .radio-circle{
+.check-btn:disabled ~ .check-circle{
     background-color:  #F6F6F6FF;
 }
 
 
 // ==================
-// Square Radio Buttons
+// Square Check Buttons
 // ==================
 
-.radio-square{
+.check-square{
     position: absolute;
     width: 16px;
     height: 16px;
@@ -169,16 +169,16 @@
     cursor: pointer;
     border-radius: 4px;
 }
-.radio-svg{
+.check-svg{
     position: absolute;
     top: calc(50% - 4px);
     left: calc(50% - 5.5px);
     opacity: 0;
 }
-.radio-btn:checked ~ .radio-square{
+.check-btn:checked ~ .check-square{
     background-color: #18A0FBFF;
     border: 1px solid #18A0FBFF;
 }
-.radio-btn:checked ~ .radio-square > .radio-svg{
+.check-btn:checked ~ .check-square > .check-svg{
     opacity: 1;
 }
