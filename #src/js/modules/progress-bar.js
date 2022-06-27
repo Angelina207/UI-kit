@@ -23,7 +23,7 @@ function setProgress(percent) {
         circle.style.strokeDashoffset = circumference - (percent / 100) * circumference;
 
         if (count >= percent) {
-            clearInterval(offsetCount)
+            clearInterval(offsetCount);
         } 
         count += 1;
     }, 100)

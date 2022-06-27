@@ -1,5 +1,3 @@
-import { Parallax } from "swiper";
-
 export function isRange() {
 
 // =======================
@@ -10,12 +8,12 @@ let rangeValue = document.getElementById('rangeValue');
 let rangeProgress = document.getElementById('rangeProgress');
 
 rangeValue.innerHTML = range.value;
-rangeValue.style.left = range.value - 2 + '%';
+rangeValue.style.left = range.value - 1.5 + '%';
 rangeProgress.style.width = range.value + '%';
 
 range.oninput = () => {
     rangeValue.innerHTML = range.value;
-    rangeValue.style.left = range.value - 2 + '%';
+    rangeValue.style.left = range.value - 1.5 + '%';
     rangeProgress.style.width = range.value + '%';
 }
 
@@ -43,8 +41,11 @@ let valueRight = document.getElementById('valueRight');
 let valueChangeLeft = document.querySelector('#valueLeft > div');
 let valueChangeRight = document.querySelector('#valueRight > div');
 
-valueLeft.style.left = sliderLeft.value - 5 + '%';
-valueRight.style.left = sliderRight.value - 5 + '%';
+const mediaQueryMin = window.matchMedia('(min-width: 768px)');
+const mediaQueryMax = window.matchMedia('(min-width: 1024px)');
+
+valueLeft.style.left = sliderLeft.value - 3.5 + '%';
+valueRight.style.left = sliderRight.value - 3.5 + '%';
 sliderRange.style.left = sliderLeft.value + '%';
 
 changeRangeWidth();
@@ -53,7 +54,7 @@ changeRangeWidth();
     sliderLeft.oninput = () => {
         sliderLeft.value = Math.min(parseInt(sliderLeft.value), parseInt(sliderRight.value) - 10);
         valueChangeLeft.innerHTML = sliderLeft.value;
-        valueLeft.style.left = sliderLeft.value - 5 + '%';
+        valueLeft.style.left = sliderLeft.value - 3.5 + '%';
         sliderRange.style.left = sliderLeft.value + '%';
 
         changeRangeWidth()
@@ -61,7 +62,7 @@ changeRangeWidth();
     sliderRight.oninput = () => {
         sliderRight.value = Math.max(parseInt(sliderRight.value), parseInt(sliderLeft.value) + 10);
         valueChangeRight.innerHTML = sliderRight.value;
-        valueRight.style.left = sliderRight.value - 5 + '%';
+        valueRight.style.left = sliderRight.value - 3.5 + '%';
 
         changeRangeWidth()
     }
@@ -73,6 +74,22 @@ changeRangeWidth();
     
         sliderRange.style.width = width + '%';
         }
+
+        function setMediaQuery (width) {
+            if (width.matches) {
+                valueLeft.style.left = sliderLeft.value - 4.5 + '%';
+                valueRight.style.left = sliderRight.value - 5 + '%';
+            } 
+        }
+        setMediaQuery (mediaQueryMin);
+
+        function setMediaQueryMax (width) {
+            if (width.matches) {
+                valueLeft.style.left = sliderLeft.value - 3.5 + '%';
+                valueRight.style.left = sliderRight.value - 3.5 + '%';
+            } 
+        }
+        setMediaQueryMax (mediaQueryMax);
 
 // =======================
 //     Range Input #4
